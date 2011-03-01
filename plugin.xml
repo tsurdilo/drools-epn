@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://epn/1.0"
+            class="org.drools.epn.EpnPackage"
+            genModel="src/main/resources/org/drools/epn/model/epn.genmodel"/>
+   </extension>
+
+</plugin>
