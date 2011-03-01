@@ -32,7 +32,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link org.drools.epn.DocumentRoot#getOutputSet <em>Output Set</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getEventProducer <em>Event Producer</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getEventConsumer <em>Event Consumer</em>}</li>
- *   <li>{@link org.drools.epn.DocumentRoot#getEventAgent <em>Event Agent</em>}</li>
+ *   <li>{@link org.drools.epn.DocumentRoot#getEventProcessingAgent <em>Event Processing Agent</em>}</li>
+ *   <li>{@link org.drools.epn.DocumentRoot#getEventChannel <em>Event Channel</em>}</li>
  * </ul>
  * </p>
  *
@@ -410,30 +411,57 @@ public interface DocumentRoot extends EObject {
     void setEventConsumer(EventConsumer value);
 
     /**
-     * Returns the value of the '<em><b>Event Agent</b></em>' containment reference.
+     * Returns the value of the '<em><b>Event Processing Agent</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Event Agent</em>' containment reference isn't clear,
+     * If the meaning of the '<em>Event Processing Agent</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Event Agent</em>' containment reference.
-     * @see #setEventAgent(EventAgent)
-     * @see org.drools.epn.EpnPackage#getDocumentRoot_EventAgent()
+     * @return the value of the '<em>Event Processing Agent</em>' containment reference.
+     * @see #setEventProcessingAgent(EventProcessingAgent)
+     * @see org.drools.epn.EpnPackage#getDocumentRoot_EventProcessingAgent()
      * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
-     *        annotation="ExtendedMetaData name='eventAgent' kind='element'"
+     *        annotation="ExtendedMetaData name='eventProcessingAgent' kind='element'"
      * @generated
      */
-    EventAgent getEventAgent();
+    EventProcessingAgent getEventProcessingAgent();
 
     /**
-     * Sets the value of the '{@link org.drools.epn.DocumentRoot#getEventAgent <em>Event Agent</em>}' containment reference.
+     * Sets the value of the '{@link org.drools.epn.DocumentRoot#getEventProcessingAgent <em>Event Processing Agent</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Event Agent</em>' containment reference.
-     * @see #getEventAgent()
+     * @param value the new value of the '<em>Event Processing Agent</em>' containment reference.
+     * @see #getEventProcessingAgent()
      * @generated
      */
-    void setEventAgent(EventAgent value);
+    void setEventProcessingAgent(EventProcessingAgent value);
+
+    /**
+     * Returns the value of the '<em><b>Event Channel</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Event Channel</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Event Channel</em>' containment reference.
+     * @see #setEventChannel(EventChannel)
+     * @see org.drools.epn.EpnPackage#getDocumentRoot_EventChannel()
+     * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+     *        annotation="ExtendedMetaData name='eventChannel' kind='element'"
+     * @generated
+     */
+    EventChannel getEventChannel();
+
+    /**
+     * Sets the value of the '{@link org.drools.epn.DocumentRoot#getEventChannel <em>Event Channel</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Event Channel</em>' containment reference.
+     * @see #getEventChannel()
+     * @generated
+     */
+    void setEventChannel(EventChannel value);
 
 } // DocumentRoot

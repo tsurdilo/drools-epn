@@ -120,8 +120,8 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
                 return createEventConsumerAdapter();
             }
             @Override
-            public Adapter caseEventAgent(EventAgent object) {
-                return createEventAgentAdapter();
+            public Adapter caseEventProcessingAgent(EventProcessingAgent object) {
+                return createEventProcessingAgentAdapter();
             }
             @Override
             public Adapter caseDataInput(DataInput object) {
@@ -138,6 +138,10 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseOutputSet(OutputSet object) {
                 return createOutputSetAdapter();
+            }
+            @Override
+            public Adapter caseEventChannel(EventChannel object) {
+                return createEventChannelAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -328,16 +332,16 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.EventAgent <em>Event Agent</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EventProcessingAgent <em>Event Processing Agent</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.EventAgent
+     * @see org.drools.epn.EventProcessingAgent
      * @generated
      */
-    public Adapter createEventAgentAdapter() {
+    public Adapter createEventProcessingAgentAdapter() {
         return null;
     }
 
@@ -394,6 +398,20 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createOutputSetAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EventChannel <em>Event Channel</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.EventChannel
+     * @generated
+     */
+    public Adapter createEventChannelAdapter() {
         return null;
     }
 

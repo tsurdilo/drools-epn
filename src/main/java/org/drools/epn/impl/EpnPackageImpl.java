@@ -15,8 +15,9 @@ import org.drools.epn.DocumentRoot;
 import org.drools.epn.Documentation;
 import org.drools.epn.EpnFactory;
 import org.drools.epn.EpnPackage;
-import org.drools.epn.EventAgent;
+import org.drools.epn.EventChannel;
 import org.drools.epn.EventConsumer;
+import org.drools.epn.EventProcessingAgent;
 import org.drools.epn.EventProducer;
 import org.drools.epn.FlowElement;
 import org.drools.epn.FlowNode;
@@ -129,7 +130,7 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass eventAgentEClass = null;
+    private EClass eventProcessingAgentEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -158,6 +159,13 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
      * @generated
      */
     private EClass outputSetEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass eventChannelEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -360,8 +368,17 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getDocumentRoot_EventAgent() {
+    public EReference getDocumentRoot_EventProcessingAgent() {
         return (EReference)documentRootEClass.getEStructuralFeatures().get(14);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getDocumentRoot_EventChannel() {
+        return (EReference)documentRootEClass.getEStructuralFeatures().get(15);
     }
 
     /**
@@ -630,8 +647,8 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getEventAgent() {
-        return eventAgentEClass;
+    public EClass getEventProcessingAgent() {
+        return eventProcessingAgentEClass;
     }
 
     /**
@@ -639,8 +656,8 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getEventAgent_DataOutputs() {
-        return (EReference)eventAgentEClass.getEStructuralFeatures().get(0);
+    public EReference getEventProcessingAgent_DataOutputs() {
+        return (EReference)eventProcessingAgentEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -648,8 +665,8 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getEventAgent_DataInputs() {
-        return (EReference)eventAgentEClass.getEStructuralFeatures().get(1);
+    public EReference getEventProcessingAgent_DataInputs() {
+        return (EReference)eventProcessingAgentEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -783,6 +800,33 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getEventChannel() {
+        return eventChannelEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getEventChannel_DataOutputs() {
+        return (EReference)eventChannelEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getEventChannel_DataInputs() {
+        return (EReference)eventChannelEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EpnFactory getEpnFactory() {
         return (EpnFactory)getEFactoryInstance();
     }
@@ -821,7 +865,8 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         createEReference(documentRootEClass, DOCUMENT_ROOT__OUTPUT_SET);
         createEReference(documentRootEClass, DOCUMENT_ROOT__EVENT_PRODUCER);
         createEReference(documentRootEClass, DOCUMENT_ROOT__EVENT_CONSUMER);
-        createEReference(documentRootEClass, DOCUMENT_ROOT__EVENT_AGENT);
+        createEReference(documentRootEClass, DOCUMENT_ROOT__EVENT_PROCESSING_AGENT);
+        createEReference(documentRootEClass, DOCUMENT_ROOT__EVENT_CHANNEL);
 
         activityEClass = createEClass(ACTIVITY);
 
@@ -863,9 +908,9 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         createEReference(eventConsumerEClass, EVENT_CONSUMER__DATA_OUTPUTS);
         createEReference(eventConsumerEClass, EVENT_CONSUMER__DATA_INPUTS);
 
-        eventAgentEClass = createEClass(EVENT_AGENT);
-        createEReference(eventAgentEClass, EVENT_AGENT__DATA_OUTPUTS);
-        createEReference(eventAgentEClass, EVENT_AGENT__DATA_INPUTS);
+        eventProcessingAgentEClass = createEClass(EVENT_PROCESSING_AGENT);
+        createEReference(eventProcessingAgentEClass, EVENT_PROCESSING_AGENT__DATA_OUTPUTS);
+        createEReference(eventProcessingAgentEClass, EVENT_PROCESSING_AGENT__DATA_INPUTS);
 
         dataInputEClass = createEClass(DATA_INPUT);
         createEAttribute(dataInputEClass, DATA_INPUT__NAME);
@@ -884,6 +929,10 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         createEReference(outputSetEClass, OUTPUT_SET__DATA_OUTPUT_REFS);
         createEAttribute(outputSetEClass, OUTPUT_SET__NAME);
         createEReference(outputSetEClass, OUTPUT_SET__INPUT_SET_REFS);
+
+        eventChannelEClass = createEClass(EVENT_CHANNEL);
+        createEReference(eventChannelEClass, EVENT_CHANNEL__DATA_OUTPUTS);
+        createEReference(eventChannelEClass, EVENT_CHANNEL__DATA_INPUTS);
     }
 
     /**
@@ -924,11 +973,12 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         conversationLinkEClass.getESuperTypes().add(this.getBaseElement());
         eventProducerEClass.getESuperTypes().add(this.getTask());
         eventConsumerEClass.getESuperTypes().add(this.getTask());
-        eventAgentEClass.getESuperTypes().add(this.getTask());
+        eventProcessingAgentEClass.getESuperTypes().add(this.getTask());
         dataInputEClass.getESuperTypes().add(this.getBaseElement());
         dataOutputEClass.getESuperTypes().add(this.getBaseElement());
         inputSetEClass.getESuperTypes().add(this.getBaseElement());
         outputSetEClass.getESuperTypes().add(this.getBaseElement());
+        eventChannelEClass.getESuperTypes().add(this.getTask());
 
         // Initialize classes and features; add operations and parameters
         initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -946,7 +996,8 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         initEReference(getDocumentRoot_OutputSet(), this.getOutputSet(), null, "outputSet", null, 0, -2, DocumentRoot.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_EventProducer(), this.getEventProducer(), null, "eventProducer", null, 0, -2, DocumentRoot.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_EventConsumer(), this.getEventConsumer(), null, "eventConsumer", null, 0, -2, DocumentRoot.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-        initEReference(getDocumentRoot_EventAgent(), this.getEventAgent(), null, "eventAgent", null, 0, -2, DocumentRoot.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getDocumentRoot_EventProcessingAgent(), this.getEventProcessingAgent(), null, "eventProcessingAgent", null, 0, -2, DocumentRoot.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getDocumentRoot_EventChannel(), this.getEventChannel(), null, "eventChannel", null, 0, -2, DocumentRoot.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
         initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -988,9 +1039,9 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         initEReference(getEventConsumer_DataOutputs(), this.getDataOutput(), null, "dataOutputs", null, 0, -2, EventConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getEventConsumer_DataInputs(), this.getDataInput(), null, "dataInputs", null, 0, -2, EventConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(eventAgentEClass, EventAgent.class, "EventAgent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getEventAgent_DataOutputs(), this.getDataOutput(), null, "dataOutputs", null, 0, -2, EventAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getEventAgent_DataInputs(), this.getDataInput(), null, "dataInputs", null, 0, -2, EventAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEClass(eventProcessingAgentEClass, EventProcessingAgent.class, "EventProcessingAgent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getEventProcessingAgent_DataOutputs(), this.getDataOutput(), null, "dataOutputs", null, 0, -2, EventProcessingAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getEventProcessingAgent_DataInputs(), this.getDataInput(), null, "dataInputs", null, 0, -2, EventProcessingAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(dataInputEClass, DataInput.class, "DataInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getDataInput_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1009,6 +1060,10 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         initEReference(getOutputSet_DataOutputRefs(), this.getDataOutput(), this.getDataOutput_OutputSetRefs(), "dataOutputRefs", null, 0, -1, OutputSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getOutputSet_Name(), ecorePackage.getEString(), "name", null, 0, 1, OutputSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getOutputSet_InputSetRefs(), this.getInputSet(), this.getInputSet_OutputSetRefs(), "inputSetRefs", null, 0, -1, OutputSet.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(eventChannelEClass, EventChannel.class, "EventChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getEventChannel_DataOutputs(), this.getDataOutput(), null, "dataOutputs", null, 0, -2, EventChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getEventChannel_DataInputs(), this.getDataInput(), null, "dataInputs", null, 0, -2, EventChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);
@@ -1041,7 +1096,7 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
            new String[] {
              "name", ":mixed",
              "kind", "elementWildcard"
-           });																																																
+           });																																																		
     }
 
     /**
@@ -1144,10 +1199,17 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
              "kind", "element"
            });		
         addAnnotation
-          (getDocumentRoot_EventAgent(), 
+          (getDocumentRoot_EventProcessingAgent(), 
            source, 
            new String[] {
-             "name", "eventAgent",
+             "name", "eventProcessingAgent",
+             "kind", "element"
+           });		
+        addAnnotation
+          (getDocumentRoot_EventChannel(), 
+           source, 
+           new String[] {
+             "name", "eventChannel",
              "kind", "element"
            });		
         addAnnotation
@@ -1299,7 +1361,7 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
              "kind", "elementOnly"
            });		
         addAnnotation
-          (eventAgentEClass, 
+          (eventProcessingAgentEClass, 
            source, 
            new String[] {
              "name", "tEventAgent",
@@ -1388,6 +1450,13 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
            new String[] {
              "name", "outputSetRefs",
              "kind", "element"
+           });		
+        addAnnotation
+          (eventChannelEClass, 
+           source, 
+           new String[] {
+             "name", "tEventChannel",
+             "kind", "elementOnly"
            });
     }
 

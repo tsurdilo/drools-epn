@@ -134,13 +134,13 @@ public interface EpnFactory extends EFactory {
     EventConsumer createEventConsumer();
 
     /**
-     * Returns a new object of class '<em>Event Agent</em>'.
+     * Returns a new object of class '<em>Event Processing Agent</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Event Agent</em>'.
+     * @return a new object of class '<em>Event Processing Agent</em>'.
      * @generated
      */
-    EventAgent createEventAgent();
+    EventProcessingAgent createEventProcessingAgent();
 
     /**
      * Returns a new object of class '<em>Data Input</em>'.
@@ -177,6 +177,15 @@ public interface EpnFactory extends EFactory {
      * @generated
      */
     OutputSet createOutputSet();
+
+    /**
+     * Returns a new object of class '<em>Event Channel</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Event Channel</em>'.
+     * @generated
+     */
+    EventChannel createEventChannel();
 
     /**
      * Returns the package supported by this factory.

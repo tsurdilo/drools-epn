@@ -14,8 +14,9 @@ import org.drools.epn.DataOutput;
 import org.drools.epn.DocumentRoot;
 import org.drools.epn.Documentation;
 import org.drools.epn.EpnPackage;
-import org.drools.epn.EventAgent;
+import org.drools.epn.EventChannel;
 import org.drools.epn.EventConsumer;
+import org.drools.epn.EventProcessingAgent;
 import org.drools.epn.EventProducer;
 import org.drools.epn.FlowNode;
 import org.drools.epn.InputSet;
@@ -55,7 +56,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getOutputSet <em>Output Set</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getEventProducer <em>Event Producer</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getEventConsumer <em>Event Consumer</em>}</li>
- *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getEventAgent <em>Event Agent</em>}</li>
+ *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getEventProcessingAgent <em>Event Processing Agent</em>}</li>
+ *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getEventChannel <em>Event Channel</em>}</li>
  * </ul>
  * </p>
  *
@@ -576,8 +578,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EventAgent getEventAgent() {
-        // TODO: implement this method to return the 'Event Agent' containment reference
+    public EventProcessingAgent getEventProcessingAgent() {
+        // TODO: implement this method to return the 'Event Processing Agent' containment reference
         // Ensure that you remove @generated or mark it @generated NOT
         throw new UnsupportedOperationException();
     }
@@ -587,8 +589,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetEventAgent(EventAgent newEventAgent, NotificationChain msgs) {
-        // TODO: implement this method to set the contained 'Event Agent' containment reference
+    public NotificationChain basicSetEventProcessingAgent(EventProcessingAgent newEventProcessingAgent, NotificationChain msgs) {
+        // TODO: implement this method to set the contained 'Event Processing Agent' containment reference
         // -> this method is automatically invoked to keep the containment relationship in synch
         // -> do not modify other features
         // -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
@@ -601,8 +603,44 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setEventAgent(EventAgent newEventAgent) {
-        // TODO: implement this method to set the 'Event Agent' containment reference
+    public void setEventProcessingAgent(EventProcessingAgent newEventProcessingAgent) {
+        // TODO: implement this method to set the 'Event Processing Agent' containment reference
+        // Ensure that you remove @generated or mark it @generated NOT
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EventChannel getEventChannel() {
+        // TODO: implement this method to return the 'Event Channel' containment reference
+        // Ensure that you remove @generated or mark it @generated NOT
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetEventChannel(EventChannel newEventChannel, NotificationChain msgs) {
+        // TODO: implement this method to set the contained 'Event Channel' containment reference
+        // -> this method is automatically invoked to keep the containment relationship in synch
+        // -> do not modify other features
+        // -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
+        // Ensure that you remove @generated or mark it @generated NOT
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setEventChannel(EventChannel newEventChannel) {
+        // TODO: implement this method to set the 'Event Channel' containment reference
         // Ensure that you remove @generated or mark it @generated NOT
         throw new UnsupportedOperationException();
     }
@@ -643,8 +681,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
                 return basicSetEventProducer(null, msgs);
             case EpnPackage.DOCUMENT_ROOT__EVENT_CONSUMER:
                 return basicSetEventConsumer(null, msgs);
-            case EpnPackage.DOCUMENT_ROOT__EVENT_AGENT:
-                return basicSetEventAgent(null, msgs);
+            case EpnPackage.DOCUMENT_ROOT__EVENT_PROCESSING_AGENT:
+                return basicSetEventProcessingAgent(null, msgs);
+            case EpnPackage.DOCUMENT_ROOT__EVENT_CHANNEL:
+                return basicSetEventChannel(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -686,8 +726,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
                 return getEventProducer();
             case EpnPackage.DOCUMENT_ROOT__EVENT_CONSUMER:
                 return getEventConsumer();
-            case EpnPackage.DOCUMENT_ROOT__EVENT_AGENT:
-                return getEventAgent();
+            case EpnPackage.DOCUMENT_ROOT__EVENT_PROCESSING_AGENT:
+                return getEventProcessingAgent();
+            case EpnPackage.DOCUMENT_ROOT__EVENT_CHANNEL:
+                return getEventChannel();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -742,8 +784,11 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
             case EpnPackage.DOCUMENT_ROOT__EVENT_CONSUMER:
                 setEventConsumer((EventConsumer)newValue);
                 return;
-            case EpnPackage.DOCUMENT_ROOT__EVENT_AGENT:
-                setEventAgent((EventAgent)newValue);
+            case EpnPackage.DOCUMENT_ROOT__EVENT_PROCESSING_AGENT:
+                setEventProcessingAgent((EventProcessingAgent)newValue);
+                return;
+            case EpnPackage.DOCUMENT_ROOT__EVENT_CHANNEL:
+                setEventChannel((EventChannel)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -799,8 +844,11 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
             case EpnPackage.DOCUMENT_ROOT__EVENT_CONSUMER:
                 setEventConsumer((EventConsumer)null);
                 return;
-            case EpnPackage.DOCUMENT_ROOT__EVENT_AGENT:
-                setEventAgent((EventAgent)null);
+            case EpnPackage.DOCUMENT_ROOT__EVENT_PROCESSING_AGENT:
+                setEventProcessingAgent((EventProcessingAgent)null);
+                return;
+            case EpnPackage.DOCUMENT_ROOT__EVENT_CHANNEL:
+                setEventChannel((EventChannel)null);
                 return;
         }
         super.eUnset(featureID);
@@ -842,8 +890,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
                 return getEventProducer() != null;
             case EpnPackage.DOCUMENT_ROOT__EVENT_CONSUMER:
                 return getEventConsumer() != null;
-            case EpnPackage.DOCUMENT_ROOT__EVENT_AGENT:
-                return getEventAgent() != null;
+            case EpnPackage.DOCUMENT_ROOT__EVENT_PROCESSING_AGENT:
+                return getEventProcessingAgent() != null;
+            case EpnPackage.DOCUMENT_ROOT__EVENT_CHANNEL:
+                return getEventChannel() != null;
         }
         return super.eIsSet(featureID);
     }

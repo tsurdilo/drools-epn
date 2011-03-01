@@ -118,11 +118,19 @@
         <details key="kind" value="element"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventAgent" upperBound="-2"
-        eType="#//EventAgent" volatile="true" transient="true" derived="true" containment="true"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventProcessingAgent" upperBound="-2"
+        eType="#//EventProcessingAgent" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="name" value="eventProcessingAgent"/>
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventChannel" upperBound="-2"
+        eType="#//EventChannel" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="ExtendedMetaData">
-        <details key="name" value="eventAgent"/>
+        <details key="name" value="eventChannel"/>
         <details key="kind" value="element"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -277,7 +285,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataInputs" upperBound="-2"
         eType="#//DataInput"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventAgent" eSuperTypes="#//Task">
+  <eClassifiers xsi:type="ecore:EClass" name="EventProcessingAgent" eSuperTypes="#//Task">
     <eAnnotations source="ExtendedMetaData">
       <details key="name" value="tEventAgent"/>
       <details key="kind" value="elementOnly"/>
@@ -366,5 +374,15 @@
         <details key="kind" value="element"/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventChannel" eSuperTypes="#//Task">
+    <eAnnotations source="ExtendedMetaData">
+      <details key="name" value="tEventChannel"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataOutputs" upperBound="-2"
+        eType="#//DataOutput"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataInputs" upperBound="-2"
+        eType="#//DataInput"/>
   </eClassifiers>
 </ecore:EPackage>

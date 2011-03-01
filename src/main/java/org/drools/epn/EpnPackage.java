@@ -196,13 +196,22 @@ public interface EpnPackage extends EPackage {
     int DOCUMENT_ROOT__EVENT_CONSUMER = 13;
 
     /**
-     * The feature id for the '<em><b>Event Agent</b></em>' containment reference.
+     * The feature id for the '<em><b>Event Processing Agent</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DOCUMENT_ROOT__EVENT_AGENT = 14;
+    int DOCUMENT_ROOT__EVENT_PROCESSING_AGENT = 14;
+
+    /**
+     * The feature id for the '<em><b>Event Channel</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOCUMENT_ROOT__EVENT_CHANNEL = 15;
 
     /**
      * The number of structural features of the '<em>Document Root</em>' class.
@@ -211,7 +220,7 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOCUMENT_ROOT_FEATURE_COUNT = 15;
+    int DOCUMENT_ROOT_FEATURE_COUNT = 16;
 
     /**
      * The meta object id for the '{@link org.drools.epn.impl.BaseElementImpl <em>Base Element</em>}' class.
@@ -927,14 +936,14 @@ public interface EpnPackage extends EPackage {
     int EVENT_CONSUMER_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
 
     /**
-     * The meta object id for the '{@link org.drools.epn.impl.EventAgentImpl <em>Event Agent</em>}' class.
+     * The meta object id for the '{@link org.drools.epn.impl.EventProcessingAgentImpl <em>Event Processing Agent</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.drools.epn.impl.EventAgentImpl
-     * @see org.drools.epn.impl.EpnPackageImpl#getEventAgent()
+     * @see org.drools.epn.impl.EventProcessingAgentImpl
+     * @see org.drools.epn.impl.EpnPackageImpl#getEventProcessingAgent()
      * @generated
      */
-    int EVENT_AGENT = 12;
+    int EVENT_PROCESSING_AGENT = 12;
 
     /**
      * The feature id for the '<em><b>Documentation</b></em>' reference list.
@@ -943,7 +952,7 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EVENT_AGENT__DOCUMENTATION = TASK__DOCUMENTATION;
+    int EVENT_PROCESSING_AGENT__DOCUMENTATION = TASK__DOCUMENTATION;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -952,7 +961,7 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EVENT_AGENT__ID = TASK__ID;
+    int EVENT_PROCESSING_AGENT__ID = TASK__ID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -961,7 +970,7 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EVENT_AGENT__NAME = TASK__NAME;
+    int EVENT_PROCESSING_AGENT__NAME = TASK__NAME;
 
     /**
      * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -970,7 +979,7 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EVENT_AGENT__INCOMING = TASK__INCOMING;
+    int EVENT_PROCESSING_AGENT__INCOMING = TASK__INCOMING;
 
     /**
      * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -979,7 +988,7 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EVENT_AGENT__OUTGOING = TASK__OUTGOING;
+    int EVENT_PROCESSING_AGENT__OUTGOING = TASK__OUTGOING;
 
     /**
      * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -988,7 +997,7 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EVENT_AGENT__INCOMING_CONVERSATION_LINKS = TASK__INCOMING_CONVERSATION_LINKS;
+    int EVENT_PROCESSING_AGENT__INCOMING_CONVERSATION_LINKS = TASK__INCOMING_CONVERSATION_LINKS;
 
     /**
      * The feature id for the '<em><b>Outgoing Conversation Links</b></em>' reference list.
@@ -997,7 +1006,7 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EVENT_AGENT__OUTGOING_CONVERSATION_LINKS = TASK__OUTGOING_CONVERSATION_LINKS;
+    int EVENT_PROCESSING_AGENT__OUTGOING_CONVERSATION_LINKS = TASK__OUTGOING_CONVERSATION_LINKS;
 
     /**
      * The feature id for the '<em><b>Data Outputs</b></em>' reference.
@@ -1006,7 +1015,7 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EVENT_AGENT__DATA_OUTPUTS = TASK_FEATURE_COUNT + 0;
+    int EVENT_PROCESSING_AGENT__DATA_OUTPUTS = TASK_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Data Inputs</b></em>' reference.
@@ -1015,16 +1024,16 @@ public interface EpnPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EVENT_AGENT__DATA_INPUTS = TASK_FEATURE_COUNT + 1;
+    int EVENT_PROCESSING_AGENT__DATA_INPUTS = TASK_FEATURE_COUNT + 1;
 
     /**
-     * The number of structural features of the '<em>Event Agent</em>' class.
+     * The number of structural features of the '<em>Event Processing Agent</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EVENT_AGENT_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
+    int EVENT_PROCESSING_AGENT_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
 
     /**
      * The meta object id for the '{@link org.drools.epn.impl.DataInputImpl <em>Data Input</em>}' class.
@@ -1264,6 +1273,106 @@ public interface EpnPackage extends EPackage {
      */
     int OUTPUT_SET_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 3;
 
+    /**
+     * The meta object id for the '{@link org.drools.epn.impl.EventChannelImpl <em>Event Channel</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.drools.epn.impl.EventChannelImpl
+     * @see org.drools.epn.impl.EpnPackageImpl#getEventChannel()
+     * @generated
+     */
+    int EVENT_CHANNEL = 17;
+
+    /**
+     * The feature id for the '<em><b>Documentation</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL__DOCUMENTATION = TASK__DOCUMENTATION;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL__ID = TASK__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL__NAME = TASK__NAME;
+
+    /**
+     * The feature id for the '<em><b>Incoming</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL__INCOMING = TASK__INCOMING;
+
+    /**
+     * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL__OUTGOING = TASK__OUTGOING;
+
+    /**
+     * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL__INCOMING_CONVERSATION_LINKS = TASK__INCOMING_CONVERSATION_LINKS;
+
+    /**
+     * The feature id for the '<em><b>Outgoing Conversation Links</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL__OUTGOING_CONVERSATION_LINKS = TASK__OUTGOING_CONVERSATION_LINKS;
+
+    /**
+     * The feature id for the '<em><b>Data Outputs</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL__DATA_OUTPUTS = TASK_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Data Inputs</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL__DATA_INPUTS = TASK_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>Event Channel</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EVENT_CHANNEL_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
+
 
     /**
      * Returns the meta object for class '{@link org.drools.epn.DocumentRoot <em>Document Root</em>}'.
@@ -1430,15 +1539,26 @@ public interface EpnPackage extends EPackage {
     EReference getDocumentRoot_EventConsumer();
 
     /**
-     * Returns the meta object for the containment reference '{@link org.drools.epn.DocumentRoot#getEventAgent <em>Event Agent</em>}'.
+     * Returns the meta object for the containment reference '{@link org.drools.epn.DocumentRoot#getEventProcessingAgent <em>Event Processing Agent</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Event Agent</em>'.
-     * @see org.drools.epn.DocumentRoot#getEventAgent()
+     * @return the meta object for the containment reference '<em>Event Processing Agent</em>'.
+     * @see org.drools.epn.DocumentRoot#getEventProcessingAgent()
      * @see #getDocumentRoot()
      * @generated
      */
-    EReference getDocumentRoot_EventAgent();
+    EReference getDocumentRoot_EventProcessingAgent();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.drools.epn.DocumentRoot#getEventChannel <em>Event Channel</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Event Channel</em>'.
+     * @see org.drools.epn.DocumentRoot#getEventChannel()
+     * @see #getDocumentRoot()
+     * @generated
+     */
+    EReference getDocumentRoot_EventChannel();
 
     /**
      * Returns the meta object for class '{@link org.drools.epn.Activity <em>Activity</em>}'.
@@ -1749,36 +1869,36 @@ public interface EpnPackage extends EPackage {
     EReference getEventConsumer_DataInputs();
 
     /**
-     * Returns the meta object for class '{@link org.drools.epn.EventAgent <em>Event Agent</em>}'.
+     * Returns the meta object for class '{@link org.drools.epn.EventProcessingAgent <em>Event Processing Agent</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Event Agent</em>'.
-     * @see org.drools.epn.EventAgent
+     * @return the meta object for class '<em>Event Processing Agent</em>'.
+     * @see org.drools.epn.EventProcessingAgent
      * @generated
      */
-    EClass getEventAgent();
+    EClass getEventProcessingAgent();
 
     /**
-     * Returns the meta object for the reference '{@link org.drools.epn.EventAgent#getDataOutputs <em>Data Outputs</em>}'.
+     * Returns the meta object for the reference '{@link org.drools.epn.EventProcessingAgent#getDataOutputs <em>Data Outputs</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the reference '<em>Data Outputs</em>'.
-     * @see org.drools.epn.EventAgent#getDataOutputs()
-     * @see #getEventAgent()
+     * @see org.drools.epn.EventProcessingAgent#getDataOutputs()
+     * @see #getEventProcessingAgent()
      * @generated
      */
-    EReference getEventAgent_DataOutputs();
+    EReference getEventProcessingAgent_DataOutputs();
 
     /**
-     * Returns the meta object for the reference '{@link org.drools.epn.EventAgent#getDataInputs <em>Data Inputs</em>}'.
+     * Returns the meta object for the reference '{@link org.drools.epn.EventProcessingAgent#getDataInputs <em>Data Inputs</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the reference '<em>Data Inputs</em>'.
-     * @see org.drools.epn.EventAgent#getDataInputs()
-     * @see #getEventAgent()
+     * @see org.drools.epn.EventProcessingAgent#getDataInputs()
+     * @see #getEventProcessingAgent()
      * @generated
      */
-    EReference getEventAgent_DataInputs();
+    EReference getEventProcessingAgent_DataInputs();
 
     /**
      * Returns the meta object for class '{@link org.drools.epn.DataInput <em>Data Input</em>}'.
@@ -1931,6 +2051,38 @@ public interface EpnPackage extends EPackage {
     EReference getOutputSet_InputSetRefs();
 
     /**
+     * Returns the meta object for class '{@link org.drools.epn.EventChannel <em>Event Channel</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Event Channel</em>'.
+     * @see org.drools.epn.EventChannel
+     * @generated
+     */
+    EClass getEventChannel();
+
+    /**
+     * Returns the meta object for the reference '{@link org.drools.epn.EventChannel#getDataOutputs <em>Data Outputs</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Data Outputs</em>'.
+     * @see org.drools.epn.EventChannel#getDataOutputs()
+     * @see #getEventChannel()
+     * @generated
+     */
+    EReference getEventChannel_DataOutputs();
+
+    /**
+     * Returns the meta object for the reference '{@link org.drools.epn.EventChannel#getDataInputs <em>Data Inputs</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Data Inputs</em>'.
+     * @see org.drools.epn.EventChannel#getDataInputs()
+     * @see #getEventChannel()
+     * @generated
+     */
+    EReference getEventChannel_DataInputs();
+
+    /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2075,12 +2227,20 @@ public interface EpnPackage extends EPackage {
         EReference DOCUMENT_ROOT__EVENT_CONSUMER = eINSTANCE.getDocumentRoot_EventConsumer();
 
         /**
-         * The meta object literal for the '<em><b>Event Agent</b></em>' containment reference feature.
+         * The meta object literal for the '<em><b>Event Processing Agent</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference DOCUMENT_ROOT__EVENT_AGENT = eINSTANCE.getDocumentRoot_EventAgent();
+        EReference DOCUMENT_ROOT__EVENT_PROCESSING_AGENT = eINSTANCE.getDocumentRoot_EventProcessingAgent();
+
+        /**
+         * The meta object literal for the '<em><b>Event Channel</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DOCUMENT_ROOT__EVENT_CHANNEL = eINSTANCE.getDocumentRoot_EventChannel();
 
         /**
          * The meta object literal for the '{@link org.drools.epn.impl.ActivityImpl <em>Activity</em>}' class.
@@ -2337,14 +2497,14 @@ public interface EpnPackage extends EPackage {
         EReference EVENT_CONSUMER__DATA_INPUTS = eINSTANCE.getEventConsumer_DataInputs();
 
         /**
-         * The meta object literal for the '{@link org.drools.epn.impl.EventAgentImpl <em>Event Agent</em>}' class.
+         * The meta object literal for the '{@link org.drools.epn.impl.EventProcessingAgentImpl <em>Event Processing Agent</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see org.drools.epn.impl.EventAgentImpl
-         * @see org.drools.epn.impl.EpnPackageImpl#getEventAgent()
+         * @see org.drools.epn.impl.EventProcessingAgentImpl
+         * @see org.drools.epn.impl.EpnPackageImpl#getEventProcessingAgent()
          * @generated
          */
-        EClass EVENT_AGENT = eINSTANCE.getEventAgent();
+        EClass EVENT_PROCESSING_AGENT = eINSTANCE.getEventProcessingAgent();
 
         /**
          * The meta object literal for the '<em><b>Data Outputs</b></em>' reference feature.
@@ -2352,7 +2512,7 @@ public interface EpnPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference EVENT_AGENT__DATA_OUTPUTS = eINSTANCE.getEventAgent_DataOutputs();
+        EReference EVENT_PROCESSING_AGENT__DATA_OUTPUTS = eINSTANCE.getEventProcessingAgent_DataOutputs();
 
         /**
          * The meta object literal for the '<em><b>Data Inputs</b></em>' reference feature.
@@ -2360,7 +2520,7 @@ public interface EpnPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference EVENT_AGENT__DATA_INPUTS = eINSTANCE.getEventAgent_DataInputs();
+        EReference EVENT_PROCESSING_AGENT__DATA_INPUTS = eINSTANCE.getEventProcessingAgent_DataInputs();
 
         /**
          * The meta object literal for the '{@link org.drools.epn.impl.DataInputImpl <em>Data Input</em>}' class.
@@ -2481,6 +2641,32 @@ public interface EpnPackage extends EPackage {
          * @generated
          */
         EReference OUTPUT_SET__INPUT_SET_REFS = eINSTANCE.getOutputSet_InputSetRefs();
+
+        /**
+         * The meta object literal for the '{@link org.drools.epn.impl.EventChannelImpl <em>Event Channel</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.drools.epn.impl.EventChannelImpl
+         * @see org.drools.epn.impl.EpnPackageImpl#getEventChannel()
+         * @generated
+         */
+        EClass EVENT_CHANNEL = eINSTANCE.getEventChannel();
+
+        /**
+         * The meta object literal for the '<em><b>Data Outputs</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference EVENT_CHANNEL__DATA_OUTPUTS = eINSTANCE.getEventChannel_DataOutputs();
+
+        /**
+         * The meta object literal for the '<em><b>Data Inputs</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference EVENT_CHANNEL__DATA_INPUTS = eINSTANCE.getEventChannel_DataInputs();
 
     }
 

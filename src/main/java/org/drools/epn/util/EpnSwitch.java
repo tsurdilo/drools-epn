@@ -186,15 +186,15 @@ public class EpnSwitch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case EpnPackage.EVENT_AGENT: {
-                EventAgent eventAgent = (EventAgent)theEObject;
-                T result = caseEventAgent(eventAgent);
-                if (result == null) result = caseTask(eventAgent);
-                if (result == null) result = caseActivity(eventAgent);
-                if (result == null) result = caseInteractionNode(eventAgent);
-                if (result == null) result = caseFlowNode(eventAgent);
-                if (result == null) result = caseFlowElement(eventAgent);
-                if (result == null) result = caseBaseElement(eventAgent);
+            case EpnPackage.EVENT_PROCESSING_AGENT: {
+                EventProcessingAgent eventProcessingAgent = (EventProcessingAgent)theEObject;
+                T result = caseEventProcessingAgent(eventProcessingAgent);
+                if (result == null) result = caseTask(eventProcessingAgent);
+                if (result == null) result = caseActivity(eventProcessingAgent);
+                if (result == null) result = caseInteractionNode(eventProcessingAgent);
+                if (result == null) result = caseFlowNode(eventProcessingAgent);
+                if (result == null) result = caseFlowElement(eventProcessingAgent);
+                if (result == null) result = caseBaseElement(eventProcessingAgent);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -223,6 +223,18 @@ public class EpnSwitch<T> {
                 OutputSet outputSet = (OutputSet)theEObject;
                 T result = caseOutputSet(outputSet);
                 if (result == null) result = caseBaseElement(outputSet);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case EpnPackage.EVENT_CHANNEL: {
+                EventChannel eventChannel = (EventChannel)theEObject;
+                T result = caseEventChannel(eventChannel);
+                if (result == null) result = caseTask(eventChannel);
+                if (result == null) result = caseActivity(eventChannel);
+                if (result == null) result = caseInteractionNode(eventChannel);
+                if (result == null) result = caseFlowNode(eventChannel);
+                if (result == null) result = caseFlowElement(eventChannel);
+                if (result == null) result = caseBaseElement(eventChannel);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -411,17 +423,17 @@ public class EpnSwitch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Event Agent</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Event Processing Agent</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Event Agent</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Event Processing Agent</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEventAgent(EventAgent object) {
+    public T caseEventProcessingAgent(EventProcessingAgent object) {
         return null;
     }
 
@@ -482,6 +494,21 @@ public class EpnSwitch<T> {
      * @generated
      */
     public T caseOutputSet(OutputSet object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Event Channel</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Event Channel</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseEventChannel(EventChannel object) {
         return null;
     }
 

@@ -22,7 +22,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/outputSet"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/eventProducer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/eventConsumer"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/eventAgent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/eventProcessingAgent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/eventChannel"/>
     </genClasses>
     <genClasses ecoreClass="epn.ecore#//Activity"/>
     <genClasses ecoreClass="epn.ecore#//FlowNode">
@@ -62,9 +63,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventConsumer/dataOutputs"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventConsumer/dataInputs"/>
     </genClasses>
-    <genClasses ecoreClass="epn.ecore#//EventAgent">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventAgent/dataOutputs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventAgent/dataInputs"/>
+    <genClasses ecoreClass="epn.ecore#//EventProcessingAgent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventProcessingAgent/dataOutputs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventProcessingAgent/dataInputs"/>
     </genClasses>
     <genClasses ecoreClass="epn.ecore#//DataInput">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//DataInput/name"/>
@@ -83,6 +84,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//OutputSet/dataOutputRefs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//OutputSet/name"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference epn.ecore#//OutputSet/inputSetRefs"/>
+    </genClasses>
+    <genClasses ecoreClass="epn.ecore#//EventChannel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventChannel/dataOutputs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventChannel/dataInputs"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

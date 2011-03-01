@@ -72,11 +72,12 @@ public class EpnFactoryImpl extends EFactoryImpl implements EpnFactory {
             case EpnPackage.CONVERSATION_LINK: return createConversationLink();
             case EpnPackage.EVENT_PRODUCER: return createEventProducer();
             case EpnPackage.EVENT_CONSUMER: return createEventConsumer();
-            case EpnPackage.EVENT_AGENT: return createEventAgent();
+            case EpnPackage.EVENT_PROCESSING_AGENT: return createEventProcessingAgent();
             case EpnPackage.DATA_INPUT: return createDataInput();
             case EpnPackage.DATA_OUTPUT: return createDataOutput();
             case EpnPackage.INPUT_SET: return createInputSet();
             case EpnPackage.OUTPUT_SET: return createOutputSet();
+            case EpnPackage.EVENT_CHANNEL: return createEventChannel();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -207,9 +208,9 @@ public class EpnFactoryImpl extends EFactoryImpl implements EpnFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EventAgent createEventAgent() {
-        EventAgentImpl eventAgent = new EventAgentImpl();
-        return eventAgent;
+    public EventProcessingAgent createEventProcessingAgent() {
+        EventProcessingAgentImpl eventProcessingAgent = new EventProcessingAgentImpl();
+        return eventProcessingAgent;
     }
 
     /**
@@ -250,6 +251,16 @@ public class EpnFactoryImpl extends EFactoryImpl implements EpnFactory {
     public OutputSet createOutputSet() {
         OutputSetImpl outputSet = new OutputSetImpl();
         return outputSet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EventChannel createEventChannel() {
+        EventChannelImpl eventChannel = new EventChannelImpl();
+        return eventChannel;
     }
 
     /**
