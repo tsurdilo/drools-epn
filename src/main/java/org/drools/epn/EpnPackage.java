@@ -8,6 +8,7 @@ package org.drools.epn;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -1373,6 +1374,309 @@ public interface EpnPackage extends EPackage {
      */
     int EVENT_CHANNEL_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
 
+    /**
+     * The meta object id for the '{@link org.drools.epn.impl.DiagramImpl <em>Diagram</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.drools.epn.impl.DiagramImpl
+     * @see org.drools.epn.impl.EpnPackageImpl#getDiagram()
+     * @generated
+     */
+    int DIAGRAM = 19;
+
+    /**
+     * The feature id for the '<em><b>Documentation</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM__DOCUMENTATION = 0;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM__ID = 1;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM__NAME = 2;
+
+    /**
+     * The feature id for the '<em><b>Root Element</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM__ROOT_ELEMENT = 3;
+
+    /**
+     * The number of structural features of the '<em>Diagram</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM_FEATURE_COUNT = 4;
+
+    /**
+     * The meta object id for the '{@link org.drools.epn.impl.EPNDiagramImpl <em>EPN Diagram</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.drools.epn.impl.EPNDiagramImpl
+     * @see org.drools.epn.impl.EpnPackageImpl#getEPNDiagram()
+     * @generated
+     */
+    int EPN_DIAGRAM = 18;
+
+    /**
+     * The feature id for the '<em><b>Documentation</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EPN_DIAGRAM__DOCUMENTATION = DIAGRAM__DOCUMENTATION;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EPN_DIAGRAM__ID = DIAGRAM__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EPN_DIAGRAM__NAME = DIAGRAM__NAME;
+
+    /**
+     * The feature id for the '<em><b>Root Element</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EPN_DIAGRAM__ROOT_ELEMENT = DIAGRAM__ROOT_ELEMENT;
+
+    /**
+     * The feature id for the '<em><b>Processes</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EPN_DIAGRAM__PROCESSES = DIAGRAM_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>EPN Diagram</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EPN_DIAGRAM_FEATURE_COUNT = DIAGRAM_FEATURE_COUNT + 1;
+
+    /**
+     * The meta object id for the '{@link org.drools.epn.impl.FlowElementsContainerImpl <em>Flow Elements Container</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.drools.epn.impl.FlowElementsContainerImpl
+     * @see org.drools.epn.impl.EpnPackageImpl#getFlowElementsContainer()
+     * @generated
+     */
+    int FLOW_ELEMENTS_CONTAINER = 20;
+
+    /**
+     * The feature id for the '<em><b>Documentation</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FLOW_ELEMENTS_CONTAINER__DOCUMENTATION = BASE_ELEMENT__DOCUMENTATION;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FLOW_ELEMENTS_CONTAINER__ID = BASE_ELEMENT__ID;
+
+    /**
+     * The feature id for the '<em><b>Flow Elements</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>Flow Elements Container</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FLOW_ELEMENTS_CONTAINER_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 1;
+
+    /**
+     * The meta object id for the '{@link org.drools.epn.impl.DiagramElementImpl <em>Diagram Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.drools.epn.impl.DiagramElementImpl
+     * @see org.drools.epn.impl.EpnPackageImpl#getDiagramElement()
+     * @generated
+     */
+    int DIAGRAM_ELEMENT = 21;
+
+    /**
+     * The feature id for the '<em><b>Owning Diagram</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM_ELEMENT__OWNING_DIAGRAM = 0;
+
+    /**
+     * The feature id for the '<em><b>Owning Element</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM_ELEMENT__OWNING_ELEMENT = 1;
+
+    /**
+     * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM_ELEMENT__OWNED_ELEMENT = 2;
+
+    /**
+     * The feature id for the '<em><b>Model Element</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM_ELEMENT__MODEL_ELEMENT = 3;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM_ELEMENT__ID = 4;
+
+    /**
+     * The number of structural features of the '<em>Diagram Element</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGRAM_ELEMENT_FEATURE_COUNT = 5;
+
+    /**
+     * The meta object id for the '{@link org.drools.epn.impl.ProcessImpl <em>Process</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.drools.epn.impl.ProcessImpl
+     * @see org.drools.epn.impl.EpnPackageImpl#getProcess()
+     * @generated
+     */
+    int PROCESS = 22;
+
+    /**
+     * The feature id for the '<em><b>Documentation</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__DOCUMENTATION = FLOW_ELEMENTS_CONTAINER__DOCUMENTATION;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__ID = FLOW_ELEMENTS_CONTAINER__ID;
+
+    /**
+     * The feature id for the '<em><b>Flow Elements</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__FLOW_ELEMENTS = FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS;
+
+    /**
+     * The feature id for the '<em><b>Is Executable</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__IS_EXECUTABLE = FLOW_ELEMENTS_CONTAINER_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Process Type</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__PROCESS_TYPE = FLOW_ELEMENTS_CONTAINER_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>Process</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS_FEATURE_COUNT = FLOW_ELEMENTS_CONTAINER_FEATURE_COUNT + 2;
+
+    /**
+     * The meta object id for the '{@link org.drools.epn.ProcessType <em>Process Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.drools.epn.ProcessType
+     * @see org.drools.epn.impl.EpnPackageImpl#getProcessType()
+     * @generated
+     */
+    int PROCESS_TYPE = 23;
+
 
     /**
      * Returns the meta object for class '{@link org.drools.epn.DocumentRoot <em>Document Root</em>}'.
@@ -2083,6 +2387,209 @@ public interface EpnPackage extends EPackage {
     EReference getEventChannel_DataInputs();
 
     /**
+     * Returns the meta object for class '{@link org.drools.epn.EPNDiagram <em>EPN Diagram</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>EPN Diagram</em>'.
+     * @see org.drools.epn.EPNDiagram
+     * @generated
+     */
+    EClass getEPNDiagram();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link org.drools.epn.EPNDiagram#getProcesses <em>Processes</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Processes</em>'.
+     * @see org.drools.epn.EPNDiagram#getProcesses()
+     * @see #getEPNDiagram()
+     * @generated
+     */
+    EReference getEPNDiagram_Processes();
+
+    /**
+     * Returns the meta object for class '{@link org.drools.epn.Diagram <em>Diagram</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Diagram</em>'.
+     * @see org.drools.epn.Diagram
+     * @generated
+     */
+    EClass getDiagram();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.drools.epn.Diagram#getDocumentation <em>Documentation</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Documentation</em>'.
+     * @see org.drools.epn.Diagram#getDocumentation()
+     * @see #getDiagram()
+     * @generated
+     */
+    EAttribute getDiagram_Documentation();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.drools.epn.Diagram#getId <em>Id</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Id</em>'.
+     * @see org.drools.epn.Diagram#getId()
+     * @see #getDiagram()
+     * @generated
+     */
+    EAttribute getDiagram_Id();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.drools.epn.Diagram#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see org.drools.epn.Diagram#getName()
+     * @see #getDiagram()
+     * @generated
+     */
+    EAttribute getDiagram_Name();
+
+    /**
+     * Returns the meta object for the reference '{@link org.drools.epn.Diagram#getRootElement <em>Root Element</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Root Element</em>'.
+     * @see org.drools.epn.Diagram#getRootElement()
+     * @see #getDiagram()
+     * @generated
+     */
+    EReference getDiagram_RootElement();
+
+    /**
+     * Returns the meta object for class '{@link org.drools.epn.FlowElementsContainer <em>Flow Elements Container</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Flow Elements Container</em>'.
+     * @see org.drools.epn.FlowElementsContainer
+     * @generated
+     */
+    EClass getFlowElementsContainer();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link org.drools.epn.FlowElementsContainer#getFlowElements <em>Flow Elements</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Flow Elements</em>'.
+     * @see org.drools.epn.FlowElementsContainer#getFlowElements()
+     * @see #getFlowElementsContainer()
+     * @generated
+     */
+    EReference getFlowElementsContainer_FlowElements();
+
+    /**
+     * Returns the meta object for class '{@link org.drools.epn.DiagramElement <em>Diagram Element</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Diagram Element</em>'.
+     * @see org.drools.epn.DiagramElement
+     * @generated
+     */
+    EClass getDiagramElement();
+
+    /**
+     * Returns the meta object for the reference '{@link org.drools.epn.DiagramElement#getOwningDiagram <em>Owning Diagram</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Owning Diagram</em>'.
+     * @see org.drools.epn.DiagramElement#getOwningDiagram()
+     * @see #getDiagramElement()
+     * @generated
+     */
+    EReference getDiagramElement_OwningDiagram();
+
+    /**
+     * Returns the meta object for the reference '{@link org.drools.epn.DiagramElement#getOwningElement <em>Owning Element</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Owning Element</em>'.
+     * @see org.drools.epn.DiagramElement#getOwningElement()
+     * @see #getDiagramElement()
+     * @generated
+     */
+    EReference getDiagramElement_OwningElement();
+
+    /**
+     * Returns the meta object for the reference list '{@link org.drools.epn.DiagramElement#getOwnedElement <em>Owned Element</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Owned Element</em>'.
+     * @see org.drools.epn.DiagramElement#getOwnedElement()
+     * @see #getDiagramElement()
+     * @generated
+     */
+    EReference getDiagramElement_OwnedElement();
+
+    /**
+     * Returns the meta object for the reference '{@link org.drools.epn.DiagramElement#getModelElement <em>Model Element</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Model Element</em>'.
+     * @see org.drools.epn.DiagramElement#getModelElement()
+     * @see #getDiagramElement()
+     * @generated
+     */
+    EReference getDiagramElement_ModelElement();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.drools.epn.DiagramElement#getId <em>Id</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Id</em>'.
+     * @see org.drools.epn.DiagramElement#getId()
+     * @see #getDiagramElement()
+     * @generated
+     */
+    EAttribute getDiagramElement_Id();
+
+    /**
+     * Returns the meta object for class '{@link org.drools.epn.Process <em>Process</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Process</em>'.
+     * @see org.drools.epn.Process
+     * @generated
+     */
+    EClass getProcess();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.drools.epn.Process#isIsExecutable <em>Is Executable</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Is Executable</em>'.
+     * @see org.drools.epn.Process#isIsExecutable()
+     * @see #getProcess()
+     * @generated
+     */
+    EAttribute getProcess_IsExecutable();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.drools.epn.Process#getProcessType <em>Process Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Process Type</em>'.
+     * @see org.drools.epn.Process#getProcessType()
+     * @see #getProcess()
+     * @generated
+     */
+    EAttribute getProcess_ProcessType();
+
+    /**
+     * Returns the meta object for enum '{@link org.drools.epn.ProcessType <em>Process Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for enum '<em>Process Type</em>'.
+     * @see org.drools.epn.ProcessType
+     * @generated
+     */
+    EEnum getProcessType();
+
+    /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2667,6 +3174,170 @@ public interface EpnPackage extends EPackage {
          * @generated
          */
         EReference EVENT_CHANNEL__DATA_INPUTS = eINSTANCE.getEventChannel_DataInputs();
+
+        /**
+         * The meta object literal for the '{@link org.drools.epn.impl.EPNDiagramImpl <em>EPN Diagram</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.drools.epn.impl.EPNDiagramImpl
+         * @see org.drools.epn.impl.EpnPackageImpl#getEPNDiagram()
+         * @generated
+         */
+        EClass EPN_DIAGRAM = eINSTANCE.getEPNDiagram();
+
+        /**
+         * The meta object literal for the '<em><b>Processes</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference EPN_DIAGRAM__PROCESSES = eINSTANCE.getEPNDiagram_Processes();
+
+        /**
+         * The meta object literal for the '{@link org.drools.epn.impl.DiagramImpl <em>Diagram</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.drools.epn.impl.DiagramImpl
+         * @see org.drools.epn.impl.EpnPackageImpl#getDiagram()
+         * @generated
+         */
+        EClass DIAGRAM = eINSTANCE.getDiagram();
+
+        /**
+         * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute DIAGRAM__DOCUMENTATION = eINSTANCE.getDiagram_Documentation();
+
+        /**
+         * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute DIAGRAM__ID = eINSTANCE.getDiagram_Id();
+
+        /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute DIAGRAM__NAME = eINSTANCE.getDiagram_Name();
+
+        /**
+         * The meta object literal for the '<em><b>Root Element</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DIAGRAM__ROOT_ELEMENT = eINSTANCE.getDiagram_RootElement();
+
+        /**
+         * The meta object literal for the '{@link org.drools.epn.impl.FlowElementsContainerImpl <em>Flow Elements Container</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.drools.epn.impl.FlowElementsContainerImpl
+         * @see org.drools.epn.impl.EpnPackageImpl#getFlowElementsContainer()
+         * @generated
+         */
+        EClass FLOW_ELEMENTS_CONTAINER = eINSTANCE.getFlowElementsContainer();
+
+        /**
+         * The meta object literal for the '<em><b>Flow Elements</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS = eINSTANCE.getFlowElementsContainer_FlowElements();
+
+        /**
+         * The meta object literal for the '{@link org.drools.epn.impl.DiagramElementImpl <em>Diagram Element</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.drools.epn.impl.DiagramElementImpl
+         * @see org.drools.epn.impl.EpnPackageImpl#getDiagramElement()
+         * @generated
+         */
+        EClass DIAGRAM_ELEMENT = eINSTANCE.getDiagramElement();
+
+        /**
+         * The meta object literal for the '<em><b>Owning Diagram</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DIAGRAM_ELEMENT__OWNING_DIAGRAM = eINSTANCE.getDiagramElement_OwningDiagram();
+
+        /**
+         * The meta object literal for the '<em><b>Owning Element</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DIAGRAM_ELEMENT__OWNING_ELEMENT = eINSTANCE.getDiagramElement_OwningElement();
+
+        /**
+         * The meta object literal for the '<em><b>Owned Element</b></em>' reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DIAGRAM_ELEMENT__OWNED_ELEMENT = eINSTANCE.getDiagramElement_OwnedElement();
+
+        /**
+         * The meta object literal for the '<em><b>Model Element</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DIAGRAM_ELEMENT__MODEL_ELEMENT = eINSTANCE.getDiagramElement_ModelElement();
+
+        /**
+         * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute DIAGRAM_ELEMENT__ID = eINSTANCE.getDiagramElement_Id();
+
+        /**
+         * The meta object literal for the '{@link org.drools.epn.impl.ProcessImpl <em>Process</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.drools.epn.impl.ProcessImpl
+         * @see org.drools.epn.impl.EpnPackageImpl#getProcess()
+         * @generated
+         */
+        EClass PROCESS = eINSTANCE.getProcess();
+
+        /**
+         * The meta object literal for the '<em><b>Is Executable</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute PROCESS__IS_EXECUTABLE = eINSTANCE.getProcess_IsExecutable();
+
+        /**
+         * The meta object literal for the '<em><b>Process Type</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute PROCESS__PROCESS_TYPE = eINSTANCE.getProcess_ProcessType();
+
+        /**
+         * The meta object literal for the '{@link org.drools.epn.ProcessType <em>Process Type</em>}' enum.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.drools.epn.ProcessType
+         * @see org.drools.epn.impl.EpnPackageImpl#getProcessType()
+         * @generated
+         */
+        EEnum PROCESS_TYPE = eINSTANCE.getProcessType();
 
     }
 

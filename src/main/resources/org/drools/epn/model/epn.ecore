@@ -147,8 +147,8 @@
       <details key="name" value="tFlowNode"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" ordered="false"
-        upperBound="-1" eType="#//SequenceFlow" resolveProxies="false" eOpposite="#//SequenceFlow/targetRef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1"
+        eType="#//SequenceFlow" resolveProxies="false" eOpposite="#//SequenceFlow/targetRef">
       <eAnnotations source="ExtendedMetaData">
         <details key="name" value="incoming"/>
         <details key="kind" value="attribute"/>
@@ -384,5 +384,101 @@
         eType="#//DataOutput"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataInputs" upperBound="-2"
         eType="#//DataInput"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EPNDiagram" eSuperTypes="#//Diagram">
+    <eAnnotations source="ExtendedMetaData">
+      <details key="name" value="EPNDiagram"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processes" lowerBound="1"
+        upperBound="-1" eType="#//FlowElementsContainer" containment="true">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="name" value="process"/>
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Diagram" abstract="true">
+    <eAnnotations source="ExtendedMetaData">
+      <details key="name" value="diagram"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="name" value="documentation"/>
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="name" value="id"/>
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="name" value="name"/>
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootElement" lowerBound="1"
+        eType="#//DiagramElement" changeable="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowElementsContainer" abstract="true"
+      eSuperTypes="#//BaseElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowElements" upperBound="-1"
+        eType="#//FlowElement" containment="true">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="name" value="flowElement"/>
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramElement">
+    <eAnnotations source="ExtendedMetaData">
+      <details key="name" value="DiagramElement"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningDiagram" eType="#//Diagram"
+        changeable="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningElement" eType="#//DiagramElement"
+        changeable="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElement" upperBound="-1"
+        eType="#//DiagramElement" changeable="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelElement" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="name" value="id"/>
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//FlowElementsContainer">
+    <eAnnotations source="ExtendedMetaData">
+      <details key="name" value="tProcess"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isExecutable" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="name" value="isExecutable"/>
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="processType" lowerBound="1"
+        eType="#//ProcessType">
+      <eAnnotations source="ExtendedMetaData">
+        <details key="name" value="processType"/>
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProcessType">
+    <eAnnotations source="ExtendedMetaData">
+      <details key="name" value="tProcessType"/>
+    </eAnnotations>
+    <eLiterals name="None"/>
+    <eLiterals name="Public" value="1"/>
+    <eLiterals name="Private" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

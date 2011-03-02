@@ -11,8 +11,11 @@ import org.drools.epn.BaseElement;
 import org.drools.epn.ConversationLink;
 import org.drools.epn.DataInput;
 import org.drools.epn.DataOutput;
+import org.drools.epn.Diagram;
+import org.drools.epn.DiagramElement;
 import org.drools.epn.DocumentRoot;
 import org.drools.epn.Documentation;
+import org.drools.epn.EPNDiagram;
 import org.drools.epn.EpnFactory;
 import org.drools.epn.EpnPackage;
 import org.drools.epn.EventChannel;
@@ -20,15 +23,18 @@ import org.drools.epn.EventConsumer;
 import org.drools.epn.EventProcessingAgent;
 import org.drools.epn.EventProducer;
 import org.drools.epn.FlowElement;
+import org.drools.epn.FlowElementsContainer;
 import org.drools.epn.FlowNode;
 import org.drools.epn.InputSet;
 import org.drools.epn.InteractionNode;
 import org.drools.epn.OutputSet;
+import org.drools.epn.ProcessType;
 import org.drools.epn.SequenceFlow;
 import org.drools.epn.Task;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -166,6 +172,48 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
      * @generated
      */
     private EClass eventChannelEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass epnDiagramEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass diagramEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass flowElementsContainerEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass diagramElementEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass processEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EEnum processTypeEEnum = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -827,6 +875,177 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getEPNDiagram() {
+        return epnDiagramEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getEPNDiagram_Processes() {
+        return (EReference)epnDiagramEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getDiagram() {
+        return diagramEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getDiagram_Documentation() {
+        return (EAttribute)diagramEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getDiagram_Id() {
+        return (EAttribute)diagramEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getDiagram_Name() {
+        return (EAttribute)diagramEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getDiagram_RootElement() {
+        return (EReference)diagramEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getFlowElementsContainer() {
+        return flowElementsContainerEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getFlowElementsContainer_FlowElements() {
+        return (EReference)flowElementsContainerEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getDiagramElement() {
+        return diagramElementEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getDiagramElement_OwningDiagram() {
+        return (EReference)diagramElementEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getDiagramElement_OwningElement() {
+        return (EReference)diagramElementEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getDiagramElement_OwnedElement() {
+        return (EReference)diagramElementEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getDiagramElement_ModelElement() {
+        return (EReference)diagramElementEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getDiagramElement_Id() {
+        return (EAttribute)diagramElementEClass.getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getProcess() {
+        return processEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getProcess_IsExecutable() {
+        return (EAttribute)processEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getProcess_ProcessType() {
+        return (EAttribute)processEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EEnum getProcessType() {
+        return processTypeEEnum;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EpnFactory getEpnFactory() {
         return (EpnFactory)getEFactoryInstance();
     }
@@ -933,6 +1152,32 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         eventChannelEClass = createEClass(EVENT_CHANNEL);
         createEReference(eventChannelEClass, EVENT_CHANNEL__DATA_OUTPUTS);
         createEReference(eventChannelEClass, EVENT_CHANNEL__DATA_INPUTS);
+
+        epnDiagramEClass = createEClass(EPN_DIAGRAM);
+        createEReference(epnDiagramEClass, EPN_DIAGRAM__PROCESSES);
+
+        diagramEClass = createEClass(DIAGRAM);
+        createEAttribute(diagramEClass, DIAGRAM__DOCUMENTATION);
+        createEAttribute(diagramEClass, DIAGRAM__ID);
+        createEAttribute(diagramEClass, DIAGRAM__NAME);
+        createEReference(diagramEClass, DIAGRAM__ROOT_ELEMENT);
+
+        flowElementsContainerEClass = createEClass(FLOW_ELEMENTS_CONTAINER);
+        createEReference(flowElementsContainerEClass, FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS);
+
+        diagramElementEClass = createEClass(DIAGRAM_ELEMENT);
+        createEReference(diagramElementEClass, DIAGRAM_ELEMENT__OWNING_DIAGRAM);
+        createEReference(diagramElementEClass, DIAGRAM_ELEMENT__OWNING_ELEMENT);
+        createEReference(diagramElementEClass, DIAGRAM_ELEMENT__OWNED_ELEMENT);
+        createEReference(diagramElementEClass, DIAGRAM_ELEMENT__MODEL_ELEMENT);
+        createEAttribute(diagramElementEClass, DIAGRAM_ELEMENT__ID);
+
+        processEClass = createEClass(PROCESS);
+        createEAttribute(processEClass, PROCESS__IS_EXECUTABLE);
+        createEAttribute(processEClass, PROCESS__PROCESS_TYPE);
+
+        // Create enums
+        processTypeEEnum = createEEnum(PROCESS_TYPE);
     }
 
     /**
@@ -979,6 +1224,9 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         inputSetEClass.getESuperTypes().add(this.getBaseElement());
         outputSetEClass.getESuperTypes().add(this.getBaseElement());
         eventChannelEClass.getESuperTypes().add(this.getTask());
+        epnDiagramEClass.getESuperTypes().add(this.getDiagram());
+        flowElementsContainerEClass.getESuperTypes().add(this.getBaseElement());
+        processEClass.getESuperTypes().add(this.getFlowElementsContainer());
 
         // Initialize classes and features; add operations and parameters
         initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1002,7 +1250,7 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(flowNodeEClass, FlowNode.class, "FlowNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getFlowNode_Incoming(), this.getSequenceFlow(), this.getSequenceFlow_TargetRef(), "incoming", null, 0, -1, FlowNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+        initEReference(getFlowNode_Incoming(), this.getSequenceFlow(), this.getSequenceFlow_TargetRef(), "incoming", null, 0, -1, FlowNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getFlowNode_Outgoing(), this.getSequenceFlow(), this.getSequenceFlow_SourceRef(), "outgoing", null, 0, -1, FlowNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         initEClass(flowElementEClass, FlowElement.class, "FlowElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1065,6 +1313,35 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
         initEReference(getEventChannel_DataOutputs(), this.getDataOutput(), null, "dataOutputs", null, 0, -2, EventChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getEventChannel_DataInputs(), this.getDataInput(), null, "dataInputs", null, 0, -2, EventChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+        initEClass(epnDiagramEClass, EPNDiagram.class, "EPNDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getEPNDiagram_Processes(), this.getFlowElementsContainer(), null, "processes", null, 1, -1, EPNDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(diagramEClass, Diagram.class, "Diagram", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getDiagram_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getDiagram_Id(), ecorePackage.getEString(), "id", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getDiagram_Name(), ecorePackage.getEString(), "name", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDiagram_RootElement(), this.getDiagramElement(), null, "rootElement", null, 1, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(flowElementsContainerEClass, FlowElementsContainer.class, "FlowElementsContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getFlowElementsContainer_FlowElements(), this.getFlowElement(), null, "flowElements", null, 0, -1, FlowElementsContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(diagramElementEClass, DiagramElement.class, "DiagramElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getDiagramElement_OwningDiagram(), this.getDiagram(), null, "owningDiagram", null, 0, 1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDiagramElement_OwningElement(), this.getDiagramElement(), null, "owningElement", null, 0, 1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDiagramElement_OwnedElement(), this.getDiagramElement(), null, "ownedElement", null, 0, -1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDiagramElement_ModelElement(), ecorePackage.getEObject(), null, "modelElement", null, 0, 1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getDiagramElement_Id(), ecorePackage.getEString(), "id", null, 0, 1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(processEClass, org.drools.epn.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getProcess_IsExecutable(), ecorePackage.getEBoolean(), "isExecutable", null, 1, 1, org.drools.epn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getProcess_ProcessType(), this.getProcessType(), "processType", null, 1, 1, org.drools.epn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        // Initialize enums and add enum literals
+        initEEnum(processTypeEEnum, ProcessType.class, "ProcessType");
+        addEEnumLiteral(processTypeEEnum, ProcessType.NONE);
+        addEEnumLiteral(processTypeEEnum, ProcessType.PUBLIC);
+        addEEnumLiteral(processTypeEEnum, ProcessType.PRIVATE);
+
         // Create resource
         createResource(eNS_URI);
 
@@ -1096,7 +1373,7 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
            new String[] {
              "name", ":mixed",
              "kind", "elementWildcard"
-           });																																																		
+           });																																																															
     }
 
     /**
@@ -1457,6 +1734,96 @@ public class EpnPackageImpl extends EPackageImpl implements EpnPackage {
            new String[] {
              "name", "tEventChannel",
              "kind", "elementOnly"
+           });		
+        addAnnotation
+          (epnDiagramEClass, 
+           source, 
+           new String[] {
+             "name", "EPNDiagram",
+             "kind", "elementOnly"
+           });		
+        addAnnotation
+          (getEPNDiagram_Processes(), 
+           source, 
+           new String[] {
+             "name", "process",
+             "kind", "element"
+           });		
+        addAnnotation
+          (diagramEClass, 
+           source, 
+           new String[] {
+             "name", "diagram",
+             "kind", "empty"
+           });		
+        addAnnotation
+          (getDiagram_Documentation(), 
+           source, 
+           new String[] {
+             "name", "documentation",
+             "kind", "attribute"
+           });		
+        addAnnotation
+          (getDiagram_Id(), 
+           source, 
+           new String[] {
+             "name", "id",
+             "kind", "attribute"
+           });		
+        addAnnotation
+          (getDiagram_Name(), 
+           source, 
+           new String[] {
+             "name", "name",
+             "kind", "attribute"
+           });		
+        addAnnotation
+          (getFlowElementsContainer_FlowElements(), 
+           source, 
+           new String[] {
+             "name", "flowElement",
+             "kind", "element"
+           });		
+        addAnnotation
+          (diagramElementEClass, 
+           source, 
+           new String[] {
+             "name", "DiagramElement",
+             "kind", "elementOnly"
+           });		
+        addAnnotation
+          (getDiagramElement_Id(), 
+           source, 
+           new String[] {
+             "name", "id",
+             "kind", "attribute"
+           });		
+        addAnnotation
+          (processEClass, 
+           source, 
+           new String[] {
+             "name", "tProcess",
+             "kind", "elementOnly"
+           });		
+        addAnnotation
+          (getProcess_IsExecutable(), 
+           source, 
+           new String[] {
+             "name", "isExecutable",
+             "kind", "attribute"
+           });		
+        addAnnotation
+          (getProcess_ProcessType(), 
+           source, 
+           new String[] {
+             "name", "processType",
+             "kind", "attribute"
+           });		
+        addAnnotation
+          (processTypeEEnum, 
+           source, 
+           new String[] {
+             "name", "tProcessType"
            });
     }
 

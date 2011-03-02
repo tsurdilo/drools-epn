@@ -39,7 +39,7 @@ public interface FlowNode extends FlowElement {
      * @return the value of the '<em>Incoming</em>' reference list.
      * @see org.drools.epn.EpnPackage#getFlowNode_Incoming()
      * @see org.drools.epn.SequenceFlow#getTargetRef
-     * @model opposite="targetRef" resolveProxies="false" ordered="false"
+     * @model opposite="targetRef" resolveProxies="false"
      *        annotation="ExtendedMetaData name='incoming' kind='attribute'"
      * @generated
      */

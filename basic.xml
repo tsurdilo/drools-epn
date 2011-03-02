@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<epn:EPNDiagram xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:epn="http://www.jboss.org/drools/epn/model" name="testDiagram">
+  <processes xsi:type="epn:Process" id="p1" isExecutable="true" processType="Public">
+    <flowElements xsi:type="epn:EventProducer" id="prod1" name="producer1"/>
+    <flowElements xsi:type="epn:EventChannel" id="chanel1" name="channel1"/>
+  </processes>
+</epn:EPNDiagram>

@@ -6,9 +6,32 @@
  */
 package org.drools.epn.impl;
 
-import org.drools.epn.*;
+import org.drools.epn.Activity;
+import org.drools.epn.BaseElement;
+import org.drools.epn.ConversationLink;
+import org.drools.epn.DataInput;
+import org.drools.epn.DataOutput;
+import org.drools.epn.DiagramElement;
+import org.drools.epn.DocumentRoot;
+import org.drools.epn.Documentation;
+import org.drools.epn.EPNDiagram;
+import org.drools.epn.EpnFactory;
+import org.drools.epn.EpnPackage;
+import org.drools.epn.EventChannel;
+import org.drools.epn.EventConsumer;
+import org.drools.epn.EventProcessingAgent;
+import org.drools.epn.EventProducer;
+import org.drools.epn.FlowElement;
+import org.drools.epn.FlowNode;
+import org.drools.epn.InputSet;
+import org.drools.epn.InteractionNode;
+import org.drools.epn.OutputSet;
+import org.drools.epn.ProcessType;
+import org.drools.epn.SequenceFlow;
+import org.drools.epn.Task;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -78,8 +101,41 @@ public class EpnFactoryImpl extends EFactoryImpl implements EpnFactory {
             case EpnPackage.INPUT_SET: return createInputSet();
             case EpnPackage.OUTPUT_SET: return createOutputSet();
             case EpnPackage.EVENT_CHANNEL: return createEventChannel();
+            case EpnPackage.EPN_DIAGRAM: return createEPNDiagram();
+            case EpnPackage.DIAGRAM_ELEMENT: return createDiagramElement();
+            case EpnPackage.PROCESS: return createProcess();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object createFromString(EDataType eDataType, String initialValue) {
+        switch (eDataType.getClassifierID()) {
+            case EpnPackage.PROCESS_TYPE:
+                return createProcessTypeFromString(eDataType, initialValue);
+            default:
+                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String convertToString(EDataType eDataType, Object instanceValue) {
+        switch (eDataType.getClassifierID()) {
+            case EpnPackage.PROCESS_TYPE:
+                return convertProcessTypeToString(eDataType, instanceValue);
+            default:
+                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
     }
 
@@ -261,6 +317,56 @@ public class EpnFactoryImpl extends EFactoryImpl implements EpnFactory {
     public EventChannel createEventChannel() {
         EventChannelImpl eventChannel = new EventChannelImpl();
         return eventChannel;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EPNDiagram createEPNDiagram() {
+        EPNDiagramImpl epnDiagram = new EPNDiagramImpl();
+        return epnDiagram;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public DiagramElement createDiagramElement() {
+        DiagramElementImpl diagramElement = new DiagramElementImpl();
+        return diagramElement;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public org.drools.epn.Process createProcess() {
+        ProcessImpl process = new ProcessImpl();
+        return process;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ProcessType createProcessTypeFromString(EDataType eDataType, String initialValue) {
+        ProcessType result = ProcessType.get(initialValue);
+        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String convertProcessTypeToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue == null ? null : instanceValue.toString();
     }
 
     /**

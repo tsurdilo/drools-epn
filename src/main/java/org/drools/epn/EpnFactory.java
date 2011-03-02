@@ -188,6 +188,33 @@ public interface EpnFactory extends EFactory {
     EventChannel createEventChannel();
 
     /**
+     * Returns a new object of class '<em>EPN Diagram</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>EPN Diagram</em>'.
+     * @generated
+     */
+    EPNDiagram createEPNDiagram();
+
+    /**
+     * Returns a new object of class '<em>Diagram Element</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Diagram Element</em>'.
+     * @generated
+     */
+    DiagramElement createDiagramElement();
+
+    /**
+     * Returns a new object of class '<em>Process</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Process</em>'.
+     * @generated
+     */
+    Process createProcess();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

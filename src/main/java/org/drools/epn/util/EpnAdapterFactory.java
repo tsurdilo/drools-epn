@@ -6,7 +6,29 @@
  */
 package org.drools.epn.util;
 
-import org.drools.epn.*;
+import org.drools.epn.Activity;
+import org.drools.epn.BaseElement;
+import org.drools.epn.ConversationLink;
+import org.drools.epn.DataInput;
+import org.drools.epn.DataOutput;
+import org.drools.epn.Diagram;
+import org.drools.epn.DiagramElement;
+import org.drools.epn.DocumentRoot;
+import org.drools.epn.Documentation;
+import org.drools.epn.EPNDiagram;
+import org.drools.epn.EpnPackage;
+import org.drools.epn.EventChannel;
+import org.drools.epn.EventConsumer;
+import org.drools.epn.EventProcessingAgent;
+import org.drools.epn.EventProducer;
+import org.drools.epn.FlowElement;
+import org.drools.epn.FlowElementsContainer;
+import org.drools.epn.FlowNode;
+import org.drools.epn.InputSet;
+import org.drools.epn.InteractionNode;
+import org.drools.epn.OutputSet;
+import org.drools.epn.SequenceFlow;
+import org.drools.epn.Task;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -142,6 +164,26 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseEventChannel(EventChannel object) {
                 return createEventChannelAdapter();
+            }
+            @Override
+            public Adapter caseEPNDiagram(EPNDiagram object) {
+                return createEPNDiagramAdapter();
+            }
+            @Override
+            public Adapter caseDiagram(Diagram object) {
+                return createDiagramAdapter();
+            }
+            @Override
+            public Adapter caseFlowElementsContainer(FlowElementsContainer object) {
+                return createFlowElementsContainerAdapter();
+            }
+            @Override
+            public Adapter caseDiagramElement(DiagramElement object) {
+                return createDiagramElementAdapter();
+            }
+            @Override
+            public Adapter caseProcess(org.drools.epn.Process object) {
+                return createProcessAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -412,6 +454,76 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createEventChannelAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EPNDiagram <em>EPN Diagram</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.EPNDiagram
+     * @generated
+     */
+    public Adapter createEPNDiagramAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Diagram <em>Diagram</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Diagram
+     * @generated
+     */
+    public Adapter createDiagramAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.FlowElementsContainer <em>Flow Elements Container</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.FlowElementsContainer
+     * @generated
+     */
+    public Adapter createFlowElementsContainerAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.DiagramElement <em>Diagram Element</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.DiagramElement
+     * @generated
+     */
+    public Adapter createDiagramElementAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Process <em>Process</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Process
+     * @generated
+     */
+    public Adapter createProcessAdapter() {
         return null;
     }
 

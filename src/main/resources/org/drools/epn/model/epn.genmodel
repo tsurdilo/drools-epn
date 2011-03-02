@@ -7,6 +7,11 @@
   <foreignModel>epn.ecore</foreignModel>
   <genPackages prefix="Epn" basePackage="org.drools" disposableProviderFactory="true"
       ecorePackage="epn.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="epn.ecore#//ProcessType">
+      <genEnumLiterals ecoreEnumLiteral="epn.ecore#//ProcessType/None"/>
+      <genEnumLiterals ecoreEnumLiteral="epn.ecore#//ProcessType/Public"/>
+      <genEnumLiterals ecoreEnumLiteral="epn.ecore#//ProcessType/Private"/>
+    </genEnums>
     <genClasses ecoreClass="epn.ecore#//DocumentRoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute epn.ecore#//DocumentRoot/mixed"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/activity"/>
@@ -88,6 +93,29 @@
     <genClasses ecoreClass="epn.ecore#//EventChannel">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventChannel/dataOutputs"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//EventChannel/dataInputs"/>
+    </genClasses>
+    <genClasses ecoreClass="epn.ecore#//EPNDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//EPNDiagram/processes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="epn.ecore#//Diagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Diagram/documentation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Diagram/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Diagram/name"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference epn.ecore#//Diagram/rootElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="epn.ecore#//FlowElementsContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//FlowElementsContainer/flowElements"/>
+    </genClasses>
+    <genClasses ecoreClass="epn.ecore#//DiagramElement">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference epn.ecore#//DiagramElement/owningDiagram"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference epn.ecore#//DiagramElement/owningElement"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference epn.ecore#//DiagramElement/ownedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference epn.ecore#//DiagramElement/modelElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//DiagramElement/id"/>
+    </genClasses>
+    <genClasses ecoreClass="epn.ecore#//Process">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Process/isExecutable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Process/processType"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
