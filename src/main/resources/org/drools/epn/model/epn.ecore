@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="epn"
-    nsURI="http://epn/1.0" nsPrefix="epn">
+    nsURI="http://www.jboss.org/drools/epn/model" nsPrefix="epn">
   <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
     <eAnnotations source="ExtendedMetaAttributes">
       <details key="name"/>

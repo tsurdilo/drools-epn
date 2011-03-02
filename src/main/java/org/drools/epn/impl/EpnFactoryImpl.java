@@ -31,7 +31,7 @@ public class EpnFactoryImpl extends EFactoryImpl implements EpnFactory {
      */
     public static EpnFactory init() {
         try {
-            EpnFactory theEpnFactory = (EpnFactory)EPackage.Registry.INSTANCE.getEFactory("http://epn/1.0"); 
+            EpnFactory theEpnFactory = (EpnFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.jboss.org/drools/epn/model"); 
             if (theEpnFactory != null) {
                 return theEpnFactory;
             }

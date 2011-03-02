@@ -41,7 +41,7 @@ public interface EpnPackage extends EPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    String eNS_URI = "http://epn/1.0";
+    String eNS_URI = "http://www.jboss.org/drools/epn/model";
 
     /**
      * The package namespace name.
