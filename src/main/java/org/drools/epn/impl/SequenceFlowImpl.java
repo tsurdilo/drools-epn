@@ -6,15 +6,12 @@
  */
 package org.drools.epn.impl;
 
-import org.drools.epn.EpnPackage;
-import org.drools.epn.FlowNode;
+import org.drools.epn.EPNPackage;
 import org.drools.epn.SequenceFlow;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -34,24 +31,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
     /**
-     * The cached value of the '{@link #getSourceRef() <em>Source Ref</em>}' reference.
+     * The default value of the '{@link #getSourceRef() <em>Source Ref</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getSourceRef()
      * @generated
      * @ordered
      */
-    protected FlowNode sourceRef;
+    protected static final String SOURCE_REF_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getTargetRef() <em>Target Ref</em>}' reference.
+     * The cached value of the '{@link #getSourceRef() <em>Source Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSourceRef()
+     * @generated
+     * @ordered
+     */
+    protected String sourceRef = SOURCE_REF_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getTargetRef() <em>Target Ref</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getTargetRef()
      * @generated
      * @ordered
      */
-    protected FlowNode targetRef;
+    protected static final String TARGET_REF_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTargetRef() <em>Target Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTargetRef()
+     * @generated
+     * @ordered
+     */
+    protected String targetRef = TARGET_REF_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -69,7 +86,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
      */
     @Override
     protected EClass eStaticClass() {
-        return EpnPackage.Literals.SEQUENCE_FLOW;
+        return EPNPackage.Literals.SEQUENCE_FLOW;
     }
 
     /**
@@ -77,7 +94,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
      * <!-- end-user-doc -->
      * @generated
      */
-    public FlowNode getSourceRef() {
+    public String getSourceRef() {
         return sourceRef;
     }
 
@@ -86,14 +103,11 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSourceRef(FlowNode newSourceRef, NotificationChain msgs) {
-        FlowNode oldSourceRef = sourceRef;
+    public void setSourceRef(String newSourceRef) {
+        String oldSourceRef = sourceRef;
         sourceRef = newSourceRef;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EpnPackage.SEQUENCE_FLOW__SOURCE_REF, oldSourceRef, newSourceRef);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.SEQUENCE_FLOW__SOURCE_REF, oldSourceRef, sourceRef));
     }
 
     /**
@@ -101,26 +115,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setSourceRef(FlowNode newSourceRef) {
-        if (newSourceRef != sourceRef) {
-            NotificationChain msgs = null;
-            if (sourceRef != null)
-                msgs = ((InternalEObject)sourceRef).eInverseRemove(this, EpnPackage.FLOW_NODE__OUTGOING, FlowNode.class, msgs);
-            if (newSourceRef != null)
-                msgs = ((InternalEObject)newSourceRef).eInverseAdd(this, EpnPackage.FLOW_NODE__OUTGOING, FlowNode.class, msgs);
-            msgs = basicSetSourceRef(newSourceRef, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EpnPackage.SEQUENCE_FLOW__SOURCE_REF, newSourceRef, newSourceRef));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public FlowNode getTargetRef() {
+    public String getTargetRef() {
         return targetRef;
     }
 
@@ -129,69 +124,11 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetTargetRef(FlowNode newTargetRef, NotificationChain msgs) {
-        FlowNode oldTargetRef = targetRef;
+    public void setTargetRef(String newTargetRef) {
+        String oldTargetRef = targetRef;
         targetRef = newTargetRef;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EpnPackage.SEQUENCE_FLOW__TARGET_REF, oldTargetRef, newTargetRef);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setTargetRef(FlowNode newTargetRef) {
-        if (newTargetRef != targetRef) {
-            NotificationChain msgs = null;
-            if (targetRef != null)
-                msgs = ((InternalEObject)targetRef).eInverseRemove(this, EpnPackage.FLOW_NODE__INCOMING, FlowNode.class, msgs);
-            if (newTargetRef != null)
-                msgs = ((InternalEObject)newTargetRef).eInverseAdd(this, EpnPackage.FLOW_NODE__INCOMING, FlowNode.class, msgs);
-            msgs = basicSetTargetRef(newTargetRef, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EpnPackage.SEQUENCE_FLOW__TARGET_REF, newTargetRef, newTargetRef));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case EpnPackage.SEQUENCE_FLOW__SOURCE_REF:
-                if (sourceRef != null)
-                    msgs = ((InternalEObject)sourceRef).eInverseRemove(this, EpnPackage.FLOW_NODE__OUTGOING, FlowNode.class, msgs);
-                return basicSetSourceRef((FlowNode)otherEnd, msgs);
-            case EpnPackage.SEQUENCE_FLOW__TARGET_REF:
-                if (targetRef != null)
-                    msgs = ((InternalEObject)targetRef).eInverseRemove(this, EpnPackage.FLOW_NODE__INCOMING, FlowNode.class, msgs);
-                return basicSetTargetRef((FlowNode)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case EpnPackage.SEQUENCE_FLOW__SOURCE_REF:
-                return basicSetSourceRef(null, msgs);
-            case EpnPackage.SEQUENCE_FLOW__TARGET_REF:
-                return basicSetTargetRef(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.SEQUENCE_FLOW__TARGET_REF, oldTargetRef, targetRef));
     }
 
     /**
@@ -202,9 +139,9 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case EpnPackage.SEQUENCE_FLOW__SOURCE_REF:
+            case EPNPackage.SEQUENCE_FLOW__SOURCE_REF:
                 return getSourceRef();
-            case EpnPackage.SEQUENCE_FLOW__TARGET_REF:
+            case EPNPackage.SEQUENCE_FLOW__TARGET_REF:
                 return getTargetRef();
         }
         return super.eGet(featureID, resolve, coreType);
@@ -218,11 +155,11 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case EpnPackage.SEQUENCE_FLOW__SOURCE_REF:
-                setSourceRef((FlowNode)newValue);
+            case EPNPackage.SEQUENCE_FLOW__SOURCE_REF:
+                setSourceRef((String)newValue);
                 return;
-            case EpnPackage.SEQUENCE_FLOW__TARGET_REF:
-                setTargetRef((FlowNode)newValue);
+            case EPNPackage.SEQUENCE_FLOW__TARGET_REF:
+                setTargetRef((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -236,11 +173,11 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case EpnPackage.SEQUENCE_FLOW__SOURCE_REF:
-                setSourceRef((FlowNode)null);
+            case EPNPackage.SEQUENCE_FLOW__SOURCE_REF:
+                setSourceRef(SOURCE_REF_EDEFAULT);
                 return;
-            case EpnPackage.SEQUENCE_FLOW__TARGET_REF:
-                setTargetRef((FlowNode)null);
+            case EPNPackage.SEQUENCE_FLOW__TARGET_REF:
+                setTargetRef(TARGET_REF_EDEFAULT);
                 return;
         }
         super.eUnset(featureID);
@@ -254,12 +191,30 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case EpnPackage.SEQUENCE_FLOW__SOURCE_REF:
-                return sourceRef != null;
-            case EpnPackage.SEQUENCE_FLOW__TARGET_REF:
-                return targetRef != null;
+            case EPNPackage.SEQUENCE_FLOW__SOURCE_REF:
+                return SOURCE_REF_EDEFAULT == null ? sourceRef != null : !SOURCE_REF_EDEFAULT.equals(sourceRef);
+            case EPNPackage.SEQUENCE_FLOW__TARGET_REF:
+                return TARGET_REF_EDEFAULT == null ? targetRef != null : !TARGET_REF_EDEFAULT.equals(targetRef);
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String toString() {
+        if (eIsProxy()) return super.toString();
+
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (sourceRef: ");
+        result.append(sourceRef);
+        result.append(", targetRef: ");
+        result.append(targetRef);
+        result.append(')');
+        return result.toString();
     }
 
 } //SequenceFlowImpl

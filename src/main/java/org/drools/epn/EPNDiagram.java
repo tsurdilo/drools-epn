@@ -6,40 +6,49 @@
  */
 package org.drools.epn;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EPN Diagram</b></em>'.
+ * A representation of the model object '<em><b>Diagram</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.drools.epn.EPNDiagram#getProcesses <em>Processes</em>}</li>
+ *   <li>{@link org.drools.epn.EPNDiagram#getEPNPlane <em>EPN Plane</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.drools.epn.EpnPackage#getEPNDiagram()
- * @model annotation="ExtendedMetaData name='EPNDiagram' kind='elementOnly'"
+ * @see org.drools.epn.EPNPackage#getEPNDiagram()
+ * @model extendedMetaData="name='EPNDiagram' kind='elementOnly'"
  * @generated
  */
 public interface EPNDiagram extends Diagram {
     /**
-     * Returns the value of the '<em><b>Processes</b></em>' containment reference list.
-     * The list contents are of type {@link org.drools.epn.FlowElementsContainer}.
+     * Returns the value of the '<em><b>EPN Plane</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Processes</em>' containment reference list isn't clear,
+     * If the meaning of the '<em>EPN Plane</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Processes</em>' containment reference list.
-     * @see org.drools.epn.EpnPackage#getEPNDiagram_Processes()
+     * @return the value of the '<em>EPN Plane</em>' containment reference.
+     * @see #setEPNPlane(EPNPlane)
+     * @see org.drools.epn.EPNPackage#getEPNDiagram_EPNPlane()
      * @model containment="true" required="true"
-     *        annotation="ExtendedMetaData name='process' kind='element'"
+     *        extendedMetaData="kind='element' name='EPNPlane' namespace='##targetNamespace'"
      * @generated
      */
-    EList<FlowElementsContainer> getProcesses();
+    EPNPlane getEPNPlane();
+
+    /**
+     * Sets the value of the '{@link org.drools.epn.EPNDiagram#getEPNPlane <em>EPN Plane</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>EPN Plane</em>' containment reference.
+     * @see #getEPNPlane()
+     * @generated
+     */
+    void setEPNPlane(EPNPlane value);
 
 } // EPNDiagram

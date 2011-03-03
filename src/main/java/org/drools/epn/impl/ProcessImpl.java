@@ -6,14 +6,26 @@
  */
 package org.drools.epn.impl;
 
-import org.drools.epn.EpnPackage;
-import org.drools.epn.ProcessType;
+import java.util.Collection;
+
+import javax.xml.namespace.QName;
+
+import org.drools.epn.EPNPackage;
+import org.drools.epn.FlowElement;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,14 +34,46 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.drools.epn.impl.ProcessImpl#getFlowElementGroup <em>Flow Element Group</em>}</li>
+ *   <li>{@link org.drools.epn.impl.ProcessImpl#getFlowElement <em>Flow Element</em>}</li>
+ *   <li>{@link org.drools.epn.impl.ProcessImpl#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}</li>
  *   <li>{@link org.drools.epn.impl.ProcessImpl#isIsExecutable <em>Is Executable</em>}</li>
- *   <li>{@link org.drools.epn.impl.ProcessImpl#getProcessType <em>Process Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ProcessImpl extends FlowElementsContainerImpl implements org.drools.epn.Process {
+public class ProcessImpl extends CallableElementImpl implements org.drools.epn.Process {
+    /**
+     * The cached value of the '{@link #getFlowElementGroup() <em>Flow Element Group</em>}' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFlowElementGroup()
+     * @generated
+     * @ordered
+     */
+    protected FeatureMap flowElementGroup;
+
+    /**
+     * The default value of the '{@link #getDefinitionalCollaborationRef() <em>Definitional Collaboration Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDefinitionalCollaborationRef()
+     * @generated
+     * @ordered
+     */
+    protected static final QName DEFINITIONAL_COLLABORATION_REF_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getDefinitionalCollaborationRef() <em>Definitional Collaboration Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDefinitionalCollaborationRef()
+     * @generated
+     * @ordered
+     */
+    protected QName definitionalCollaborationRef = DEFINITIONAL_COLLABORATION_REF_EDEFAULT;
+
     /**
      * The default value of the '{@link #isIsExecutable() <em>Is Executable</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -51,24 +95,13 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
     protected boolean isExecutable = IS_EXECUTABLE_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getProcessType() <em>Process Type</em>}' attribute.
+     * This is true if the Is Executable attribute has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getProcessType()
      * @generated
      * @ordered
      */
-    protected static final ProcessType PROCESS_TYPE_EDEFAULT = ProcessType.NONE;
-
-    /**
-     * The cached value of the '{@link #getProcessType() <em>Process Type</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getProcessType()
-     * @generated
-     * @ordered
-     */
-    protected ProcessType processType = PROCESS_TYPE_EDEFAULT;
+    protected boolean isExecutableESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -86,7 +119,49 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
      */
     @Override
     protected EClass eStaticClass() {
-        return EpnPackage.Literals.PROCESS;
+        return EPNPackage.Literals.PROCESS;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public FeatureMap getFlowElementGroup() {
+        if (flowElementGroup == null) {
+            flowElementGroup = new BasicFeatureMap(this, EPNPackage.PROCESS__FLOW_ELEMENT_GROUP);
+        }
+        return flowElementGroup;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EList<FlowElement> getFlowElement() {
+        return getFlowElementGroup().list(EPNPackage.Literals.PROCESS__FLOW_ELEMENT);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public QName getDefinitionalCollaborationRef() {
+        return definitionalCollaborationRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setDefinitionalCollaborationRef(QName newDefinitionalCollaborationRef) {
+        QName oldDefinitionalCollaborationRef = definitionalCollaborationRef;
+        definitionalCollaborationRef = newDefinitionalCollaborationRef;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF, oldDefinitionalCollaborationRef, definitionalCollaborationRef));
     }
 
     /**
@@ -106,8 +181,10 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
     public void setIsExecutable(boolean newIsExecutable) {
         boolean oldIsExecutable = isExecutable;
         isExecutable = newIsExecutable;
+        boolean oldIsExecutableESet = isExecutableESet;
+        isExecutableESet = true;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EpnPackage.PROCESS__IS_EXECUTABLE, oldIsExecutable, isExecutable));
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.PROCESS__IS_EXECUTABLE, oldIsExecutable, isExecutable, !oldIsExecutableESet));
     }
 
     /**
@@ -115,8 +192,13 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
      * <!-- end-user-doc -->
      * @generated
      */
-    public ProcessType getProcessType() {
-        return processType;
+    public void unsetIsExecutable() {
+        boolean oldIsExecutable = isExecutable;
+        boolean oldIsExecutableESet = isExecutableESet;
+        isExecutable = IS_EXECUTABLE_EDEFAULT;
+        isExecutableESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, EPNPackage.PROCESS__IS_EXECUTABLE, oldIsExecutable, IS_EXECUTABLE_EDEFAULT, oldIsExecutableESet));
     }
 
     /**
@@ -124,11 +206,24 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setProcessType(ProcessType newProcessType) {
-        ProcessType oldProcessType = processType;
-        processType = newProcessType == null ? PROCESS_TYPE_EDEFAULT : newProcessType;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EpnPackage.PROCESS__PROCESS_TYPE, oldProcessType, processType));
+    public boolean isSetIsExecutable() {
+        return isExecutableESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+        switch (featureID) {
+            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
+                return ((InternalEList<?>)getFlowElementGroup()).basicRemove(otherEnd, msgs);
+            case EPNPackage.PROCESS__FLOW_ELEMENT:
+                return ((InternalEList<?>)getFlowElement()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
@@ -139,10 +234,15 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case EpnPackage.PROCESS__IS_EXECUTABLE:
+            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
+                if (coreType) return getFlowElementGroup();
+                return ((FeatureMap.Internal)getFlowElementGroup()).getWrapper();
+            case EPNPackage.PROCESS__FLOW_ELEMENT:
+                return getFlowElement();
+            case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
+                return getDefinitionalCollaborationRef();
+            case EPNPackage.PROCESS__IS_EXECUTABLE:
                 return isIsExecutable();
-            case EpnPackage.PROCESS__PROCESS_TYPE:
-                return getProcessType();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -152,14 +252,22 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case EpnPackage.PROCESS__IS_EXECUTABLE:
-                setIsExecutable((Boolean)newValue);
+            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
+                ((FeatureMap.Internal)getFlowElementGroup()).set(newValue);
                 return;
-            case EpnPackage.PROCESS__PROCESS_TYPE:
-                setProcessType((ProcessType)newValue);
+            case EPNPackage.PROCESS__FLOW_ELEMENT:
+                getFlowElement().clear();
+                getFlowElement().addAll((Collection<? extends FlowElement>)newValue);
+                return;
+            case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
+                setDefinitionalCollaborationRef((QName)newValue);
+                return;
+            case EPNPackage.PROCESS__IS_EXECUTABLE:
+                setIsExecutable((Boolean)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -173,11 +281,17 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case EpnPackage.PROCESS__IS_EXECUTABLE:
-                setIsExecutable(IS_EXECUTABLE_EDEFAULT);
+            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
+                getFlowElementGroup().clear();
                 return;
-            case EpnPackage.PROCESS__PROCESS_TYPE:
-                setProcessType(PROCESS_TYPE_EDEFAULT);
+            case EPNPackage.PROCESS__FLOW_ELEMENT:
+                getFlowElement().clear();
+                return;
+            case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
+                setDefinitionalCollaborationRef(DEFINITIONAL_COLLABORATION_REF_EDEFAULT);
+                return;
+            case EPNPackage.PROCESS__IS_EXECUTABLE:
+                unsetIsExecutable();
                 return;
         }
         super.eUnset(featureID);
@@ -191,10 +305,14 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case EpnPackage.PROCESS__IS_EXECUTABLE:
-                return isExecutable != IS_EXECUTABLE_EDEFAULT;
-            case EpnPackage.PROCESS__PROCESS_TYPE:
-                return processType != PROCESS_TYPE_EDEFAULT;
+            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
+                return flowElementGroup != null && !flowElementGroup.isEmpty();
+            case EPNPackage.PROCESS__FLOW_ELEMENT:
+                return !getFlowElement().isEmpty();
+            case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
+                return DEFINITIONAL_COLLABORATION_REF_EDEFAULT == null ? definitionalCollaborationRef != null : !DEFINITIONAL_COLLABORATION_REF_EDEFAULT.equals(definitionalCollaborationRef);
+            case EPNPackage.PROCESS__IS_EXECUTABLE:
+                return isSetIsExecutable();
         }
         return super.eIsSet(featureID);
     }
@@ -209,10 +327,12 @@ public class ProcessImpl extends FlowElementsContainerImpl implements org.drools
         if (eIsProxy()) return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (isExecutable: ");
-        result.append(isExecutable);
-        result.append(", processType: ");
-        result.append(processType);
+        result.append(" (flowElementGroup: ");
+        result.append(flowElementGroup);
+        result.append(", definitionalCollaborationRef: ");
+        result.append(definitionalCollaborationRef);
+        result.append(", isExecutable: ");
+        if (isExecutableESet) result.append(isExecutable); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

@@ -17,8 +17,8 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Process Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.drools.epn.EpnPackage#getProcessType()
- * @model annotation="ExtendedMetaData name='tProcessType'"
+ * @see org.drools.epn.EPNPackage#getProcessType()
+ * @model extendedMetaData="name='ProcessType'"
  * @generated
  */
 public enum ProcessType implements Enumerator {

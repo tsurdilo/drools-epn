@@ -6,6 +6,8 @@
  */
 package org.drools.epn;
 
+import javax.xml.namespace.QName;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -21,47 +23,44 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  * </p>
  *
- * @see org.drools.epn.EpnPackage#getFlowNode()
- * @model annotation="ExtendedMetaData name='tFlowNode' kind='elementOnly'"
+ * @see org.drools.epn.EPNPackage#getFlowNode()
+ * @model abstract="true"
+ *        extendedMetaData="name='FlowNode' kind='elementOnly'"
  * @generated
  */
 public interface FlowNode extends FlowElement {
     /**
-     * Returns the value of the '<em><b>Incoming</b></em>' reference list.
-     * The list contents are of type {@link org.drools.epn.SequenceFlow}.
-     * It is bidirectional and its opposite is '{@link org.drools.epn.SequenceFlow#getTargetRef <em>Target Ref</em>}'.
+     * Returns the value of the '<em><b>Incoming</b></em>' attribute list.
+     * The list contents are of type {@link javax.xml.namespace.QName}.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Incoming</em>' reference list isn't clear,
+     * If the meaning of the '<em>Incoming</em>' attribute list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Incoming</em>' reference list.
-     * @see org.drools.epn.EpnPackage#getFlowNode_Incoming()
-     * @see org.drools.epn.SequenceFlow#getTargetRef
-     * @model opposite="targetRef" resolveProxies="false"
-     *        annotation="ExtendedMetaData name='incoming' kind='attribute'"
+     * @return the value of the '<em>Incoming</em>' attribute list.
+     * @see org.drools.epn.EPNPackage#getFlowNode_Incoming()
+     * @model unique="false" dataType="org.eclipse.emf.ecore.xml.type.QName"
+     *        extendedMetaData="kind='element' name='incoming' namespace='##targetNamespace'"
      * @generated
      */
-    EList<SequenceFlow> getIncoming();
+    EList<QName> getIncoming();
 
     /**
-     * Returns the value of the '<em><b>Outgoing</b></em>' reference list.
-     * The list contents are of type {@link org.drools.epn.SequenceFlow}.
-     * It is bidirectional and its opposite is '{@link org.drools.epn.SequenceFlow#getSourceRef <em>Source Ref</em>}'.
+     * Returns the value of the '<em><b>Outgoing</b></em>' attribute list.
+     * The list contents are of type {@link javax.xml.namespace.QName}.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Outgoing</em>' reference list isn't clear,
+     * If the meaning of the '<em>Outgoing</em>' attribute list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Outgoing</em>' reference list.
-     * @see org.drools.epn.EpnPackage#getFlowNode_Outgoing()
-     * @see org.drools.epn.SequenceFlow#getSourceRef
-     * @model opposite="sourceRef" resolveProxies="false" ordered="false"
-     *        annotation="ExtendedMetaData name='outgoing' kind='element'"
+     * @return the value of the '<em>Outgoing</em>' attribute list.
+     * @see org.drools.epn.EPNPackage#getFlowNode_Outgoing()
+     * @model unique="false" dataType="org.eclipse.emf.ecore.xml.type.QName"
+     *        extendedMetaData="kind='element' name='outgoing' namespace='##targetNamespace'"
      * @generated
      */
-    EList<SequenceFlow> getOutgoing();
+    EList<QName> getOutgoing();
 
 } // FlowNode

@@ -8,26 +8,37 @@ package org.drools.epn.util;
 
 import org.drools.epn.Activity;
 import org.drools.epn.BaseElement;
-import org.drools.epn.ConversationLink;
-import org.drools.epn.DataInput;
-import org.drools.epn.DataOutput;
+import org.drools.epn.Bounds;
+import org.drools.epn.CallableElement;
+import org.drools.epn.Definitions;
 import org.drools.epn.Diagram;
 import org.drools.epn.DiagramElement;
 import org.drools.epn.DocumentRoot;
 import org.drools.epn.Documentation;
 import org.drools.epn.EPNDiagram;
-import org.drools.epn.EpnPackage;
+import org.drools.epn.EPNEdge;
+import org.drools.epn.EPNLabel;
+import org.drools.epn.EPNPackage;
+import org.drools.epn.EPNPlane;
+import org.drools.epn.EPNShape;
+import org.drools.epn.Edge;
 import org.drools.epn.EventChannel;
 import org.drools.epn.EventConsumer;
 import org.drools.epn.EventProcessingAgent;
 import org.drools.epn.EventProducer;
+import org.drools.epn.ExtensionType;
 import org.drools.epn.FlowElement;
-import org.drools.epn.FlowElementsContainer;
 import org.drools.epn.FlowNode;
-import org.drools.epn.InputSet;
-import org.drools.epn.InteractionNode;
-import org.drools.epn.OutputSet;
+import org.drools.epn.Label;
+import org.drools.epn.LabeledEdge;
+import org.drools.epn.LabeledShape;
+import org.drools.epn.Node;
+import org.drools.epn.Plane;
+import org.drools.epn.Point;
+import org.drools.epn.RootElement;
 import org.drools.epn.SequenceFlow;
+import org.drools.epn.Shape;
+import org.drools.epn.Style;
 import org.drools.epn.Task;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -42,17 +53,17 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see org.drools.epn.EpnPackage
+ * @see org.drools.epn.EPNPackage
  * @generated
  */
-public class EpnAdapterFactory extends AdapterFactoryImpl {
+public class EPNAdapterFactory extends AdapterFactoryImpl {
     /**
      * The cached model package.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected static EpnPackage modelPackage;
+    protected static EPNPackage modelPackage;
 
     /**
      * Creates an instance of the adapter factory.
@@ -60,9 +71,9 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EpnAdapterFactory() {
+    public EPNAdapterFactory() {
         if (modelPackage == null) {
-            modelPackage = EpnPackage.eINSTANCE;
+            modelPackage = EPNPackage.eINSTANCE;
         }
     }
 
@@ -91,51 +102,71 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected EpnSwitch<Adapter> modelSwitch =
-        new EpnSwitch<Adapter>() {
-            @Override
-            public Adapter caseDocumentRoot(DocumentRoot object) {
-                return createDocumentRootAdapter();
-            }
+    protected EPNSwitch<Adapter> modelSwitch =
+        new EPNSwitch<Adapter>() {
             @Override
             public Adapter caseActivity(Activity object) {
                 return createActivityAdapter();
-            }
-            @Override
-            public Adapter caseFlowNode(FlowNode object) {
-                return createFlowNodeAdapter();
-            }
-            @Override
-            public Adapter caseFlowElement(FlowElement object) {
-                return createFlowElementAdapter();
             }
             @Override
             public Adapter caseBaseElement(BaseElement object) {
                 return createBaseElementAdapter();
             }
             @Override
+            public Adapter caseBounds(Bounds object) {
+                return createBoundsAdapter();
+            }
+            @Override
+            public Adapter caseCallableElement(CallableElement object) {
+                return createCallableElementAdapter();
+            }
+            @Override
+            public Adapter caseDefinitions(Definitions object) {
+                return createDefinitionsAdapter();
+            }
+            @Override
+            public Adapter caseDiagram(Diagram object) {
+                return createDiagramAdapter();
+            }
+            @Override
+            public Adapter caseDiagramElement(DiagramElement object) {
+                return createDiagramElementAdapter();
+            }
+            @Override
             public Adapter caseDocumentation(Documentation object) {
                 return createDocumentationAdapter();
             }
             @Override
-            public Adapter caseSequenceFlow(SequenceFlow object) {
-                return createSequenceFlowAdapter();
+            public Adapter caseDocumentRoot(DocumentRoot object) {
+                return createDocumentRootAdapter();
             }
             @Override
-            public Adapter caseTask(Task object) {
-                return createTaskAdapter();
+            public Adapter caseEdge(Edge object) {
+                return createEdgeAdapter();
             }
             @Override
-            public Adapter caseInteractionNode(InteractionNode object) {
-                return createInteractionNodeAdapter();
+            public Adapter caseEPNDiagram(EPNDiagram object) {
+                return createEPNDiagramAdapter();
             }
             @Override
-            public Adapter caseConversationLink(ConversationLink object) {
-                return createConversationLinkAdapter();
+            public Adapter caseEPNEdge(EPNEdge object) {
+                return createEPNEdgeAdapter();
             }
             @Override
-            public Adapter caseEventProducer(EventProducer object) {
-                return createEventProducerAdapter();
+            public Adapter caseEPNLabel(EPNLabel object) {
+                return createEPNLabelAdapter();
+            }
+            @Override
+            public Adapter caseEPNPlane(EPNPlane object) {
+                return createEPNPlaneAdapter();
+            }
+            @Override
+            public Adapter caseEPNShape(EPNShape object) {
+                return createEPNShapeAdapter();
+            }
+            @Override
+            public Adapter caseEventChannel(EventChannel object) {
+                return createEventChannelAdapter();
             }
             @Override
             public Adapter caseEventConsumer(EventConsumer object) {
@@ -146,44 +177,68 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
                 return createEventProcessingAgentAdapter();
             }
             @Override
-            public Adapter caseDataInput(DataInput object) {
-                return createDataInputAdapter();
+            public Adapter caseEventProducer(EventProducer object) {
+                return createEventProducerAdapter();
             }
             @Override
-            public Adapter caseDataOutput(DataOutput object) {
-                return createDataOutputAdapter();
+            public Adapter caseExtensionType(ExtensionType object) {
+                return createExtensionTypeAdapter();
             }
             @Override
-            public Adapter caseInputSet(InputSet object) {
-                return createInputSetAdapter();
+            public Adapter caseFlowElement(FlowElement object) {
+                return createFlowElementAdapter();
             }
             @Override
-            public Adapter caseOutputSet(OutputSet object) {
-                return createOutputSetAdapter();
+            public Adapter caseFlowNode(FlowNode object) {
+                return createFlowNodeAdapter();
             }
             @Override
-            public Adapter caseEventChannel(EventChannel object) {
-                return createEventChannelAdapter();
+            public Adapter caseLabel(Label object) {
+                return createLabelAdapter();
             }
             @Override
-            public Adapter caseEPNDiagram(EPNDiagram object) {
-                return createEPNDiagramAdapter();
+            public Adapter caseLabeledEdge(LabeledEdge object) {
+                return createLabeledEdgeAdapter();
             }
             @Override
-            public Adapter caseDiagram(Diagram object) {
-                return createDiagramAdapter();
+            public Adapter caseLabeledShape(LabeledShape object) {
+                return createLabeledShapeAdapter();
             }
             @Override
-            public Adapter caseFlowElementsContainer(FlowElementsContainer object) {
-                return createFlowElementsContainerAdapter();
+            public Adapter caseNode(Node object) {
+                return createNodeAdapter();
             }
             @Override
-            public Adapter caseDiagramElement(DiagramElement object) {
-                return createDiagramElementAdapter();
+            public Adapter casePlane(Plane object) {
+                return createPlaneAdapter();
+            }
+            @Override
+            public Adapter casePoint(Point object) {
+                return createPointAdapter();
             }
             @Override
             public Adapter caseProcess(org.drools.epn.Process object) {
                 return createProcessAdapter();
+            }
+            @Override
+            public Adapter caseRootElement(RootElement object) {
+                return createRootElementAdapter();
+            }
+            @Override
+            public Adapter caseSequenceFlow(SequenceFlow object) {
+                return createSequenceFlowAdapter();
+            }
+            @Override
+            public Adapter caseShape(Shape object) {
+                return createShapeAdapter();
+            }
+            @Override
+            public Adapter caseStyle(Style object) {
+                return createStyleAdapter();
+            }
+            @Override
+            public Adapter caseTask(Task object) {
+                return createTaskAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -206,20 +261,6 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
 
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.DocumentRoot <em>Document Root</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.drools.epn.DocumentRoot
-     * @generated
-     */
-    public Adapter createDocumentRootAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link org.drools.epn.Activity <em>Activity</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -230,34 +271,6 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createActivityAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.FlowNode <em>Flow Node</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.drools.epn.FlowNode
-     * @generated
-     */
-    public Adapter createFlowNodeAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.FlowElement <em>Flow Element</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.drools.epn.FlowElement
-     * @generated
-     */
-    public Adapter createFlowElementAdapter() {
         return null;
     }
 
@@ -276,6 +289,76 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Bounds <em>Bounds</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Bounds
+     * @generated
+     */
+    public Adapter createBoundsAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.CallableElement <em>Callable Element</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.CallableElement
+     * @generated
+     */
+    public Adapter createCallableElementAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Definitions <em>Definitions</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Definitions
+     * @generated
+     */
+    public Adapter createDefinitionsAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Diagram <em>Diagram</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Diagram
+     * @generated
+     */
+    public Adapter createDiagramAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.DiagramElement <em>Diagram Element</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.DiagramElement
+     * @generated
+     */
+    public Adapter createDiagramElementAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link org.drools.epn.Documentation <em>Documentation</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -290,72 +373,114 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.SequenceFlow <em>Sequence Flow</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.DocumentRoot <em>Document Root</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.SequenceFlow
+     * @see org.drools.epn.DocumentRoot
      * @generated
      */
-    public Adapter createSequenceFlowAdapter() {
+    public Adapter createDocumentRootAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.Task <em>Task</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Edge <em>Edge</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.Task
+     * @see org.drools.epn.Edge
      * @generated
      */
-    public Adapter createTaskAdapter() {
+    public Adapter createEdgeAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.InteractionNode <em>Interaction Node</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EPNDiagram <em>Diagram</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.InteractionNode
+     * @see org.drools.epn.EPNDiagram
      * @generated
      */
-    public Adapter createInteractionNodeAdapter() {
+    public Adapter createEPNDiagramAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.ConversationLink <em>Conversation Link</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EPNEdge <em>Edge</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.ConversationLink
+     * @see org.drools.epn.EPNEdge
      * @generated
      */
-    public Adapter createConversationLinkAdapter() {
+    public Adapter createEPNEdgeAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.EventProducer <em>Event Producer</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EPNLabel <em>Label</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.EventProducer
+     * @see org.drools.epn.EPNLabel
      * @generated
      */
-    public Adapter createEventProducerAdapter() {
+    public Adapter createEPNLabelAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EPNPlane <em>Plane</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.EPNPlane
+     * @generated
+     */
+    public Adapter createEPNPlaneAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EPNShape <em>Shape</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.EPNShape
+     * @generated
+     */
+    public Adapter createEPNShapeAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EventChannel <em>Event Channel</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.EventChannel
+     * @generated
+     */
+    public Adapter createEventChannelAdapter() {
         return null;
     }
 
@@ -388,128 +513,142 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.DataInput <em>Data Input</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.EventProducer <em>Event Producer</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.DataInput
+     * @see org.drools.epn.EventProducer
      * @generated
      */
-    public Adapter createDataInputAdapter() {
+    public Adapter createEventProducerAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.DataOutput <em>Data Output</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.ExtensionType <em>Extension Type</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.DataOutput
+     * @see org.drools.epn.ExtensionType
      * @generated
      */
-    public Adapter createDataOutputAdapter() {
+    public Adapter createExtensionTypeAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.InputSet <em>Input Set</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.FlowElement <em>Flow Element</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.InputSet
+     * @see org.drools.epn.FlowElement
      * @generated
      */
-    public Adapter createInputSetAdapter() {
+    public Adapter createFlowElementAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.OutputSet <em>Output Set</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.FlowNode <em>Flow Node</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.OutputSet
+     * @see org.drools.epn.FlowNode
      * @generated
      */
-    public Adapter createOutputSetAdapter() {
+    public Adapter createFlowNodeAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.EventChannel <em>Event Channel</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Label <em>Label</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.EventChannel
+     * @see org.drools.epn.Label
      * @generated
      */
-    public Adapter createEventChannelAdapter() {
+    public Adapter createLabelAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.EPNDiagram <em>EPN Diagram</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.LabeledEdge <em>Labeled Edge</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.EPNDiagram
+     * @see org.drools.epn.LabeledEdge
      * @generated
      */
-    public Adapter createEPNDiagramAdapter() {
+    public Adapter createLabeledEdgeAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.Diagram <em>Diagram</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.LabeledShape <em>Labeled Shape</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.Diagram
+     * @see org.drools.epn.LabeledShape
      * @generated
      */
-    public Adapter createDiagramAdapter() {
+    public Adapter createLabeledShapeAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.FlowElementsContainer <em>Flow Elements Container</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Node <em>Node</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.FlowElementsContainer
+     * @see org.drools.epn.Node
      * @generated
      */
-    public Adapter createFlowElementsContainerAdapter() {
+    public Adapter createNodeAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.DiagramElement <em>Diagram Element</em>}'.
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Plane <em>Plane</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see org.drools.epn.DiagramElement
+     * @see org.drools.epn.Plane
      * @generated
      */
-    public Adapter createDiagramElementAdapter() {
+    public Adapter createPlaneAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Point <em>Point</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Point
+     * @generated
+     */
+    public Adapter createPointAdapter() {
         return null;
     }
 
@@ -528,6 +667,76 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.RootElement <em>Root Element</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.RootElement
+     * @generated
+     */
+    public Adapter createRootElementAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.SequenceFlow <em>Sequence Flow</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.SequenceFlow
+     * @generated
+     */
+    public Adapter createSequenceFlowAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Shape <em>Shape</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Shape
+     * @generated
+     */
+    public Adapter createShapeAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Style <em>Style</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Style
+     * @generated
+     */
+    public Adapter createStyleAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Task <em>Task</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Task
+     * @generated
+     */
+    public Adapter createTaskAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
      * This default implementation returns null.
@@ -539,4 +748,4 @@ public class EpnAdapterFactory extends AdapterFactoryImpl {
         return null;
     }
 
-} //EpnAdapterFactory
+} //EPNAdapterFactory

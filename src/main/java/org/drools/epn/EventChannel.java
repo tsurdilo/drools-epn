@@ -15,66 +15,68 @@ package org.drools.epn;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.drools.epn.EventChannel#getDataOutputs <em>Data Outputs</em>}</li>
- *   <li>{@link org.drools.epn.EventChannel#getDataInputs <em>Data Inputs</em>}</li>
+ *   <li>{@link org.drools.epn.EventChannel#getImplementation <em>Implementation</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.drools.epn.EpnPackage#getEventChannel()
- * @model annotation="ExtendedMetaData name='tEventChannel' kind='elementOnly'"
+ * @see org.drools.epn.EPNPackage#getEventChannel()
+ * @model extendedMetaData="name='EventChannel' kind='elementOnly'"
  * @generated
  */
 public interface EventChannel extends Task {
     /**
-     * Returns the value of the '<em><b>Data Outputs</b></em>' reference.
+     * Returns the value of the '<em><b>Implementation</b></em>' attribute.
+     * The default value is <code>"##unspecified"</code>.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Data Outputs</em>' reference isn't clear,
+     * If the meaning of the '<em>Implementation</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Data Outputs</em>' reference.
-     * @see #setDataOutputs(DataOutput)
-     * @see org.drools.epn.EpnPackage#getEventChannel_DataOutputs()
-     * @model upper="-2"
+     * @return the value of the '<em>Implementation</em>' attribute.
+     * @see #isSetImplementation()
+     * @see #unsetImplementation()
+     * @see #setImplementation(Object)
+     * @see org.drools.epn.EPNPackage#getEventChannel_Implementation()
+     * @model default="##unspecified" unsettable="true" dataType="org.drools.epn.Implementation"
+     *        extendedMetaData="kind='attribute' name='implementation'"
      * @generated
      */
-    DataOutput getDataOutputs();
+    Object getImplementation();
 
     /**
-     * Sets the value of the '{@link org.drools.epn.EventChannel#getDataOutputs <em>Data Outputs</em>}' reference.
+     * Sets the value of the '{@link org.drools.epn.EventChannel#getImplementation <em>Implementation</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Data Outputs</em>' reference.
-     * @see #getDataOutputs()
+     * @param value the new value of the '<em>Implementation</em>' attribute.
+     * @see #isSetImplementation()
+     * @see #unsetImplementation()
+     * @see #getImplementation()
      * @generated
      */
-    void setDataOutputs(DataOutput value);
+    void setImplementation(Object value);
 
     /**
-     * Returns the value of the '<em><b>Data Inputs</b></em>' reference.
+     * Unsets the value of the '{@link org.drools.epn.EventChannel#getImplementation <em>Implementation</em>}' attribute.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Data Inputs</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Data Inputs</em>' reference.
-     * @see #setDataInputs(DataInput)
-     * @see org.drools.epn.EpnPackage#getEventChannel_DataInputs()
-     * @model upper="-2"
+     * @see #isSetImplementation()
+     * @see #getImplementation()
+     * @see #setImplementation(Object)
      * @generated
      */
-    DataInput getDataInputs();
+    void unsetImplementation();
 
     /**
-     * Sets the value of the '{@link org.drools.epn.EventChannel#getDataInputs <em>Data Inputs</em>}' reference.
+     * Returns whether the value of the '{@link org.drools.epn.EventChannel#getImplementation <em>Implementation</em>}' attribute is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Data Inputs</em>' reference.
-     * @see #getDataInputs()
+     * @return whether the value of the '<em>Implementation</em>' attribute is set.
+     * @see #unsetImplementation()
+     * @see #getImplementation()
+     * @see #setImplementation(Object)
      * @generated
      */
-    void setDataInputs(DataInput value);
+    boolean isSetImplementation();
 
 } // EventChannel

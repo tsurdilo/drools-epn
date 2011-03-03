@@ -19,13 +19,13 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.drools.epn.Diagram#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.drools.epn.Diagram#getId <em>Id</em>}</li>
  *   <li>{@link org.drools.epn.Diagram#getName <em>Name</em>}</li>
- *   <li>{@link org.drools.epn.Diagram#getRootElement <em>Root Element</em>}</li>
+ *   <li>{@link org.drools.epn.Diagram#getResolution <em>Resolution</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.drools.epn.EpnPackage#getDiagram()
+ * @see org.drools.epn.EPNPackage#getDiagram()
  * @model abstract="true"
- *        annotation="ExtendedMetaData name='diagram' kind='empty'"
+ *        extendedMetaData="name='Diagram' kind='empty'"
  * @generated
  */
 public interface Diagram extends EObject {
@@ -39,8 +39,9 @@ public interface Diagram extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Documentation</em>' attribute.
      * @see #setDocumentation(String)
-     * @see org.drools.epn.EpnPackage#getDiagram_Documentation()
-     * @model annotation="ExtendedMetaData name='documentation' kind='attribute'"
+     * @see org.drools.epn.EPNPackage#getDiagram_Documentation()
+     * @model dataType="org.eclipse.emf.ecore.xml.type.String"
+     *        extendedMetaData="kind='attribute' name='documentation'"
      * @generated
      */
     String getDocumentation();
@@ -65,8 +66,9 @@ public interface Diagram extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Id</em>' attribute.
      * @see #setId(String)
-     * @see org.drools.epn.EpnPackage#getDiagram_Id()
-     * @model annotation="ExtendedMetaData name='id' kind='attribute'"
+     * @see org.drools.epn.EPNPackage#getDiagram_Id()
+     * @model id="true" dataType="org.eclipse.emf.ecore.xml.type.ID"
+     *        extendedMetaData="kind='attribute' name='id'"
      * @generated
      */
     String getId();
@@ -91,8 +93,9 @@ public interface Diagram extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
-     * @see org.drools.epn.EpnPackage#getDiagram_Name()
-     * @model annotation="ExtendedMetaData name='name' kind='attribute'"
+     * @see org.drools.epn.EPNPackage#getDiagram_Name()
+     * @model dataType="org.eclipse.emf.ecore.xml.type.String"
+     *        extendedMetaData="kind='attribute' name='name'"
      * @generated
      */
     String getName();
@@ -108,18 +111,57 @@ public interface Diagram extends EObject {
     void setName(String value);
 
     /**
-     * Returns the value of the '<em><b>Root Element</b></em>' reference.
+     * Returns the value of the '<em><b>Resolution</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Root Element</em>' reference isn't clear,
+     * If the meaning of the '<em>Resolution</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Root Element</em>' reference.
-     * @see org.drools.epn.EpnPackage#getDiagram_RootElement()
-     * @model required="true" changeable="false"
+     * @return the value of the '<em>Resolution</em>' attribute.
+     * @see #isSetResolution()
+     * @see #unsetResolution()
+     * @see #setResolution(double)
+     * @see org.drools.epn.EPNPackage#getDiagram_Resolution()
+     * @model unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Double"
+     *        extendedMetaData="kind='attribute' name='resolution'"
      * @generated
      */
-    DiagramElement getRootElement();
+    double getResolution();
+
+    /**
+     * Sets the value of the '{@link org.drools.epn.Diagram#getResolution <em>Resolution</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Resolution</em>' attribute.
+     * @see #isSetResolution()
+     * @see #unsetResolution()
+     * @see #getResolution()
+     * @generated
+     */
+    void setResolution(double value);
+
+    /**
+     * Unsets the value of the '{@link org.drools.epn.Diagram#getResolution <em>Resolution</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetResolution()
+     * @see #getResolution()
+     * @see #setResolution(double)
+     * @generated
+     */
+    void unsetResolution();
+
+    /**
+     * Returns whether the value of the '{@link org.drools.epn.Diagram#getResolution <em>Resolution</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Resolution</em>' attribute is set.
+     * @see #unsetResolution()
+     * @see #getResolution()
+     * @see #setResolution(double)
+     * @generated
+     */
+    boolean isSetResolution();
 
 } // Diagram

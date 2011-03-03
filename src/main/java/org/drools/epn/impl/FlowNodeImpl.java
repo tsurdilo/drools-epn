@@ -8,19 +8,16 @@ package org.drools.epn.impl;
 
 import java.util.Collection;
 
-import org.drools.epn.EpnPackage;
-import org.drools.epn.FlowNode;
-import org.drools.epn.SequenceFlow;
+import javax.xml.namespace.QName;
 
-import org.eclipse.emf.common.notify.NotificationChain;
+import org.drools.epn.EPNPackage;
+import org.drools.epn.FlowNode;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,26 +33,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class FlowNodeImpl extends FlowElementImpl implements FlowNode {
+public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
     /**
-     * The cached value of the '{@link #getIncoming() <em>Incoming</em>}' reference list.
+     * The cached value of the '{@link #getIncoming() <em>Incoming</em>}' attribute list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getIncoming()
      * @generated
      * @ordered
      */
-    protected EList<SequenceFlow> incoming;
+    protected EList<QName> incoming;
 
     /**
-     * The cached value of the '{@link #getOutgoing() <em>Outgoing</em>}' reference list.
+     * The cached value of the '{@link #getOutgoing() <em>Outgoing</em>}' attribute list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getOutgoing()
      * @generated
      * @ordered
      */
-    protected EList<SequenceFlow> outgoing;
+    protected EList<QName> outgoing;
 
     /**
      * <!-- begin-user-doc -->
@@ -73,7 +70,7 @@ public class FlowNodeImpl extends FlowElementImpl implements FlowNode {
      */
     @Override
     protected EClass eStaticClass() {
-        return EpnPackage.Literals.FLOW_NODE;
+        return EPNPackage.Literals.FLOW_NODE;
     }
 
     /**
@@ -81,9 +78,9 @@ public class FlowNodeImpl extends FlowElementImpl implements FlowNode {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<SequenceFlow> getIncoming() {
+    public EList<QName> getIncoming() {
         if (incoming == null) {
-            incoming = new EObjectWithInverseEList<SequenceFlow>(SequenceFlow.class, this, EpnPackage.FLOW_NODE__INCOMING, EpnPackage.SEQUENCE_FLOW__TARGET_REF);
+            incoming = new EDataTypeEList<QName>(QName.class, this, EPNPackage.FLOW_NODE__INCOMING);
         }
         return incoming;
     }
@@ -93,44 +90,11 @@ public class FlowNodeImpl extends FlowElementImpl implements FlowNode {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<SequenceFlow> getOutgoing() {
+    public EList<QName> getOutgoing() {
         if (outgoing == null) {
-            outgoing = new EObjectWithInverseEList<SequenceFlow>(SequenceFlow.class, this, EpnPackage.FLOW_NODE__OUTGOING, EpnPackage.SEQUENCE_FLOW__SOURCE_REF);
+            outgoing = new EDataTypeEList<QName>(QName.class, this, EPNPackage.FLOW_NODE__OUTGOING);
         }
         return outgoing;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @SuppressWarnings("unchecked")
-    @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case EpnPackage.FLOW_NODE__INCOMING:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncoming()).basicAdd(otherEnd, msgs);
-            case EpnPackage.FLOW_NODE__OUTGOING:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoing()).basicAdd(otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case EpnPackage.FLOW_NODE__INCOMING:
-                return ((InternalEList<?>)getIncoming()).basicRemove(otherEnd, msgs);
-            case EpnPackage.FLOW_NODE__OUTGOING:
-                return ((InternalEList<?>)getOutgoing()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
@@ -141,9 +105,9 @@ public class FlowNodeImpl extends FlowElementImpl implements FlowNode {
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case EpnPackage.FLOW_NODE__INCOMING:
+            case EPNPackage.FLOW_NODE__INCOMING:
                 return getIncoming();
-            case EpnPackage.FLOW_NODE__OUTGOING:
+            case EPNPackage.FLOW_NODE__OUTGOING:
                 return getOutgoing();
         }
         return super.eGet(featureID, resolve, coreType);
@@ -158,13 +122,13 @@ public class FlowNodeImpl extends FlowElementImpl implements FlowNode {
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case EpnPackage.FLOW_NODE__INCOMING:
+            case EPNPackage.FLOW_NODE__INCOMING:
                 getIncoming().clear();
-                getIncoming().addAll((Collection<? extends SequenceFlow>)newValue);
+                getIncoming().addAll((Collection<? extends QName>)newValue);
                 return;
-            case EpnPackage.FLOW_NODE__OUTGOING:
+            case EPNPackage.FLOW_NODE__OUTGOING:
                 getOutgoing().clear();
-                getOutgoing().addAll((Collection<? extends SequenceFlow>)newValue);
+                getOutgoing().addAll((Collection<? extends QName>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -178,10 +142,10 @@ public class FlowNodeImpl extends FlowElementImpl implements FlowNode {
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case EpnPackage.FLOW_NODE__INCOMING:
+            case EPNPackage.FLOW_NODE__INCOMING:
                 getIncoming().clear();
                 return;
-            case EpnPackage.FLOW_NODE__OUTGOING:
+            case EPNPackage.FLOW_NODE__OUTGOING:
                 getOutgoing().clear();
                 return;
         }
@@ -196,12 +160,30 @@ public class FlowNodeImpl extends FlowElementImpl implements FlowNode {
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case EpnPackage.FLOW_NODE__INCOMING:
+            case EPNPackage.FLOW_NODE__INCOMING:
                 return incoming != null && !incoming.isEmpty();
-            case EpnPackage.FLOW_NODE__OUTGOING:
+            case EPNPackage.FLOW_NODE__OUTGOING:
                 return outgoing != null && !outgoing.isEmpty();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String toString() {
+        if (eIsProxy()) return super.toString();
+
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (incoming: ");
+        result.append(incoming);
+        result.append(", outgoing: ");
+        result.append(outgoing);
+        result.append(')');
+        return result.toString();
     }
 
 } //FlowNodeImpl

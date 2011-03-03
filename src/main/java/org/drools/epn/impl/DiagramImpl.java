@@ -7,13 +7,11 @@
 package org.drools.epn.impl;
 
 import org.drools.epn.Diagram;
-import org.drools.epn.DiagramElement;
-import org.drools.epn.EpnPackage;
+import org.drools.epn.EPNPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -28,7 +26,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link org.drools.epn.impl.DiagramImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.drools.epn.impl.DiagramImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.drools.epn.impl.DiagramImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.drools.epn.impl.DiagramImpl#getRootElement <em>Root Element</em>}</li>
+ *   <li>{@link org.drools.epn.impl.DiagramImpl#getResolution <em>Resolution</em>}</li>
  * </ul>
  * </p>
  *
@@ -96,14 +94,33 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getRootElement() <em>Root Element</em>}' reference.
+     * The default value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRootElement()
+     * @see #getResolution()
      * @generated
      * @ordered
      */
-    protected DiagramElement rootElement;
+    protected static final double RESOLUTION_EDEFAULT = 0.0;
+
+    /**
+     * The cached value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getResolution()
+     * @generated
+     * @ordered
+     */
+    protected double resolution = RESOLUTION_EDEFAULT;
+
+    /**
+     * This is true if the Resolution attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean resolutionESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -121,7 +138,7 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
      */
     @Override
     protected EClass eStaticClass() {
-        return EpnPackage.Literals.DIAGRAM;
+        return EPNPackage.Literals.DIAGRAM;
     }
 
     /**
@@ -142,7 +159,7 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
         String oldDocumentation = documentation;
         documentation = newDocumentation;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EpnPackage.DIAGRAM__DOCUMENTATION, oldDocumentation, documentation));
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.DIAGRAM__DOCUMENTATION, oldDocumentation, documentation));
     }
 
     /**
@@ -163,7 +180,7 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
         String oldId = id;
         id = newId;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EpnPackage.DIAGRAM__ID, oldId, id));
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.DIAGRAM__ID, oldId, id));
     }
 
     /**
@@ -184,7 +201,7 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
         String oldName = name;
         name = newName;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EpnPackage.DIAGRAM__NAME, oldName, name));
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.DIAGRAM__NAME, oldName, name));
     }
 
     /**
@@ -192,16 +209,8 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
      * <!-- end-user-doc -->
      * @generated
      */
-    public DiagramElement getRootElement() {
-        if (rootElement != null && rootElement.eIsProxy()) {
-            InternalEObject oldRootElement = (InternalEObject)rootElement;
-            rootElement = (DiagramElement)eResolveProxy(oldRootElement);
-            if (rootElement != oldRootElement) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, EpnPackage.DIAGRAM__ROOT_ELEMENT, oldRootElement, rootElement));
-            }
-        }
-        return rootElement;
+    public double getResolution() {
+        return resolution;
     }
 
     /**
@@ -209,8 +218,36 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
      * <!-- end-user-doc -->
      * @generated
      */
-    public DiagramElement basicGetRootElement() {
-        return rootElement;
+    public void setResolution(double newResolution) {
+        double oldResolution = resolution;
+        resolution = newResolution;
+        boolean oldResolutionESet = resolutionESet;
+        resolutionESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.DIAGRAM__RESOLUTION, oldResolution, resolution, !oldResolutionESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetResolution() {
+        double oldResolution = resolution;
+        boolean oldResolutionESet = resolutionESet;
+        resolution = RESOLUTION_EDEFAULT;
+        resolutionESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, EPNPackage.DIAGRAM__RESOLUTION, oldResolution, RESOLUTION_EDEFAULT, oldResolutionESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetResolution() {
+        return resolutionESet;
     }
 
     /**
@@ -221,15 +258,14 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case EpnPackage.DIAGRAM__DOCUMENTATION:
+            case EPNPackage.DIAGRAM__DOCUMENTATION:
                 return getDocumentation();
-            case EpnPackage.DIAGRAM__ID:
+            case EPNPackage.DIAGRAM__ID:
                 return getId();
-            case EpnPackage.DIAGRAM__NAME:
+            case EPNPackage.DIAGRAM__NAME:
                 return getName();
-            case EpnPackage.DIAGRAM__ROOT_ELEMENT:
-                if (resolve) return getRootElement();
-                return basicGetRootElement();
+            case EPNPackage.DIAGRAM__RESOLUTION:
+                return getResolution();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -242,14 +278,17 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case EpnPackage.DIAGRAM__DOCUMENTATION:
+            case EPNPackage.DIAGRAM__DOCUMENTATION:
                 setDocumentation((String)newValue);
                 return;
-            case EpnPackage.DIAGRAM__ID:
+            case EPNPackage.DIAGRAM__ID:
                 setId((String)newValue);
                 return;
-            case EpnPackage.DIAGRAM__NAME:
+            case EPNPackage.DIAGRAM__NAME:
                 setName((String)newValue);
+                return;
+            case EPNPackage.DIAGRAM__RESOLUTION:
+                setResolution((Double)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -263,14 +302,17 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case EpnPackage.DIAGRAM__DOCUMENTATION:
+            case EPNPackage.DIAGRAM__DOCUMENTATION:
                 setDocumentation(DOCUMENTATION_EDEFAULT);
                 return;
-            case EpnPackage.DIAGRAM__ID:
+            case EPNPackage.DIAGRAM__ID:
                 setId(ID_EDEFAULT);
                 return;
-            case EpnPackage.DIAGRAM__NAME:
+            case EPNPackage.DIAGRAM__NAME:
                 setName(NAME_EDEFAULT);
+                return;
+            case EPNPackage.DIAGRAM__RESOLUTION:
+                unsetResolution();
                 return;
         }
         super.eUnset(featureID);
@@ -284,14 +326,14 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case EpnPackage.DIAGRAM__DOCUMENTATION:
+            case EPNPackage.DIAGRAM__DOCUMENTATION:
                 return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
-            case EpnPackage.DIAGRAM__ID:
+            case EPNPackage.DIAGRAM__ID:
                 return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-            case EpnPackage.DIAGRAM__NAME:
+            case EPNPackage.DIAGRAM__NAME:
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case EpnPackage.DIAGRAM__ROOT_ELEMENT:
-                return rootElement != null;
+            case EPNPackage.DIAGRAM__RESOLUTION:
+                return isSetResolution();
         }
         return super.eIsSet(featureID);
     }
@@ -312,6 +354,8 @@ public abstract class DiagramImpl extends EObjectImpl implements Diagram {
         result.append(id);
         result.append(", name: ");
         result.append(name);
+        result.append(", resolution: ");
+        if (resolutionESet) result.append(resolution); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

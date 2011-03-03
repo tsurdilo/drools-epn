@@ -13,9 +13,9 @@ package org.drools.epn;
  * <!-- end-user-doc -->
  *
  *
- * @see org.drools.epn.EpnPackage#getTask()
- * @model annotation="ExtendedMetaData name='tTask' kind='elementOnly'"
+ * @see org.drools.epn.EPNPackage#getTask()
+ * @model extendedMetaData="name='Task' kind='elementOnly'"
  * @generated
  */
-public interface Task extends Activity, InteractionNode {
+public interface Task extends Activity {
 } // Task

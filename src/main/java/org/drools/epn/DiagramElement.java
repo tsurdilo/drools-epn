@@ -6,9 +6,9 @@
  */
 package org.drools.epn;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,90 +18,44 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.drools.epn.DiagramElement#getOwningDiagram <em>Owning Diagram</em>}</li>
- *   <li>{@link org.drools.epn.DiagramElement#getOwningElement <em>Owning Element</em>}</li>
- *   <li>{@link org.drools.epn.DiagramElement#getOwnedElement <em>Owned Element</em>}</li>
- *   <li>{@link org.drools.epn.DiagramElement#getModelElement <em>Model Element</em>}</li>
+ *   <li>{@link org.drools.epn.DiagramElement#getExtension <em>Extension</em>}</li>
  *   <li>{@link org.drools.epn.DiagramElement#getId <em>Id</em>}</li>
+ *   <li>{@link org.drools.epn.DiagramElement#getAnyAttribute <em>Any Attribute</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.drools.epn.EpnPackage#getDiagramElement()
- * @model annotation="ExtendedMetaData name='DiagramElement' kind='elementOnly'"
+ * @see org.drools.epn.EPNPackage#getDiagramElement()
+ * @model abstract="true"
+ *        extendedMetaData="name='DiagramElement' kind='elementOnly'"
  * @generated
  */
 public interface DiagramElement extends EObject {
     /**
-     * Returns the value of the '<em><b>Owning Diagram</b></em>' reference.
+     * Returns the value of the '<em><b>Extension</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Owning Diagram</em>' reference isn't clear,
+     * If the meaning of the '<em>Extension</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Owning Diagram</em>' reference.
-     * @see org.drools.epn.EpnPackage#getDiagramElement_OwningDiagram()
-     * @model changeable="false"
+     * @return the value of the '<em>Extension</em>' containment reference.
+     * @see #setExtension(ExtensionType)
+     * @see org.drools.epn.EPNPackage#getDiagramElement_Extension()
+     * @model containment="true"
+     *        extendedMetaData="kind='element' name='extension' namespace='##targetNamespace'"
      * @generated
      */
-    Diagram getOwningDiagram();
+    ExtensionType getExtension();
 
     /**
-     * Returns the value of the '<em><b>Owning Element</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Owning Element</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Owning Element</em>' reference.
-     * @see org.drools.epn.EpnPackage#getDiagramElement_OwningElement()
-     * @model changeable="false"
-     * @generated
-     */
-    DiagramElement getOwningElement();
-
-    /**
-     * Returns the value of the '<em><b>Owned Element</b></em>' reference list.
-     * The list contents are of type {@link org.drools.epn.DiagramElement}.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Owned Element</em>' reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Owned Element</em>' reference list.
-     * @see org.drools.epn.EpnPackage#getDiagramElement_OwnedElement()
-     * @model changeable="false"
-     * @generated
-     */
-    EList<DiagramElement> getOwnedElement();
-
-    /**
-     * Returns the value of the '<em><b>Model Element</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Model Element</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Model Element</em>' reference.
-     * @see #setModelElement(EObject)
-     * @see org.drools.epn.EpnPackage#getDiagramElement_ModelElement()
-     * @model
-     * @generated
-     */
-    EObject getModelElement();
-
-    /**
-     * Sets the value of the '{@link org.drools.epn.DiagramElement#getModelElement <em>Model Element</em>}' reference.
+     * Sets the value of the '{@link org.drools.epn.DiagramElement#getExtension <em>Extension</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Model Element</em>' reference.
-     * @see #getModelElement()
+     * @param value the new value of the '<em>Extension</em>' containment reference.
+     * @see #getExtension()
      * @generated
      */
-    void setModelElement(EObject value);
+    void setExtension(ExtensionType value);
 
     /**
      * Returns the value of the '<em><b>Id</b></em>' attribute.
@@ -113,8 +67,9 @@ public interface DiagramElement extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Id</em>' attribute.
      * @see #setId(String)
-     * @see org.drools.epn.EpnPackage#getDiagramElement_Id()
-     * @model annotation="ExtendedMetaData name='id' kind='attribute'"
+     * @see org.drools.epn.EPNPackage#getDiagramElement_Id()
+     * @model id="true" dataType="org.eclipse.emf.ecore.xml.type.ID"
+     *        extendedMetaData="kind='attribute' name='id'"
      * @generated
      */
     String getId();
@@ -128,5 +83,22 @@ public interface DiagramElement extends EObject {
      * @generated
      */
     void setId(String value);
+
+    /**
+     * Returns the value of the '<em><b>Any Attribute</b></em>' attribute list.
+     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Any Attribute</em>' attribute list isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Any Attribute</em>' attribute list.
+     * @see org.drools.epn.EPNPackage#getDiagramElement_AnyAttribute()
+     * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+     *        extendedMetaData="kind='attributeWildcard' wildcards='##other' name=':2' processing='lax'"
+     * @generated
+     */
+    FeatureMap getAnyAttribute();
 
 } // DiagramElement

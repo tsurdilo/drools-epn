@@ -13,62 +13,44 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see org.drools.epn.EpnPackage
+ * @see org.drools.epn.EPNPackage
  * @generated
  */
-public interface EpnFactory extends EFactory {
+public interface EPNFactory extends EFactory {
     /**
      * The singleton instance of the factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EpnFactory eINSTANCE = org.drools.epn.impl.EpnFactoryImpl.init();
+    EPNFactory eINSTANCE = org.drools.epn.impl.EPNFactoryImpl.init();
 
     /**
-     * Returns a new object of class '<em>Document Root</em>'.
+     * Returns a new object of class '<em>Bounds</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Document Root</em>'.
+     * @return a new object of class '<em>Bounds</em>'.
      * @generated
      */
-    DocumentRoot createDocumentRoot();
+    Bounds createBounds();
 
     /**
-     * Returns a new object of class '<em>Activity</em>'.
+     * Returns a new object of class '<em>Callable Element</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Activity</em>'.
+     * @return a new object of class '<em>Callable Element</em>'.
      * @generated
      */
-    Activity createActivity();
+    CallableElement createCallableElement();
 
     /**
-     * Returns a new object of class '<em>Flow Node</em>'.
+     * Returns a new object of class '<em>Definitions</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Flow Node</em>'.
+     * @return a new object of class '<em>Definitions</em>'.
      * @generated
      */
-    FlowNode createFlowNode();
-
-    /**
-     * Returns a new object of class '<em>Flow Element</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Flow Element</em>'.
-     * @generated
-     */
-    FlowElement createFlowElement();
-
-    /**
-     * Returns a new object of class '<em>Base Element</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Base Element</em>'.
-     * @generated
-     */
-    BaseElement createBaseElement();
+    Definitions createDefinitions();
 
     /**
      * Returns a new object of class '<em>Documentation</em>'.
@@ -80,49 +62,67 @@ public interface EpnFactory extends EFactory {
     Documentation createDocumentation();
 
     /**
-     * Returns a new object of class '<em>Sequence Flow</em>'.
+     * Returns a new object of class '<em>Document Root</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Sequence Flow</em>'.
+     * @return a new object of class '<em>Document Root</em>'.
      * @generated
      */
-    SequenceFlow createSequenceFlow();
+    DocumentRoot createDocumentRoot();
 
     /**
-     * Returns a new object of class '<em>Task</em>'.
+     * Returns a new object of class '<em>Diagram</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Task</em>'.
+     * @return a new object of class '<em>Diagram</em>'.
      * @generated
      */
-    Task createTask();
+    EPNDiagram createEPNDiagram();
 
     /**
-     * Returns a new object of class '<em>Interaction Node</em>'.
+     * Returns a new object of class '<em>Edge</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Interaction Node</em>'.
+     * @return a new object of class '<em>Edge</em>'.
      * @generated
      */
-    InteractionNode createInteractionNode();
+    EPNEdge createEPNEdge();
 
     /**
-     * Returns a new object of class '<em>Conversation Link</em>'.
+     * Returns a new object of class '<em>Label</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Conversation Link</em>'.
+     * @return a new object of class '<em>Label</em>'.
      * @generated
      */
-    ConversationLink createConversationLink();
+    EPNLabel createEPNLabel();
 
     /**
-     * Returns a new object of class '<em>Event Producer</em>'.
+     * Returns a new object of class '<em>Plane</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Event Producer</em>'.
+     * @return a new object of class '<em>Plane</em>'.
      * @generated
      */
-    EventProducer createEventProducer();
+    EPNPlane createEPNPlane();
+
+    /**
+     * Returns a new object of class '<em>Shape</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Shape</em>'.
+     * @generated
+     */
+    EPNShape createEPNShape();
+
+    /**
+     * Returns a new object of class '<em>Event Channel</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Event Channel</em>'.
+     * @generated
+     */
+    EventChannel createEventChannel();
 
     /**
      * Returns a new object of class '<em>Event Consumer</em>'.
@@ -143,67 +143,31 @@ public interface EpnFactory extends EFactory {
     EventProcessingAgent createEventProcessingAgent();
 
     /**
-     * Returns a new object of class '<em>Data Input</em>'.
+     * Returns a new object of class '<em>Event Producer</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Data Input</em>'.
+     * @return a new object of class '<em>Event Producer</em>'.
      * @generated
      */
-    DataInput createDataInput();
+    EventProducer createEventProducer();
 
     /**
-     * Returns a new object of class '<em>Data Output</em>'.
+     * Returns a new object of class '<em>Extension Type</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Data Output</em>'.
+     * @return a new object of class '<em>Extension Type</em>'.
      * @generated
      */
-    DataOutput createDataOutput();
+    ExtensionType createExtensionType();
 
     /**
-     * Returns a new object of class '<em>Input Set</em>'.
+     * Returns a new object of class '<em>Point</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Input Set</em>'.
+     * @return a new object of class '<em>Point</em>'.
      * @generated
      */
-    InputSet createInputSet();
-
-    /**
-     * Returns a new object of class '<em>Output Set</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Output Set</em>'.
-     * @generated
-     */
-    OutputSet createOutputSet();
-
-    /**
-     * Returns a new object of class '<em>Event Channel</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Event Channel</em>'.
-     * @generated
-     */
-    EventChannel createEventChannel();
-
-    /**
-     * Returns a new object of class '<em>EPN Diagram</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>EPN Diagram</em>'.
-     * @generated
-     */
-    EPNDiagram createEPNDiagram();
-
-    /**
-     * Returns a new object of class '<em>Diagram Element</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Diagram Element</em>'.
-     * @generated
-     */
-    DiagramElement createDiagramElement();
+    Point createPoint();
 
     /**
      * Returns a new object of class '<em>Process</em>'.
@@ -215,12 +179,30 @@ public interface EpnFactory extends EFactory {
     Process createProcess();
 
     /**
+     * Returns a new object of class '<em>Sequence Flow</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Sequence Flow</em>'.
+     * @generated
+     */
+    SequenceFlow createSequenceFlow();
+
+    /**
+     * Returns a new object of class '<em>Task</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Task</em>'.
+     * @generated
+     */
+    Task createTask();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the package supported by this factory.
      * @generated
      */
-    EpnPackage getEpnPackage();
+    EPNPackage getEPNPackage();
 
-} //EpnFactory
+} //EPNFactory

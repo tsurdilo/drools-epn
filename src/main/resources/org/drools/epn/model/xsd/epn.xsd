@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified"
+  attributeFormDefault="unqualified" xmlns="http://www.jboss.org/drools/epn/MODEL"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.jboss.org/drools/epn/MODEL">
+
+  <xsd:element name="definitions" type="Definitions" />
+  <xsd:complexType name="Definitions">
+    <xsd:sequence>
+      <xsd:element ref="rootElement" minOccurs="0"
+        maxOccurs="unbounded" />
+      <xsd:element ref="EPNDiagram" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID" use="optional" />
+    <xsd:attribute name="name" type="xsd:string" />
+    <xsd:attribute name="targetNamespace" type="xsd:anyURI"
+      use="required" />
+    <xsd:attribute name="expressionLanguage" type="xsd:anyURI"
+      use="optional" default="http://www.w3.org/1999/XPath" />
+    <xsd:attribute name="typeLanguage" type="xsd:anyURI"
+      use="optional" default="http://www.w3.org/2001/XMLSchema" />
+    <xsd:anyAttribute namespace="##other"
+      processContents="lax" />
+  </xsd:complexType>
+
+  <xsd:element name="rootElement" type="RootElement" />
+  <xsd:complexType name="RootElement" abstract="true">
+    <xsd:complexContent>
+      <xsd:extension base="BaseElement" />
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="baseElement" type="BaseElement" />
+  <xsd:complexType name="BaseElement" abstract="true">
+    <xsd:sequence>
+      <xsd:element ref="documentation" minOccurs="0"
+        maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID" use="optional" />
+    <xsd:anyAttribute namespace="##other"
+      processContents="lax" />
+  </xsd:complexType>
+
+  <xsd:element name="documentation" type="Documentation" />
+  <xsd:complexType name="Documentation" mixed="true">
+    <xsd:sequence>
+      <xsd:any namespace="##any" processContents="lax"
+        minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID" use="optional" />
+    <xsd:attribute name="textFormat" type="xsd:string"
+      default="text/plain" />
+  </xsd:complexType>
+
+  <xsd:element name="EPNDiagram" type="EPNDiagram" />
+  <xsd:element name="EPNPlane" type="EPNPlane" />
+  <xsd:element name="EPNShape" type="EPNShape"
+    substitutionGroup="DiagramElement" />
+  <xsd:element name="EPNLabel" type="EPNLabel" />
+  <xsd:element name="EPNEdge" type="EPNEdge"
+    substitutionGroup="DiagramElement" />
+
+  <xsd:complexType name="EPNDiagram">
+    <xsd:complexContent>
+      <xsd:extension base="Diagram">
+        <xsd:sequence>
+          <xsd:element ref="EPNPlane" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="DiagramElement" type="DiagramElement" />
+  <xsd:element name="Diagram" type="Diagram" />
+  <xsd:element name="Node" type="Node" />
+  <xsd:element name="Edge" type="Edge" />
+  <xsd:element name="Shape" type="Shape" />
+  <xsd:element name="Plane" type="Plane" />
+  <xsd:element name="LabeledEdge" type="LabeledEdge" />
+  <xsd:element name="Label" type="Label" />
+  <xsd:element name="LabeledShape" type="LabeledShape" />
+
+  <xsd:complexType abstract="true" name="DiagramElement">
+    <xsd:sequence>
+      <xsd:element name="extension" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:any namespace="##other" minOccurs="0"
+              maxOccurs="unbounded" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID" />
+    <xsd:anyAttribute namespace="##other"
+      processContents="lax" />
+  </xsd:complexType>
+
+  <xsd:complexType abstract="true" name="Diagram">
+    <xsd:attribute name="name" type="xsd:string" />
+    <xsd:attribute name="documentation" type="xsd:string" />
+    <xsd:attribute name="resolution" type="xsd:double" />
+    <xsd:attribute name="id" type="xsd:ID" />
+  </xsd:complexType>
+
+  <xsd:complexType abstract="true" name="Node">
+    <xsd:complexContent>
+      <xsd:extension base="DiagramElement" />
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType abstract="true" name="Edge">
+    <xsd:complexContent>
+      <xsd:extension base="DiagramElement">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="2"
+            name="waypoint" type="Point" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType abstract="true" name="LabeledEdge">
+    <xsd:complexContent>
+      <xsd:extension base="Edge" />
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType abstract="true" name="Shape">
+    <xsd:complexContent>
+      <xsd:extension base="Node">
+        <xsd:sequence>
+          <xsd:element ref="Bounds" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType abstract="true" name="LabeledShape">
+    <xsd:complexContent>
+      <xsd:extension base="Shape" />
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType abstract="true" name="Label">
+    <xsd:complexContent>
+      <xsd:extension base="Node">
+        <xsd:sequence>
+          <xsd:element ref="Bounds" minOccurs="0" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType abstract="true" name="Plane">
+    <xsd:complexContent>
+      <xsd:extension base="Node">
+        <xsd:sequence>
+          <xsd:element ref="DiagramElement" maxOccurs="unbounded"
+            minOccurs="0" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType abstract="true" name="Style">
+    <xsd:attribute name="id" type="xsd:ID" />
+  </xsd:complexType>
+
+  <xsd:element name="Point" type="Point" />
+  <xsd:element name="Bounds" type="Bounds" />
+
+  <xsd:complexType name="Point">
+    <xsd:attribute name="x" type="xsd:double" use="required" />
+    <xsd:attribute name="y" type="xsd:double" use="required" />
+  </xsd:complexType>
+
+  <xsd:complexType name="Bounds">
+    <xsd:attribute name="x" type="xsd:double" use="required" />
+    <xsd:attribute name="y" type="xsd:double" use="required" />
+    <xsd:attribute name="width" type="xsd:double" use="required" />
+    <xsd:attribute name="height" type="xsd:double" use="required" />
+  </xsd:complexType>
+
+  <xsd:complexType name="EPNPlane">
+    <xsd:complexContent>
+      <xsd:extension base="Plane">
+        <xsd:attribute name="epnElement" type="xsd:QName" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="EPNEdge">
+    <xsd:complexContent>
+      <xsd:extension base="LabeledEdge">
+        <xsd:sequence>
+          <xsd:element ref="EPNLabel" minOccurs="0" />
+        </xsd:sequence>
+        <xsd:attribute name="epnElement" type="xsd:QName" />
+        <xsd:attribute name="sourceElement" type="xsd:QName" />
+        <xsd:attribute name="targetElement" type="xsd:QName" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="EPNShape">
+    <xsd:complexContent>
+      <xsd:extension base="LabeledShape">
+        <xsd:sequence>
+          <xsd:element ref="EPNLabel" minOccurs="0" />
+        </xsd:sequence>
+        <xsd:attribute name="epnElement" type="xsd:QName" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="EPNLabel">
+    <xsd:complexContent>
+      <xsd:extension base="Label">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="activity" type="Activity" />
+  <xsd:complexType name="Activity" abstract="true">
+    <xsd:complexContent>
+      <xsd:extension base="FlowNode">
+        <xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="default" type="xsd:IDREF"
+          use="optional" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="flowNode" type="FlowNode" />
+  <xsd:complexType name="FlowNode" abstract="true">
+    <xsd:complexContent>
+      <xsd:extension base="FlowElement">
+        <xsd:sequence>
+          <xsd:element name="incoming" type="xsd:QName"
+            minOccurs="0" maxOccurs="unbounded" />
+          <xsd:element name="outgoing" type="xsd:QName"
+            minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="flowElement" type="FlowElement" />
+  <xsd:complexType name="FlowElement" abstract="true">
+    <xsd:complexContent>
+      <xsd:extension base="BaseElement">
+        <xsd:sequence>
+          <xsd:element name="categoryValueRef" type="xsd:QName"
+            minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="sequenceFlow" type="SequenceFlow"
+    substitutionGroup="flowElement" />
+  <xsd:complexType name="SequenceFlow">
+    <xsd:complexContent>
+      <xsd:extension base="FlowElement">
+        <xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="sourceRef" type="xsd:IDREF"
+          use="required" />
+        <xsd:attribute name="targetRef" type="xsd:IDREF"
+          use="required" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="task" type="Task" substitutionGroup="flowElement" />
+  <xsd:complexType name="Task">
+    <xsd:complexContent>
+      <xsd:extension base="Activity" />
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="process" type="Process"
+    substitutionGroup="rootElement" />
+  <xsd:complexType name="Process">
+    <xsd:complexContent>
+      <xsd:extension base="CallableElement">
+				<xsd:sequence>
+					<xsd:element ref="flowElement" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+                <xsd:attribute name="isExecutable" type="xsd:boolean" default="false"/>
+				<xsd:attribute name="definitionalCollaborationRef" type="xsd:QName" use="optional"/>
+			</xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="callableElement" type="CallableElement" />
+  <xsd:complexType name="CallableElement">
+    <xsd:complexContent>
+      <xsd:extension base="RootElement">
+        <xsd:sequence>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:simpleType name="ProcessType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="None" />
+      <xsd:enumeration value="Public" />
+      <xsd:enumeration value="Private" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:element name="eventProducer" type="EventProducer"
+    substitutionGroup="flowElement" />
+  <xsd:complexType name="EventProducer">
+    <xsd:complexContent>
+      <xsd:extension base="Task">
+        <xsd:attribute name="implementation" type="Implementation"
+          default="##unspecified" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="eventChannel" type="EventChannel"
+    substitutionGroup="flowElement" />
+  <xsd:complexType name="EventChannel">
+    <xsd:complexContent>
+      <xsd:extension base="Task">
+        <xsd:attribute name="implementation" type="Implementation"
+          default="##unspecified" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="eventProcessingAgent" type="EventProcessingAgent"
+    substitutionGroup="flowElement" />
+  <xsd:complexType name="EventProcessingAgent">
+    <xsd:complexContent>
+      <xsd:extension base="Task">
+        <xsd:attribute name="implementation" type="Implementation"
+          default="##unspecified" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="eventConsumer" type="EventConsumer"
+    substitutionGroup="flowElement" />
+  <xsd:complexType name="EventConsumer">
+    <xsd:complexContent>
+      <xsd:extension base="Task">
+        <xsd:attribute name="implementation" type="Implementation"
+          default="##unspecified" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:simpleType name="Implementation">
+    <xsd:union memberTypes="xsd:anyURI">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:token">
+          <xsd:enumeration value="##unspecified" />
+          <xsd:enumeration value="##WebService" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:union>
+  </xsd:simpleType>
+
+</xsd:schema>

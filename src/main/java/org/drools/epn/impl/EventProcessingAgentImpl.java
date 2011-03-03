@@ -6,15 +6,13 @@
  */
 package org.drools.epn.impl;
 
-import org.drools.epn.DataInput;
-import org.drools.epn.DataOutput;
-import org.drools.epn.EpnPackage;
+import org.drools.epn.EPNFactory;
+import org.drools.epn.EPNPackage;
 import org.drools.epn.EventProcessingAgent;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -25,8 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.drools.epn.impl.EventProcessingAgentImpl#getDataOutputs <em>Data Outputs</em>}</li>
- *   <li>{@link org.drools.epn.impl.EventProcessingAgentImpl#getDataInputs <em>Data Inputs</em>}</li>
+ *   <li>{@link org.drools.epn.impl.EventProcessingAgentImpl#getImplementation <em>Implementation</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +31,33 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class EventProcessingAgentImpl extends TaskImpl implements EventProcessingAgent {
     /**
-     * The cached value of the '{@link #getDataOutputs() <em>Data Outputs</em>}' reference.
+     * The default value of the '{@link #getImplementation() <em>Implementation</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDataOutputs()
+     * @see #getImplementation()
      * @generated
      * @ordered
      */
-    protected DataOutput dataOutputs;
+    protected static final Object IMPLEMENTATION_EDEFAULT = EPNFactory.eINSTANCE.createFromString(EPNPackage.eINSTANCE.getImplementation(), "##unspecified");
 
     /**
-     * The cached value of the '{@link #getDataInputs() <em>Data Inputs</em>}' reference.
+     * The cached value of the '{@link #getImplementation() <em>Implementation</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDataInputs()
+     * @see #getImplementation()
      * @generated
      * @ordered
      */
-    protected DataInput dataInputs;
+    protected Object implementation = IMPLEMENTATION_EDEFAULT;
+
+    /**
+     * This is true if the Implementation attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean implementationESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -69,7 +75,7 @@ public class EventProcessingAgentImpl extends TaskImpl implements EventProcessin
      */
     @Override
     protected EClass eStaticClass() {
-        return EpnPackage.Literals.EVENT_PROCESSING_AGENT;
+        return EPNPackage.Literals.EVENT_PROCESSING_AGENT;
     }
 
     /**
@@ -77,16 +83,8 @@ public class EventProcessingAgentImpl extends TaskImpl implements EventProcessin
      * <!-- end-user-doc -->
      * @generated
      */
-    public DataOutput getDataOutputs() {
-        if (dataOutputs != null && dataOutputs.eIsProxy()) {
-            InternalEObject oldDataOutputs = (InternalEObject)dataOutputs;
-            dataOutputs = (DataOutput)eResolveProxy(oldDataOutputs);
-            if (dataOutputs != oldDataOutputs) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, EpnPackage.EVENT_PROCESSING_AGENT__DATA_OUTPUTS, oldDataOutputs, dataOutputs));
-            }
-        }
-        return dataOutputs;
+    public Object getImplementation() {
+        return implementation;
     }
 
     /**
@@ -94,20 +92,13 @@ public class EventProcessingAgentImpl extends TaskImpl implements EventProcessin
      * <!-- end-user-doc -->
      * @generated
      */
-    public DataOutput basicGetDataOutputs() {
-        return dataOutputs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setDataOutputs(DataOutput newDataOutputs) {
-        DataOutput oldDataOutputs = dataOutputs;
-        dataOutputs = newDataOutputs;
+    public void setImplementation(Object newImplementation) {
+        Object oldImplementation = implementation;
+        implementation = newImplementation;
+        boolean oldImplementationESet = implementationESet;
+        implementationESet = true;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EpnPackage.EVENT_PROCESSING_AGENT__DATA_OUTPUTS, oldDataOutputs, dataOutputs));
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.EVENT_PROCESSING_AGENT__IMPLEMENTATION, oldImplementation, implementation, !oldImplementationESet));
     }
 
     /**
@@ -115,37 +106,22 @@ public class EventProcessingAgentImpl extends TaskImpl implements EventProcessin
      * <!-- end-user-doc -->
      * @generated
      */
-    public DataInput getDataInputs() {
-        if (dataInputs != null && dataInputs.eIsProxy()) {
-            InternalEObject oldDataInputs = (InternalEObject)dataInputs;
-            dataInputs = (DataInput)eResolveProxy(oldDataInputs);
-            if (dataInputs != oldDataInputs) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, EpnPackage.EVENT_PROCESSING_AGENT__DATA_INPUTS, oldDataInputs, dataInputs));
-            }
-        }
-        return dataInputs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public DataInput basicGetDataInputs() {
-        return dataInputs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setDataInputs(DataInput newDataInputs) {
-        DataInput oldDataInputs = dataInputs;
-        dataInputs = newDataInputs;
+    public void unsetImplementation() {
+        Object oldImplementation = implementation;
+        boolean oldImplementationESet = implementationESet;
+        implementation = IMPLEMENTATION_EDEFAULT;
+        implementationESet = false;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EpnPackage.EVENT_PROCESSING_AGENT__DATA_INPUTS, oldDataInputs, dataInputs));
+            eNotify(new ENotificationImpl(this, Notification.UNSET, EPNPackage.EVENT_PROCESSING_AGENT__IMPLEMENTATION, oldImplementation, IMPLEMENTATION_EDEFAULT, oldImplementationESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetImplementation() {
+        return implementationESet;
     }
 
     /**
@@ -156,12 +132,8 @@ public class EventProcessingAgentImpl extends TaskImpl implements EventProcessin
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case EpnPackage.EVENT_PROCESSING_AGENT__DATA_OUTPUTS:
-                if (resolve) return getDataOutputs();
-                return basicGetDataOutputs();
-            case EpnPackage.EVENT_PROCESSING_AGENT__DATA_INPUTS:
-                if (resolve) return getDataInputs();
-                return basicGetDataInputs();
+            case EPNPackage.EVENT_PROCESSING_AGENT__IMPLEMENTATION:
+                return getImplementation();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -174,11 +146,8 @@ public class EventProcessingAgentImpl extends TaskImpl implements EventProcessin
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case EpnPackage.EVENT_PROCESSING_AGENT__DATA_OUTPUTS:
-                setDataOutputs((DataOutput)newValue);
-                return;
-            case EpnPackage.EVENT_PROCESSING_AGENT__DATA_INPUTS:
-                setDataInputs((DataInput)newValue);
+            case EPNPackage.EVENT_PROCESSING_AGENT__IMPLEMENTATION:
+                setImplementation(newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -192,11 +161,8 @@ public class EventProcessingAgentImpl extends TaskImpl implements EventProcessin
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case EpnPackage.EVENT_PROCESSING_AGENT__DATA_OUTPUTS:
-                setDataOutputs((DataOutput)null);
-                return;
-            case EpnPackage.EVENT_PROCESSING_AGENT__DATA_INPUTS:
-                setDataInputs((DataInput)null);
+            case EPNPackage.EVENT_PROCESSING_AGENT__IMPLEMENTATION:
+                unsetImplementation();
                 return;
         }
         super.eUnset(featureID);
@@ -210,12 +176,26 @@ public class EventProcessingAgentImpl extends TaskImpl implements EventProcessin
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case EpnPackage.EVENT_PROCESSING_AGENT__DATA_OUTPUTS:
-                return dataOutputs != null;
-            case EpnPackage.EVENT_PROCESSING_AGENT__DATA_INPUTS:
-                return dataInputs != null;
+            case EPNPackage.EVENT_PROCESSING_AGENT__IMPLEMENTATION:
+                return isSetImplementation();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String toString() {
+        if (eIsProxy()) return super.toString();
+
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (implementation: ");
+        if (implementationESet) result.append(implementation); else result.append("<unset>");
+        result.append(')');
+        return result.toString();
     }
 
 } //EventProcessingAgentImpl

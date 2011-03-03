@@ -20,66 +20,63 @@ package org.drools.epn;
  * </ul>
  * </p>
  *
- * @see org.drools.epn.EpnPackage#getSequenceFlow()
- * @model annotation="ExtendedMetaData name='tSequenceFlow' kind='elementOnly'"
+ * @see org.drools.epn.EPNPackage#getSequenceFlow()
+ * @model extendedMetaData="name='SequenceFlow' kind='elementOnly'"
  * @generated
  */
 public interface SequenceFlow extends FlowElement {
     /**
-     * Returns the value of the '<em><b>Source Ref</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link org.drools.epn.FlowNode#getOutgoing <em>Outgoing</em>}'.
+     * Returns the value of the '<em><b>Source Ref</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Source Ref</em>' reference isn't clear,
+     * If the meaning of the '<em>Source Ref</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Source Ref</em>' reference.
-     * @see #setSourceRef(FlowNode)
-     * @see org.drools.epn.EpnPackage#getSequenceFlow_SourceRef()
-     * @see org.drools.epn.FlowNode#getOutgoing
-     * @model opposite="outgoing" resolveProxies="false" required="true" ordered="false"
-     *        annotation="ExtendedMetaData name='sourceRef' kind='attribute'"
+     * @return the value of the '<em>Source Ref</em>' attribute.
+     * @see #setSourceRef(String)
+     * @see org.drools.epn.EPNPackage#getSequenceFlow_SourceRef()
+     * @model dataType="org.eclipse.emf.ecore.xml.type.IDREF" required="true"
+     *        extendedMetaData="kind='attribute' name='sourceRef'"
      * @generated
      */
-    FlowNode getSourceRef();
+    String getSourceRef();
 
     /**
-     * Sets the value of the '{@link org.drools.epn.SequenceFlow#getSourceRef <em>Source Ref</em>}' reference.
+     * Sets the value of the '{@link org.drools.epn.SequenceFlow#getSourceRef <em>Source Ref</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Source Ref</em>' reference.
+     * @param value the new value of the '<em>Source Ref</em>' attribute.
      * @see #getSourceRef()
      * @generated
      */
-    void setSourceRef(FlowNode value);
+    void setSourceRef(String value);
 
     /**
-     * Returns the value of the '<em><b>Target Ref</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link org.drools.epn.FlowNode#getIncoming <em>Incoming</em>}'.
+     * Returns the value of the '<em><b>Target Ref</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Target Ref</em>' reference isn't clear,
+     * If the meaning of the '<em>Target Ref</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Target Ref</em>' reference.
-     * @see #setTargetRef(FlowNode)
-     * @see org.drools.epn.EpnPackage#getSequenceFlow_TargetRef()
-     * @see org.drools.epn.FlowNode#getIncoming
-     * @model opposite="incoming" resolveProxies="false" required="true" ordered="false"
+     * @return the value of the '<em>Target Ref</em>' attribute.
+     * @see #setTargetRef(String)
+     * @see org.drools.epn.EPNPackage#getSequenceFlow_TargetRef()
+     * @model dataType="org.eclipse.emf.ecore.xml.type.IDREF" required="true"
+     *        extendedMetaData="kind='attribute' name='targetRef'"
      * @generated
      */
-    FlowNode getTargetRef();
+    String getTargetRef();
 
     /**
-     * Sets the value of the '{@link org.drools.epn.SequenceFlow#getTargetRef <em>Target Ref</em>}' reference.
+     * Sets the value of the '{@link org.drools.epn.SequenceFlow#getTargetRef <em>Target Ref</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Target Ref</em>' reference.
+     * @param value the new value of the '<em>Target Ref</em>' attribute.
      * @see #getTargetRef()
      * @generated
      */
-    void setTargetRef(FlowNode value);
+    void setTargetRef(String value);
 
 } // SequenceFlow
