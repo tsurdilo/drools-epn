@@ -7,4 +7,27 @@
     <epn:sequenceFlow id="_p1-_a1" sourceRef="_p1" targetRef="_a1"/>
     <epn:sequenceFlow id="_a1-_c1" sourceRef="_a1" targetRef="_c1"/>
   </epn:process>
+  <epn:EPNDiagram>
+    <epn:EPNPlane epnElement="simpleProcess">
+      <epn:EPNShape epnElement="_p1">
+        <epn:Bounds height="48.0" width="48.0" x="15.0" y="91.0"/>
+      </epn:EPNShape>
+      <epn:EPNShape epnElement="_a1">
+        <epn:Bounds width="48.0" x="95.0" y="88.0"/>
+      </epn:EPNShape>
+      <epn:EPNShape epnElement="_c1">
+        <epn:Bounds height="48.0" width="48.0" x="258.0" y="86.0"/>
+      </epn:EPNShape>
+      <epn:EPNEdge epnElement="_p1-_a1">
+        <epn:waypoint x="39.0" y="115.0"/>
+        <epn:waypoint x="75.0" y="46.0"/>
+        <epn:waypoint x="136.0" y="112.0"/>
+      </epn:EPNEdge>
+      <epn:EPNEdge epnElement="_a1-_c1">
+        <epn:waypoint x="136.0" y="112.0"/>
+        <epn:waypoint x="240.0" y="240.0"/>
+        <epn:waypoint x="282.0" y="110.0"/>
+      </epn:EPNEdge>
+    </epn:EPNPlane>
+  </epn:EPNDiagram>
 </epn:definitions>

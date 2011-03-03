@@ -62,13 +62,13 @@ public interface EPNShape extends LabeledShape {
      * </p>
      * <!-- end-user-doc -->
      * @return the value of the '<em>Epn Element</em>' attribute.
-     * @see #setEpnElement(QName)
+     * @see #setEpnElement(String)
      * @see org.drools.epn.EPNPackage#getEPNShape_EpnElement()
-     * @model dataType="org.eclipse.emf.ecore.xml.type.QName"
+     * @model dataType="org.eclipse.emf.ecore.xml.type.String"
      *        extendedMetaData="kind='attribute' name='epnElement'"
      * @generated
      */
-    QName getEpnElement();
+    String getEpnElement();
 
     /**
      * Sets the value of the '{@link org.drools.epn.EPNShape#getEpnElement <em>Epn Element</em>}' attribute.
@@ -78,6 +78,6 @@ public interface EPNShape extends LabeledShape {
      * @see #getEpnElement()
      * @generated
      */
-    void setEpnElement(QName value);
+    void setEpnElement(String value);
 
 } // EPNShape

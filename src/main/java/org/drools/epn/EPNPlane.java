@@ -6,7 +6,6 @@
  */
 package org.drools.epn;
 
-import javax.xml.namespace.QName;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,13 +33,13 @@ public interface EPNPlane extends Plane {
      * </p>
      * <!-- end-user-doc -->
      * @return the value of the '<em>Epn Element</em>' attribute.
-     * @see #setEpnElement(QName)
+     * @see #setEpnElement(String)
      * @see org.drools.epn.EPNPackage#getEPNPlane_EpnElement()
-     * @model dataType="org.eclipse.emf.ecore.xml.type.QName"
+     * @model dataType="org.eclipse.emf.ecore.xml.type.String"
      *        extendedMetaData="kind='attribute' name='epnElement'"
      * @generated
      */
-    QName getEpnElement();
+    String getEpnElement();
 
     /**
      * Sets the value of the '{@link org.drools.epn.EPNPlane#getEpnElement <em>Epn Element</em>}' attribute.
@@ -50,6 +49,6 @@ public interface EPNPlane extends Plane {
      * @see #getEpnElement()
      * @generated
      */
-    void setEpnElement(QName value);
+    void setEpnElement(String value);
 
 } // EPNPlane

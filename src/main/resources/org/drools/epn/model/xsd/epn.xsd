@@ -185,7 +185,7 @@
   <xsd:complexType name="EPNPlane">
     <xsd:complexContent>
       <xsd:extension base="Plane">
-        <xsd:attribute name="epnElement" type="xsd:QName" />
+        <xsd:attribute name="epnElement" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -196,7 +196,7 @@
         <xsd:sequence>
           <xsd:element ref="EPNLabel" minOccurs="0" />
         </xsd:sequence>
-        <xsd:attribute name="epnElement" type="xsd:QName" />
+        <xsd:attribute name="epnElement" type="xsd:string" />
         <xsd:attribute name="sourceElement" type="xsd:QName" />
         <xsd:attribute name="targetElement" type="xsd:QName" />
       </xsd:extension>
@@ -209,7 +209,7 @@
         <xsd:sequence>
           <xsd:element ref="EPNLabel" minOccurs="0" />
         </xsd:sequence>
-        <xsd:attribute name="epnElement" type="xsd:QName" />
+        <xsd:attribute name="epnElement" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

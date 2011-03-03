@@ -55,7 +55,7 @@ public class EPNEdgeImpl extends LabeledEdgeImpl implements EPNEdge {
      * @generated
      * @ordered
      */
-    protected static final QName EPN_ELEMENT_EDEFAULT = null;
+    protected static final String EPN_ELEMENT_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getEpnElement() <em>Epn Element</em>}' attribute.
@@ -65,7 +65,7 @@ public class EPNEdgeImpl extends LabeledEdgeImpl implements EPNEdge {
      * @generated
      * @ordered
      */
-    protected QName epnElement = EPN_ELEMENT_EDEFAULT;
+    protected String epnElement = EPN_ELEMENT_EDEFAULT;
 
     /**
      * The default value of the '{@link #getSourceElement() <em>Source Element</em>}' attribute.
@@ -174,7 +174,7 @@ public class EPNEdgeImpl extends LabeledEdgeImpl implements EPNEdge {
      * <!-- end-user-doc -->
      * @generated
      */
-    public QName getEpnElement() {
+    public String getEpnElement() {
         return epnElement;
     }
 
@@ -183,8 +183,8 @@ public class EPNEdgeImpl extends LabeledEdgeImpl implements EPNEdge {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setEpnElement(QName newEpnElement) {
-        QName oldEpnElement = epnElement;
+    public void setEpnElement(String newEpnElement) {
+        String oldEpnElement = epnElement;
         epnElement = newEpnElement;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.EPN_EDGE__EPN_ELEMENT, oldEpnElement, epnElement));
@@ -278,7 +278,7 @@ public class EPNEdgeImpl extends LabeledEdgeImpl implements EPNEdge {
                 setEPNLabel((EPNLabel)newValue);
                 return;
             case EPNPackage.EPN_EDGE__EPN_ELEMENT:
-                setEpnElement((QName)newValue);
+                setEpnElement((String)newValue);
                 return;
             case EPNPackage.EPN_EDGE__SOURCE_ELEMENT:
                 setSourceElement((QName)newValue);

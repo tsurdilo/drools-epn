@@ -20,8 +20,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.BasicFeatureMap;
-import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -47,6 +45,7 @@ public abstract class PlaneImpl extends NodeImpl implements Plane {
      * @ordered
      */
     protected EList<DiagramElement> diagramElement;
+
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

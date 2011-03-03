@@ -10,8 +10,6 @@ import javax.xml.namespace.QName;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.util.FeatureMap;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Process</b></em>'.

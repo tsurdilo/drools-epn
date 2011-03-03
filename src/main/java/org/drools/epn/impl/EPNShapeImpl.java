@@ -53,7 +53,7 @@ public class EPNShapeImpl extends LabeledShapeImpl implements EPNShape {
      * @generated
      * @ordered
      */
-    protected static final QName EPN_ELEMENT_EDEFAULT = null;
+    protected static final String EPN_ELEMENT_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getEpnElement() <em>Epn Element</em>}' attribute.
@@ -63,7 +63,7 @@ public class EPNShapeImpl extends LabeledShapeImpl implements EPNShape {
      * @generated
      * @ordered
      */
-    protected QName epnElement = EPN_ELEMENT_EDEFAULT;
+    protected String epnElement = EPN_ELEMENT_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public class EPNShapeImpl extends LabeledShapeImpl implements EPNShape {
      * <!-- end-user-doc -->
      * @generated
      */
-    public QName getEpnElement() {
+    public String getEpnElement() {
         return epnElement;
     }
 
@@ -141,8 +141,8 @@ public class EPNShapeImpl extends LabeledShapeImpl implements EPNShape {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setEpnElement(QName newEpnElement) {
-        QName oldEpnElement = epnElement;
+    public void setEpnElement(String newEpnElement) {
+        String oldEpnElement = epnElement;
         epnElement = newEpnElement;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.EPN_SHAPE__EPN_ELEMENT, oldEpnElement, epnElement));
@@ -190,7 +190,7 @@ public class EPNShapeImpl extends LabeledShapeImpl implements EPNShape {
                 setEPNLabel((EPNLabel)newValue);
                 return;
             case EPNPackage.EPN_SHAPE__EPN_ELEMENT:
-                setEpnElement((QName)newValue);
+                setEpnElement((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);

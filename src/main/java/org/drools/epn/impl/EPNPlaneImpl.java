@@ -6,8 +6,6 @@
  */
 package org.drools.epn.impl;
 
-import javax.xml.namespace.QName;
-
 import org.drools.epn.EPNPackage;
 import org.drools.epn.EPNPlane;
 
@@ -39,7 +37,7 @@ public class EPNPlaneImpl extends PlaneImpl implements EPNPlane {
      * @generated
      * @ordered
      */
-    protected static final QName EPN_ELEMENT_EDEFAULT = null;
+    protected static final String EPN_ELEMENT_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getEpnElement() <em>Epn Element</em>}' attribute.
@@ -49,7 +47,7 @@ public class EPNPlaneImpl extends PlaneImpl implements EPNPlane {
      * @generated
      * @ordered
      */
-    protected QName epnElement = EPN_ELEMENT_EDEFAULT;
+    protected String epnElement = EPN_ELEMENT_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -75,7 +73,7 @@ public class EPNPlaneImpl extends PlaneImpl implements EPNPlane {
      * <!-- end-user-doc -->
      * @generated
      */
-    public QName getEpnElement() {
+    public String getEpnElement() {
         return epnElement;
     }
 
@@ -84,8 +82,8 @@ public class EPNPlaneImpl extends PlaneImpl implements EPNPlane {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setEpnElement(QName newEpnElement) {
-        QName oldEpnElement = epnElement;
+    public void setEpnElement(String newEpnElement) {
+        String oldEpnElement = epnElement;
         epnElement = newEpnElement;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.EPN_PLANE__EPN_ELEMENT, oldEpnElement, epnElement));
@@ -114,7 +112,7 @@ public class EPNPlaneImpl extends PlaneImpl implements EPNPlane {
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
             case EPNPackage.EPN_PLANE__EPN_ELEMENT:
-                setEpnElement((QName)newValue);
+                setEpnElement((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
