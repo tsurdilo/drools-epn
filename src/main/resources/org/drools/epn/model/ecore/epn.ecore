@@ -96,22 +96,12 @@
       <details key="name" value="Definitions"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootElementGroup" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-        <details key="name" value="rootElement:group"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rootElement" upperBound="-1"
-        eType="#//RootElement" volatile="true" transient="true" derived="true" containment="true"
-        resolveProxies="false">
+        eType="#//RootElement" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="rootElement"/>
         <details key="namespace" value="##targetNamespace"/>
-        <details key="group" value="rootElement:group"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ePNDiagram" upperBound="-1"
@@ -161,7 +151,7 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attributeWildcard"/>
         <details key="wildcards" value="##other"/>
-        <details key="name" value=":8"/>
+        <details key="name" value=":7"/>
         <details key="processing" value="lax"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -841,22 +831,12 @@
       <details key="name" value="Plane"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diagramElementGroup" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-        <details key="name" value="DiagramElement:group"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="diagramElement" upperBound="-1"
-        eType="#//DiagramElement" volatile="true" transient="true" derived="true"
-        containment="true" resolveProxies="false">
+        eType="#//DiagramElement" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="DiagramElement"/>
         <details key="namespace" value="##targetNamespace"/>
-        <details key="group" value="DiagramElement:group"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -885,22 +865,12 @@
       <details key="name" value="Process"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flowElementGroup" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-        <details key="name" value="flowElement:group"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="flowElement" upperBound="-1"
-        eType="#//FlowElement" volatile="true" transient="true" derived="true" containment="true"
-        resolveProxies="false">
+        eType="#//FlowElement" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="flowElement"/>
         <details key="namespace" value="##targetNamespace"/>
-        <details key="group" value="flowElement:group"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="definitionalCollaborationRef"

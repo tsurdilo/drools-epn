@@ -542,17 +542,8 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getDefinitions_RootElementGroup() {
-        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EReference getDefinitions_RootElement() {
-        return (EReference)definitionsEClass.getEStructuralFeatures().get(1);
+        return (EReference)definitionsEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -561,7 +552,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     public EReference getDefinitions_EPNDiagram() {
-        return (EReference)definitionsEClass.getEStructuralFeatures().get(2);
+        return (EReference)definitionsEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -570,7 +561,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     public EAttribute getDefinitions_ExpressionLanguage() {
-        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -579,7 +570,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     public EAttribute getDefinitions_Id() {
-        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -588,7 +579,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     public EAttribute getDefinitions_Name() {
-        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(4);
     }
 
     /**
@@ -597,7 +588,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     public EAttribute getDefinitions_TargetNamespace() {
-        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(6);
+        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(5);
     }
 
     /**
@@ -606,7 +597,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     public EAttribute getDefinitions_TypeLanguage() {
-        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(7);
+        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(6);
     }
 
     /**
@@ -615,7 +606,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     public EAttribute getDefinitions_AnyAttribute() {
-        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(8);
+        return (EAttribute)definitionsEClass.getEStructuralFeatures().get(7);
     }
 
     /**
@@ -1397,17 +1388,8 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getPlane_DiagramElementGroup() {
-        return (EAttribute)planeEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EReference getPlane_DiagramElement() {
-        return (EReference)planeEClass.getEStructuralFeatures().get(1);
+        return (EReference)planeEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -1451,17 +1433,8 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getProcess_FlowElementGroup() {
-        return (EAttribute)processEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EReference getProcess_FlowElement() {
-        return (EReference)processEClass.getEStructuralFeatures().get(1);
+        return (EReference)processEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -1470,7 +1443,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     public EAttribute getProcess_DefinitionalCollaborationRef() {
-        return (EAttribute)processEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)processEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -1479,7 +1452,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     public EAttribute getProcess_IsExecutable() {
-        return (EAttribute)processEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)processEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -1654,7 +1627,6 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         createEAttribute(callableElementEClass, CALLABLE_ELEMENT__NAME);
 
         definitionsEClass = createEClass(DEFINITIONS);
-        createEAttribute(definitionsEClass, DEFINITIONS__ROOT_ELEMENT_GROUP);
         createEReference(definitionsEClass, DEFINITIONS__ROOT_ELEMENT);
         createEReference(definitionsEClass, DEFINITIONS__EPN_DIAGRAM);
         createEAttribute(definitionsEClass, DEFINITIONS__EXPRESSION_LANGUAGE);
@@ -1771,7 +1743,6 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         nodeEClass = createEClass(NODE);
 
         planeEClass = createEClass(PLANE);
-        createEAttribute(planeEClass, PLANE__DIAGRAM_ELEMENT_GROUP);
         createEReference(planeEClass, PLANE__DIAGRAM_ELEMENT);
 
         pointEClass = createEClass(POINT);
@@ -1779,7 +1750,6 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         createEAttribute(pointEClass, POINT__Y);
 
         processEClass = createEClass(PROCESS);
-        createEAttribute(processEClass, PROCESS__FLOW_ELEMENT_GROUP);
         createEReference(processEClass, PROCESS__FLOW_ELEMENT);
         createEAttribute(processEClass, PROCESS__DEFINITIONAL_COLLABORATION_REF);
         createEAttribute(processEClass, PROCESS__IS_EXECUTABLE);
@@ -1883,8 +1853,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         initEAttribute(getCallableElement_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, CallableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(definitionsEClass, Definitions.class, "Definitions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getDefinitions_RootElementGroup(), ecorePackage.getEFeatureMapEntry(), "rootElementGroup", null, 0, -1, Definitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getDefinitions_RootElement(), this.getRootElement(), null, "rootElement", null, 0, -1, Definitions.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getDefinitions_RootElement(), this.getRootElement(), null, "rootElement", null, 0, -1, Definitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getDefinitions_EPNDiagram(), this.getEPNDiagram(), null, "ePNDiagram", null, 0, -1, Definitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getDefinitions_ExpressionLanguage(), theXMLTypePackage.getAnyURI(), "expressionLanguage", "http://www.w3.org/1999/XPath", 0, 1, Definitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getDefinitions_Id(), theXMLTypePackage.getID(), "id", null, 0, 1, Definitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2000,16 +1969,14 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(planeEClass, Plane.class, "Plane", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getPlane_DiagramElementGroup(), ecorePackage.getEFeatureMapEntry(), "diagramElementGroup", null, 0, -1, Plane.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getPlane_DiagramElement(), this.getDiagramElement(), null, "diagramElement", null, 0, -1, Plane.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getPlane_DiagramElement(), this.getDiagramElement(), null, "diagramElement", null, 0, -1, Plane.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(pointEClass, Point.class, "Point", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getPoint_X(), theXMLTypePackage.getDouble(), "x", null, 1, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getPoint_Y(), theXMLTypePackage.getDouble(), "y", null, 1, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(processEClass, org.drools.epn.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getProcess_FlowElementGroup(), ecorePackage.getEFeatureMapEntry(), "flowElementGroup", null, 0, -1, org.drools.epn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getProcess_FlowElement(), this.getFlowElement(), null, "flowElement", null, 0, -1, org.drools.epn.Process.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getProcess_FlowElement(), this.getFlowElement(), null, "flowElement", null, 0, -1, org.drools.epn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getProcess_DefinitionalCollaborationRef(), theXMLTypePackage.getQName(), "definitionalCollaborationRef", null, 0, 1, org.drools.epn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getProcess_IsExecutable(), theXMLTypePackage.getBoolean(), "isExecutable", "false", 0, 1, org.drools.epn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2160,21 +2127,12 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
              "kind", "elementOnly"
            });		
         addAnnotation
-          (getDefinitions_RootElementGroup(), 
-           source, 
-           new String[] {
-             "kind", "group",
-             "name", "rootElement:group",
-             "namespace", "##targetNamespace"
-           });		
-        addAnnotation
           (getDefinitions_RootElement(), 
            source, 
            new String[] {
              "kind", "element",
              "name", "rootElement",
-             "namespace", "##targetNamespace",
-             "group", "rootElement:group"
+             "namespace", "##targetNamespace"
            });		
         addAnnotation
           (getDefinitions_EPNDiagram(), 
@@ -2225,7 +2183,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
            new String[] {
              "kind", "attributeWildcard",
              "wildcards", "##other",
-             "name", ":8",
+             "name", ":7",
              "processing", "lax"
            });		
         addAnnotation
@@ -2906,21 +2864,12 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
              "kind", "elementOnly"
            });		
         addAnnotation
-          (getPlane_DiagramElementGroup(), 
-           source, 
-           new String[] {
-             "kind", "group",
-             "name", "DiagramElement:group",
-             "namespace", "##targetNamespace"
-           });		
-        addAnnotation
           (getPlane_DiagramElement(), 
            source, 
            new String[] {
              "kind", "element",
              "name", "DiagramElement",
-             "namespace", "##targetNamespace",
-             "group", "DiagramElement:group"
+             "namespace", "##targetNamespace"
            });		
         addAnnotation
           (pointEClass, 
@@ -2951,21 +2900,12 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
              "kind", "elementOnly"
            });		
         addAnnotation
-          (getProcess_FlowElementGroup(), 
-           source, 
-           new String[] {
-             "kind", "group",
-             "name", "flowElement:group",
-             "namespace", "##targetNamespace"
-           });		
-        addAnnotation
           (getProcess_FlowElement(), 
            source, 
            new String[] {
              "kind", "element",
              "name", "flowElement",
-             "namespace", "##targetNamespace",
-             "group", "flowElement:group"
+             "namespace", "##targetNamespace"
            });		
         addAnnotation
           (getProcess_DefinitionalCollaborationRef(), 

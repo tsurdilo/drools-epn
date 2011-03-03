@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema elementFormDefault="qualified"
   attributeFormDefault="unqualified" xmlns="http://www.jboss.org/drools/epn/MODEL"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.jboss.org/drools/epn/MODEL">
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.jboss.org/drools/epn/MODEL"
+  xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" ecore:ignoreSubstitutionGroups="true">
 
   <xsd:element name="definitions" type="Definitions" />
   <xsd:complexType name="Definitions">
@@ -286,12 +287,15 @@
   <xsd:complexType name="Process">
     <xsd:complexContent>
       <xsd:extension base="CallableElement">
-				<xsd:sequence>
-					<xsd:element ref="flowElement" minOccurs="0" maxOccurs="unbounded"/>
-				</xsd:sequence>
-                <xsd:attribute name="isExecutable" type="xsd:boolean" default="false"/>
-				<xsd:attribute name="definitionalCollaborationRef" type="xsd:QName" use="optional"/>
-			</xsd:extension>
+        <xsd:sequence>
+          <xsd:element ref="flowElement" minOccurs="0"
+            maxOccurs="unbounded" />
+        </xsd:sequence>
+        <xsd:attribute name="isExecutable" type="xsd:boolean"
+          default="false" />
+        <xsd:attribute name="definitionalCollaborationRef"
+          type="xsd:QName" use="optional" />
+      </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
 

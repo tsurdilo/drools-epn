@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.drools.epn.impl.DefinitionsImpl#getRootElementGroup <em>Root Element Group</em>}</li>
  *   <li>{@link org.drools.epn.impl.DefinitionsImpl#getRootElement <em>Root Element</em>}</li>
  *   <li>{@link org.drools.epn.impl.DefinitionsImpl#getEPNDiagram <em>EPN Diagram</em>}</li>
  *   <li>{@link org.drools.epn.impl.DefinitionsImpl#getExpressionLanguage <em>Expression Language</em>}</li>
@@ -52,14 +51,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class DefinitionsImpl extends EObjectImpl implements Definitions {
     /**
-     * The cached value of the '{@link #getRootElementGroup() <em>Root Element Group</em>}' attribute list.
+     * The cached value of the '{@link #getRootElement() <em>Root Element</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRootElementGroup()
+     * @see #getRootElement()
      * @generated
      * @ordered
      */
-    protected FeatureMap rootElementGroup;
+    protected EList<RootElement> rootElement;
 
     /**
      * The cached value of the '{@link #getEPNDiagram() <em>EPN Diagram</em>}' containment reference list.
@@ -223,20 +222,11 @@ public class DefinitionsImpl extends EObjectImpl implements Definitions {
      * <!-- end-user-doc -->
      * @generated
      */
-    public FeatureMap getRootElementGroup() {
-        if (rootElementGroup == null) {
-            rootElementGroup = new BasicFeatureMap(this, EPNPackage.DEFINITIONS__ROOT_ELEMENT_GROUP);
-        }
-        return rootElementGroup;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EList<RootElement> getRootElement() {
-        return getRootElementGroup().list(EPNPackage.Literals.DEFINITIONS__ROOT_ELEMENT);
+        if (rootElement == null) {
+            rootElement = new EObjectContainmentEList<RootElement>(RootElement.class, this, EPNPackage.DEFINITIONS__ROOT_ELEMENT);
+        }
+        return rootElement;
     }
 
     /**
@@ -426,8 +416,6 @@ public class DefinitionsImpl extends EObjectImpl implements Definitions {
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case EPNPackage.DEFINITIONS__ROOT_ELEMENT_GROUP:
-                return ((InternalEList<?>)getRootElementGroup()).basicRemove(otherEnd, msgs);
             case EPNPackage.DEFINITIONS__ROOT_ELEMENT:
                 return ((InternalEList<?>)getRootElement()).basicRemove(otherEnd, msgs);
             case EPNPackage.DEFINITIONS__EPN_DIAGRAM:
@@ -446,9 +434,6 @@ public class DefinitionsImpl extends EObjectImpl implements Definitions {
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case EPNPackage.DEFINITIONS__ROOT_ELEMENT_GROUP:
-                if (coreType) return getRootElementGroup();
-                return ((FeatureMap.Internal)getRootElementGroup()).getWrapper();
             case EPNPackage.DEFINITIONS__ROOT_ELEMENT:
                 return getRootElement();
             case EPNPackage.DEFINITIONS__EPN_DIAGRAM:
@@ -479,9 +464,6 @@ public class DefinitionsImpl extends EObjectImpl implements Definitions {
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case EPNPackage.DEFINITIONS__ROOT_ELEMENT_GROUP:
-                ((FeatureMap.Internal)getRootElementGroup()).set(newValue);
-                return;
             case EPNPackage.DEFINITIONS__ROOT_ELEMENT:
                 getRootElement().clear();
                 getRootElement().addAll((Collection<? extends RootElement>)newValue);
@@ -520,9 +502,6 @@ public class DefinitionsImpl extends EObjectImpl implements Definitions {
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case EPNPackage.DEFINITIONS__ROOT_ELEMENT_GROUP:
-                getRootElementGroup().clear();
-                return;
             case EPNPackage.DEFINITIONS__ROOT_ELEMENT:
                 getRootElement().clear();
                 return;
@@ -559,10 +538,8 @@ public class DefinitionsImpl extends EObjectImpl implements Definitions {
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case EPNPackage.DEFINITIONS__ROOT_ELEMENT_GROUP:
-                return rootElementGroup != null && !rootElementGroup.isEmpty();
             case EPNPackage.DEFINITIONS__ROOT_ELEMENT:
-                return !getRootElement().isEmpty();
+                return rootElement != null && !rootElement.isEmpty();
             case EPNPackage.DEFINITIONS__EPN_DIAGRAM:
                 return ePNDiagram != null && !ePNDiagram.isEmpty();
             case EPNPackage.DEFINITIONS__EXPRESSION_LANGUAGE:
@@ -591,9 +568,7 @@ public class DefinitionsImpl extends EObjectImpl implements Definitions {
         if (eIsProxy()) return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (rootElementGroup: ");
-        result.append(rootElementGroup);
-        result.append(", expressionLanguage: ");
+        result.append(" (expressionLanguage: ");
         if (expressionLanguageESet) result.append(expressionLanguage); else result.append("<unset>");
         result.append(", id: ");
         result.append(id);

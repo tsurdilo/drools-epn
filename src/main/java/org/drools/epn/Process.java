@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.drools.epn.Process#getFlowElementGroup <em>Flow Element Group</em>}</li>
  *   <li>{@link org.drools.epn.Process#getFlowElement <em>Flow Element</em>}</li>
  *   <li>{@link org.drools.epn.Process#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}</li>
  *   <li>{@link org.drools.epn.Process#isIsExecutable <em>Is Executable</em>}</li>
@@ -33,23 +32,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  */
 public interface Process extends CallableElement {
     /**
-     * Returns the value of the '<em><b>Flow Element Group</b></em>' attribute list.
-     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Flow Element Group</em>' attribute list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Flow Element Group</em>' attribute list.
-     * @see org.drools.epn.EPNPackage#getProcess_FlowElementGroup()
-     * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-     *        extendedMetaData="kind='group' name='flowElement:group' namespace='##targetNamespace'"
-     * @generated
-     */
-    FeatureMap getFlowElementGroup();
-
-    /**
      * Returns the value of the '<em><b>Flow Element</b></em>' containment reference list.
      * The list contents are of type {@link org.drools.epn.FlowElement}.
      * <!-- begin-user-doc -->
@@ -60,8 +42,8 @@ public interface Process extends CallableElement {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Flow Element</em>' containment reference list.
      * @see org.drools.epn.EPNPackage#getProcess_FlowElement()
-     * @model containment="true" transient="true" volatile="true" derived="true"
-     *        extendedMetaData="kind='element' name='flowElement' namespace='##targetNamespace' group='flowElement:group'"
+     * @model containment="true"
+     *        extendedMetaData="kind='element' name='flowElement' namespace='##targetNamespace'"
      * @generated
      */
     EList<FlowElement> getFlowElement();

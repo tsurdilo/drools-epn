@@ -511,22 +511,13 @@ public interface EPNPackage extends EPackage {
     int DEFINITIONS = 4;
 
     /**
-     * The feature id for the '<em><b>Root Element Group</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEFINITIONS__ROOT_ELEMENT_GROUP = 0;
-
-    /**
      * The feature id for the '<em><b>Root Element</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DEFINITIONS__ROOT_ELEMENT = 1;
+    int DEFINITIONS__ROOT_ELEMENT = 0;
 
     /**
      * The feature id for the '<em><b>EPN Diagram</b></em>' containment reference list.
@@ -535,7 +526,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEFINITIONS__EPN_DIAGRAM = 2;
+    int DEFINITIONS__EPN_DIAGRAM = 1;
 
     /**
      * The feature id for the '<em><b>Expression Language</b></em>' attribute.
@@ -544,7 +535,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEFINITIONS__EXPRESSION_LANGUAGE = 3;
+    int DEFINITIONS__EXPRESSION_LANGUAGE = 2;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -553,7 +544,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEFINITIONS__ID = 4;
+    int DEFINITIONS__ID = 3;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -562,7 +553,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEFINITIONS__NAME = 5;
+    int DEFINITIONS__NAME = 4;
 
     /**
      * The feature id for the '<em><b>Target Namespace</b></em>' attribute.
@@ -571,7 +562,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEFINITIONS__TARGET_NAMESPACE = 6;
+    int DEFINITIONS__TARGET_NAMESPACE = 5;
 
     /**
      * The feature id for the '<em><b>Type Language</b></em>' attribute.
@@ -580,7 +571,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEFINITIONS__TYPE_LANGUAGE = 7;
+    int DEFINITIONS__TYPE_LANGUAGE = 6;
 
     /**
      * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
@@ -589,7 +580,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEFINITIONS__ANY_ATTRIBUTE = 8;
+    int DEFINITIONS__ANY_ATTRIBUTE = 7;
 
     /**
      * The number of structural features of the '<em>Definitions</em>' class.
@@ -598,7 +589,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEFINITIONS_FEATURE_COUNT = 9;
+    int DEFINITIONS_FEATURE_COUNT = 8;
 
     /**
      * The meta object id for the '{@link org.drools.epn.impl.DiagramImpl <em>Diagram</em>}' class.
@@ -1540,22 +1531,13 @@ public interface EPNPackage extends EPackage {
     int PLANE__ANY_ATTRIBUTE = NODE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Diagram Element Group</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PLANE__DIAGRAM_ELEMENT_GROUP = NODE_FEATURE_COUNT + 0;
-
-    /**
      * The feature id for the '<em><b>Diagram Element</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PLANE__DIAGRAM_ELEMENT = NODE_FEATURE_COUNT + 1;
+    int PLANE__DIAGRAM_ELEMENT = NODE_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Plane</em>' class.
@@ -1564,7 +1546,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PLANE_FEATURE_COUNT = NODE_FEATURE_COUNT + 2;
+    int PLANE_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
 
     /**
      * The meta object id for the '{@link org.drools.epn.impl.EPNPlaneImpl <em>Plane</em>}' class.
@@ -1602,15 +1584,6 @@ public interface EPNPackage extends EPackage {
      * @ordered
      */
     int EPN_PLANE__ANY_ATTRIBUTE = PLANE__ANY_ATTRIBUTE;
-
-    /**
-     * The feature id for the '<em><b>Diagram Element Group</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EPN_PLANE__DIAGRAM_ELEMENT_GROUP = PLANE__DIAGRAM_ELEMENT_GROUP;
 
     /**
      * The feature id for the '<em><b>Diagram Element</b></em>' containment reference list.
@@ -2425,22 +2398,13 @@ public interface EPNPackage extends EPackage {
     int PROCESS__NAME = CALLABLE_ELEMENT__NAME;
 
     /**
-     * The feature id for the '<em><b>Flow Element Group</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS__FLOW_ELEMENT_GROUP = CALLABLE_ELEMENT_FEATURE_COUNT + 0;
-
-    /**
      * The feature id for the '<em><b>Flow Element</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROCESS__FLOW_ELEMENT = CALLABLE_ELEMENT_FEATURE_COUNT + 1;
+    int PROCESS__FLOW_ELEMENT = CALLABLE_ELEMENT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Definitional Collaboration Ref</b></em>' attribute.
@@ -2449,7 +2413,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PROCESS__DEFINITIONAL_COLLABORATION_REF = CALLABLE_ELEMENT_FEATURE_COUNT + 2;
+    int PROCESS__DEFINITIONAL_COLLABORATION_REF = CALLABLE_ELEMENT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Is Executable</b></em>' attribute.
@@ -2458,7 +2422,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PROCESS__IS_EXECUTABLE = CALLABLE_ELEMENT_FEATURE_COUNT + 3;
+    int PROCESS__IS_EXECUTABLE = CALLABLE_ELEMENT_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Process</em>' class.
@@ -2467,7 +2431,7 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PROCESS_FEATURE_COUNT = CALLABLE_ELEMENT_FEATURE_COUNT + 4;
+    int PROCESS_FEATURE_COUNT = CALLABLE_ELEMENT_FEATURE_COUNT + 3;
 
     /**
      * The meta object id for the '{@link org.drools.epn.impl.SequenceFlowImpl <em>Sequence Flow</em>}' class.
@@ -2778,17 +2742,6 @@ public interface EPNPackage extends EPackage {
      * @generated
      */
     EClass getDefinitions();
-
-    /**
-     * Returns the meta object for the attribute list '{@link org.drools.epn.Definitions#getRootElementGroup <em>Root Element Group</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Root Element Group</em>'.
-     * @see org.drools.epn.Definitions#getRootElementGroup()
-     * @see #getDefinitions()
-     * @generated
-     */
-    EAttribute getDefinitions_RootElementGroup();
 
     /**
      * Returns the meta object for the containment reference list '{@link org.drools.epn.Definitions#getRootElement <em>Root Element</em>}'.
@@ -3803,17 +3756,6 @@ public interface EPNPackage extends EPackage {
     EClass getPlane();
 
     /**
-     * Returns the meta object for the attribute list '{@link org.drools.epn.Plane#getDiagramElementGroup <em>Diagram Element Group</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Diagram Element Group</em>'.
-     * @see org.drools.epn.Plane#getDiagramElementGroup()
-     * @see #getPlane()
-     * @generated
-     */
-    EAttribute getPlane_DiagramElementGroup();
-
-    /**
      * Returns the meta object for the containment reference list '{@link org.drools.epn.Plane#getDiagramElement <em>Diagram Element</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3865,17 +3807,6 @@ public interface EPNPackage extends EPackage {
      * @generated
      */
     EClass getProcess();
-
-    /**
-     * Returns the meta object for the attribute list '{@link org.drools.epn.Process#getFlowElementGroup <em>Flow Element Group</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Flow Element Group</em>'.
-     * @see org.drools.epn.Process#getFlowElementGroup()
-     * @see #getProcess()
-     * @generated
-     */
-    EAttribute getProcess_FlowElementGroup();
 
     /**
      * Returns the meta object for the containment reference list '{@link org.drools.epn.Process#getFlowElement <em>Flow Element</em>}'.
@@ -4203,14 +4134,6 @@ public interface EPNPackage extends EPackage {
          * @generated
          */
         EClass DEFINITIONS = eINSTANCE.getDefinitions();
-
-        /**
-         * The meta object literal for the '<em><b>Root Element Group</b></em>' attribute list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute DEFINITIONS__ROOT_ELEMENT_GROUP = eINSTANCE.getDefinitions_RootElementGroup();
 
         /**
          * The meta object literal for the '<em><b>Root Element</b></em>' containment reference list feature.
@@ -5009,14 +4932,6 @@ public interface EPNPackage extends EPackage {
         EClass PLANE = eINSTANCE.getPlane();
 
         /**
-         * The meta object literal for the '<em><b>Diagram Element Group</b></em>' attribute list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute PLANE__DIAGRAM_ELEMENT_GROUP = eINSTANCE.getPlane_DiagramElementGroup();
-
-        /**
          * The meta object literal for the '<em><b>Diagram Element</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -5059,14 +4974,6 @@ public interface EPNPackage extends EPackage {
          * @generated
          */
         EClass PROCESS = eINSTANCE.getProcess();
-
-        /**
-         * The meta object literal for the '<em><b>Flow Element Group</b></em>' attribute list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute PROCESS__FLOW_ELEMENT_GROUP = eINSTANCE.getProcess_FlowElementGroup();
 
         /**
          * The meta object literal for the '<em><b>Flow Element</b></em>' containment reference list feature.

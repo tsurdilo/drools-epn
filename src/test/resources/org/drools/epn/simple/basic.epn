@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<epn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:epn="http://www.jboss.org/drools/epn/MODEL" id="Definition" targetNamespace="http://www.example.org/SimpleExample">
-  <epn:rootElement xsi:type="epn:Process" id="p1" name="simpleProcess" isExecutable="true">
-    <epn:flowElement xsi:type="epn:EventProducer" id="producer1" name="producer1"/>
-    <epn:flowElement xsi:type="epn:EventProcessingAgent" id="agent1" name="agent1"/>
-    <epn:flowElement xsi:type="epn:EventConsumer" id="consumer1" name="consumer1"/>
-  </epn:rootElement>
+<epn:definitions xmlns:epn="http://www.jboss.org/drools/epn/MODEL" id="Definition" targetNamespace="http://www.example.org/SimpleExample">
+  <epn:process id="p1" name="simpleProcess" isExecutable="true">
+    <epn:eventProducer id="_p1" name="producer1"/>
+    <epn:eventProcessingAgent id="_a1" name="agent1"/>
+    <epn:eventConsumer id="_c1" name="consumer1"/>
+    <epn:sequenceFlow id="_p1-_a1" sourceRef="_p1" targetRef="_a1"/>
+    <epn:sequenceFlow id="_a1-_c1" sourceRef="_a1" targetRef="_c1"/>
+  </epn:process>
 </epn:definitions>

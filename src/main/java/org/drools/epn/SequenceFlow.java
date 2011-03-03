@@ -29,7 +29,7 @@ public interface SequenceFlow extends FlowElement {
      * Returns the value of the '<em><b>Source Ref</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Source Ref</em>' attribute isn't clear,
+     * If the meaning of the '<em>Source Ref</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
@@ -56,7 +56,7 @@ public interface SequenceFlow extends FlowElement {
      * Returns the value of the '<em><b>Target Ref</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Target Ref</em>' attribute isn't clear,
+     * If the meaning of the '<em>Target Ref</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->

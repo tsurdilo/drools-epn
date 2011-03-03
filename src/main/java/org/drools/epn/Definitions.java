@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.drools.epn.Definitions#getRootElementGroup <em>Root Element Group</em>}</li>
  *   <li>{@link org.drools.epn.Definitions#getRootElement <em>Root Element</em>}</li>
  *   <li>{@link org.drools.epn.Definitions#getEPNDiagram <em>EPN Diagram</em>}</li>
  *   <li>{@link org.drools.epn.Definitions#getExpressionLanguage <em>Expression Language</em>}</li>
@@ -38,23 +37,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  */
 public interface Definitions extends EObject {
     /**
-     * Returns the value of the '<em><b>Root Element Group</b></em>' attribute list.
-     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Root Element Group</em>' attribute list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Root Element Group</em>' attribute list.
-     * @see org.drools.epn.EPNPackage#getDefinitions_RootElementGroup()
-     * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-     *        extendedMetaData="kind='group' name='rootElement:group' namespace='##targetNamespace'"
-     * @generated
-     */
-    FeatureMap getRootElementGroup();
-
-    /**
      * Returns the value of the '<em><b>Root Element</b></em>' containment reference list.
      * The list contents are of type {@link org.drools.epn.RootElement}.
      * <!-- begin-user-doc -->
@@ -65,8 +47,8 @@ public interface Definitions extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Root Element</em>' containment reference list.
      * @see org.drools.epn.EPNPackage#getDefinitions_RootElement()
-     * @model containment="true" transient="true" volatile="true" derived="true"
-     *        extendedMetaData="kind='element' name='rootElement' namespace='##targetNamespace' group='rootElement:group'"
+     * @model containment="true"
+     *        extendedMetaData="kind='element' name='rootElement' namespace='##targetNamespace'"
      * @generated
      */
     EList<RootElement> getRootElement();
@@ -291,7 +273,7 @@ public interface Definitions extends EObject {
      * @return the value of the '<em>Any Attribute</em>' attribute list.
      * @see org.drools.epn.EPNPackage#getDefinitions_AnyAttribute()
      * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-     *        extendedMetaData="kind='attributeWildcard' wildcards='##other' name=':8' processing='lax'"
+     *        extendedMetaData="kind='attributeWildcard' wildcards='##other' name=':7' processing='lax'"
      * @generated
      */
     FeatureMap getAnyAttribute();

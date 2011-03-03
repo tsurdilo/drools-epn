@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.drools.epn.impl.PlaneImpl#getDiagramElementGroup <em>Diagram Element Group</em>}</li>
  *   <li>{@link org.drools.epn.impl.PlaneImpl#getDiagramElement <em>Diagram Element</em>}</li>
  * </ul>
  * </p>
@@ -39,15 +39,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public abstract class PlaneImpl extends NodeImpl implements Plane {
     /**
-     * The cached value of the '{@link #getDiagramElementGroup() <em>Diagram Element Group</em>}' attribute list.
+     * The cached value of the '{@link #getDiagramElement() <em>Diagram Element</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDiagramElementGroup()
+     * @see #getDiagramElement()
      * @generated
      * @ordered
      */
-    protected FeatureMap diagramElementGroup;
-
+    protected EList<DiagramElement> diagramElement;
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -72,20 +71,11 @@ public abstract class PlaneImpl extends NodeImpl implements Plane {
      * <!-- end-user-doc -->
      * @generated
      */
-    public FeatureMap getDiagramElementGroup() {
-        if (diagramElementGroup == null) {
-            diagramElementGroup = new BasicFeatureMap(this, EPNPackage.PLANE__DIAGRAM_ELEMENT_GROUP);
-        }
-        return diagramElementGroup;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EList<DiagramElement> getDiagramElement() {
-        return getDiagramElementGroup().list(EPNPackage.Literals.PLANE__DIAGRAM_ELEMENT);
+        if (diagramElement == null) {
+            diagramElement = new EObjectContainmentEList<DiagramElement>(DiagramElement.class, this, EPNPackage.PLANE__DIAGRAM_ELEMENT);
+        }
+        return diagramElement;
     }
 
     /**
@@ -96,8 +86,6 @@ public abstract class PlaneImpl extends NodeImpl implements Plane {
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case EPNPackage.PLANE__DIAGRAM_ELEMENT_GROUP:
-                return ((InternalEList<?>)getDiagramElementGroup()).basicRemove(otherEnd, msgs);
             case EPNPackage.PLANE__DIAGRAM_ELEMENT:
                 return ((InternalEList<?>)getDiagramElement()).basicRemove(otherEnd, msgs);
         }
@@ -112,9 +100,6 @@ public abstract class PlaneImpl extends NodeImpl implements Plane {
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case EPNPackage.PLANE__DIAGRAM_ELEMENT_GROUP:
-                if (coreType) return getDiagramElementGroup();
-                return ((FeatureMap.Internal)getDiagramElementGroup()).getWrapper();
             case EPNPackage.PLANE__DIAGRAM_ELEMENT:
                 return getDiagramElement();
         }
@@ -130,9 +115,6 @@ public abstract class PlaneImpl extends NodeImpl implements Plane {
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case EPNPackage.PLANE__DIAGRAM_ELEMENT_GROUP:
-                ((FeatureMap.Internal)getDiagramElementGroup()).set(newValue);
-                return;
             case EPNPackage.PLANE__DIAGRAM_ELEMENT:
                 getDiagramElement().clear();
                 getDiagramElement().addAll((Collection<? extends DiagramElement>)newValue);
@@ -149,9 +131,6 @@ public abstract class PlaneImpl extends NodeImpl implements Plane {
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case EPNPackage.PLANE__DIAGRAM_ELEMENT_GROUP:
-                getDiagramElementGroup().clear();
-                return;
             case EPNPackage.PLANE__DIAGRAM_ELEMENT:
                 getDiagramElement().clear();
                 return;
@@ -167,28 +146,10 @@ public abstract class PlaneImpl extends NodeImpl implements Plane {
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case EPNPackage.PLANE__DIAGRAM_ELEMENT_GROUP:
-                return diagramElementGroup != null && !diagramElementGroup.isEmpty();
             case EPNPackage.PLANE__DIAGRAM_ELEMENT:
-                return !getDiagramElement().isEmpty();
+                return diagramElement != null && !diagramElement.isEmpty();
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (eIsProxy()) return super.toString();
-
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (diagramElementGroup: ");
-        result.append(diagramElementGroup);
-        result.append(')');
-        return result.toString();
     }
 
 } //PlaneImpl

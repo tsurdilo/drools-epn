@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -34,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.drools.epn.impl.ProcessImpl#getFlowElementGroup <em>Flow Element Group</em>}</li>
  *   <li>{@link org.drools.epn.impl.ProcessImpl#getFlowElement <em>Flow Element</em>}</li>
  *   <li>{@link org.drools.epn.impl.ProcessImpl#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}</li>
  *   <li>{@link org.drools.epn.impl.ProcessImpl#isIsExecutable <em>Is Executable</em>}</li>
@@ -45,14 +45,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ProcessImpl extends CallableElementImpl implements org.drools.epn.Process {
     /**
-     * The cached value of the '{@link #getFlowElementGroup() <em>Flow Element Group</em>}' attribute list.
+     * The cached value of the '{@link #getFlowElement() <em>Flow Element</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFlowElementGroup()
+     * @see #getFlowElement()
      * @generated
      * @ordered
      */
-    protected FeatureMap flowElementGroup;
+    protected EList<FlowElement> flowElement;
 
     /**
      * The default value of the '{@link #getDefinitionalCollaborationRef() <em>Definitional Collaboration Ref</em>}' attribute.
@@ -127,20 +127,11 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
      * <!-- end-user-doc -->
      * @generated
      */
-    public FeatureMap getFlowElementGroup() {
-        if (flowElementGroup == null) {
-            flowElementGroup = new BasicFeatureMap(this, EPNPackage.PROCESS__FLOW_ELEMENT_GROUP);
-        }
-        return flowElementGroup;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EList<FlowElement> getFlowElement() {
-        return getFlowElementGroup().list(EPNPackage.Literals.PROCESS__FLOW_ELEMENT);
+        if (flowElement == null) {
+            flowElement = new EObjectContainmentEList<FlowElement>(FlowElement.class, this, EPNPackage.PROCESS__FLOW_ELEMENT);
+        }
+        return flowElement;
     }
 
     /**
@@ -218,8 +209,6 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
-                return ((InternalEList<?>)getFlowElementGroup()).basicRemove(otherEnd, msgs);
             case EPNPackage.PROCESS__FLOW_ELEMENT:
                 return ((InternalEList<?>)getFlowElement()).basicRemove(otherEnd, msgs);
         }
@@ -234,9 +223,6 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
-                if (coreType) return getFlowElementGroup();
-                return ((FeatureMap.Internal)getFlowElementGroup()).getWrapper();
             case EPNPackage.PROCESS__FLOW_ELEMENT:
                 return getFlowElement();
             case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
@@ -256,9 +242,6 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
-                ((FeatureMap.Internal)getFlowElementGroup()).set(newValue);
-                return;
             case EPNPackage.PROCESS__FLOW_ELEMENT:
                 getFlowElement().clear();
                 getFlowElement().addAll((Collection<? extends FlowElement>)newValue);
@@ -281,9 +264,6 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
-                getFlowElementGroup().clear();
-                return;
             case EPNPackage.PROCESS__FLOW_ELEMENT:
                 getFlowElement().clear();
                 return;
@@ -305,10 +285,8 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT_GROUP:
-                return flowElementGroup != null && !flowElementGroup.isEmpty();
             case EPNPackage.PROCESS__FLOW_ELEMENT:
-                return !getFlowElement().isEmpty();
+                return flowElement != null && !flowElement.isEmpty();
             case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
                 return DEFINITIONAL_COLLABORATION_REF_EDEFAULT == null ? definitionalCollaborationRef != null : !DEFINITIONAL_COLLABORATION_REF_EDEFAULT.equals(definitionalCollaborationRef);
             case EPNPackage.PROCESS__IS_EXECUTABLE:
@@ -327,9 +305,7 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
         if (eIsProxy()) return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (flowElementGroup: ");
-        result.append(flowElementGroup);
-        result.append(", definitionalCollaborationRef: ");
+        result.append(" (definitionalCollaborationRef: ");
         result.append(definitionalCollaborationRef);
         result.append(", isExecutable: ");
         if (isExecutableESet) result.append(isExecutable); else result.append("<unset>");
