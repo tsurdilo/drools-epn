@@ -31,6 +31,7 @@ import org.drools.epn.FlowNode;
 import org.drools.epn.Label;
 import org.drools.epn.LabeledEdge;
 import org.drools.epn.LabeledShape;
+import org.drools.epn.Network;
 import org.drools.epn.Node;
 import org.drools.epn.Plane;
 import org.drools.epn.Point;
@@ -89,11 +90,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getLabeledEdge <em>Labeled Edge</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getLabeledShape <em>Labeled Shape</em>}</li>
+ *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getNetwork <em>Network</em>}</li>
+ *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getRootElement <em>Root Element</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getNode <em>Node</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getPlane <em>Plane</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getPoint <em>Point</em>}</li>
- *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getProcess <em>Process</em>}</li>
- *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getRootElement <em>Root Element</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getSequenceFlow <em>Sequence Flow</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getShape <em>Shape</em>}</li>
  *   <li>{@link org.drools.epn.impl.DocumentRootImpl#getTask <em>Task</em>}</li>
@@ -814,6 +815,60 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
      * <!-- end-user-doc -->
      * @generated
      */
+    public Network getNetwork() {
+        return (Network)getMixed().get(EPNPackage.Literals.DOCUMENT_ROOT__NETWORK, true);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetNetwork(Network newNetwork, NotificationChain msgs) {
+        return ((FeatureMap.Internal)getMixed()).basicAdd(EPNPackage.Literals.DOCUMENT_ROOT__NETWORK, newNetwork, msgs);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setNetwork(Network newNetwork) {
+        ((FeatureMap.Internal)getMixed()).set(EPNPackage.Literals.DOCUMENT_ROOT__NETWORK, newNetwork);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public RootElement getRootElement() {
+        return (RootElement)getMixed().get(EPNPackage.Literals.DOCUMENT_ROOT__ROOT_ELEMENT, true);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetRootElement(RootElement newRootElement, NotificationChain msgs) {
+        return ((FeatureMap.Internal)getMixed()).basicAdd(EPNPackage.Literals.DOCUMENT_ROOT__ROOT_ELEMENT, newRootElement, msgs);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setRootElement(RootElement newRootElement) {
+        ((FeatureMap.Internal)getMixed()).set(EPNPackage.Literals.DOCUMENT_ROOT__ROOT_ELEMENT, newRootElement);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public Node getNode() {
         return (Node)getMixed().get(EPNPackage.Literals.DOCUMENT_ROOT__NODE, true);
     }
@@ -888,60 +943,6 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
      */
     public void setPoint(Point newPoint) {
         ((FeatureMap.Internal)getMixed()).set(EPNPackage.Literals.DOCUMENT_ROOT__POINT, newPoint);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public org.drools.epn.Process getProcess() {
-        return (org.drools.epn.Process)getMixed().get(EPNPackage.Literals.DOCUMENT_ROOT__PROCESS, true);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetProcess(org.drools.epn.Process newProcess, NotificationChain msgs) {
-        return ((FeatureMap.Internal)getMixed()).basicAdd(EPNPackage.Literals.DOCUMENT_ROOT__PROCESS, newProcess, msgs);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setProcess(org.drools.epn.Process newProcess) {
-        ((FeatureMap.Internal)getMixed()).set(EPNPackage.Literals.DOCUMENT_ROOT__PROCESS, newProcess);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RootElement getRootElement() {
-        return (RootElement)getMixed().get(EPNPackage.Literals.DOCUMENT_ROOT__ROOT_ELEMENT, true);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRootElement(RootElement newRootElement, NotificationChain msgs) {
-        return ((FeatureMap.Internal)getMixed()).basicAdd(EPNPackage.Literals.DOCUMENT_ROOT__ROOT_ELEMENT, newRootElement, msgs);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setRootElement(RootElement newRootElement) {
-        ((FeatureMap.Internal)getMixed()).set(EPNPackage.Literals.DOCUMENT_ROOT__ROOT_ELEMENT, newRootElement);
     }
 
     /**
@@ -1085,16 +1086,16 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
                 return basicSetLabeledEdge(null, msgs);
             case EPNPackage.DOCUMENT_ROOT__LABELED_SHAPE:
                 return basicSetLabeledShape(null, msgs);
+            case EPNPackage.DOCUMENT_ROOT__NETWORK:
+                return basicSetNetwork(null, msgs);
+            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
+                return basicSetRootElement(null, msgs);
             case EPNPackage.DOCUMENT_ROOT__NODE:
                 return basicSetNode(null, msgs);
             case EPNPackage.DOCUMENT_ROOT__PLANE:
                 return basicSetPlane(null, msgs);
             case EPNPackage.DOCUMENT_ROOT__POINT:
                 return basicSetPoint(null, msgs);
-            case EPNPackage.DOCUMENT_ROOT__PROCESS:
-                return basicSetProcess(null, msgs);
-            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
-                return basicSetRootElement(null, msgs);
             case EPNPackage.DOCUMENT_ROOT__SEQUENCE_FLOW:
                 return basicSetSequenceFlow(null, msgs);
             case EPNPackage.DOCUMENT_ROOT__SHAPE:
@@ -1168,16 +1169,16 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
                 return getLabeledEdge();
             case EPNPackage.DOCUMENT_ROOT__LABELED_SHAPE:
                 return getLabeledShape();
+            case EPNPackage.DOCUMENT_ROOT__NETWORK:
+                return getNetwork();
+            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
+                return getRootElement();
             case EPNPackage.DOCUMENT_ROOT__NODE:
                 return getNode();
             case EPNPackage.DOCUMENT_ROOT__PLANE:
                 return getPlane();
             case EPNPackage.DOCUMENT_ROOT__POINT:
                 return getPoint();
-            case EPNPackage.DOCUMENT_ROOT__PROCESS:
-                return getProcess();
-            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
-                return getRootElement();
             case EPNPackage.DOCUMENT_ROOT__SEQUENCE_FLOW:
                 return getSequenceFlow();
             case EPNPackage.DOCUMENT_ROOT__SHAPE:
@@ -1274,6 +1275,12 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
             case EPNPackage.DOCUMENT_ROOT__LABELED_SHAPE:
                 setLabeledShape((LabeledShape)newValue);
                 return;
+            case EPNPackage.DOCUMENT_ROOT__NETWORK:
+                setNetwork((Network)newValue);
+                return;
+            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
+                setRootElement((RootElement)newValue);
+                return;
             case EPNPackage.DOCUMENT_ROOT__NODE:
                 setNode((Node)newValue);
                 return;
@@ -1282,12 +1289,6 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
                 return;
             case EPNPackage.DOCUMENT_ROOT__POINT:
                 setPoint((Point)newValue);
-                return;
-            case EPNPackage.DOCUMENT_ROOT__PROCESS:
-                setProcess((org.drools.epn.Process)newValue);
-                return;
-            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
-                setRootElement((RootElement)newValue);
                 return;
             case EPNPackage.DOCUMENT_ROOT__SEQUENCE_FLOW:
                 setSequenceFlow((SequenceFlow)newValue);
@@ -1388,6 +1389,12 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
             case EPNPackage.DOCUMENT_ROOT__LABELED_SHAPE:
                 setLabeledShape((LabeledShape)null);
                 return;
+            case EPNPackage.DOCUMENT_ROOT__NETWORK:
+                setNetwork((Network)null);
+                return;
+            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
+                setRootElement((RootElement)null);
+                return;
             case EPNPackage.DOCUMENT_ROOT__NODE:
                 setNode((Node)null);
                 return;
@@ -1396,12 +1403,6 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
                 return;
             case EPNPackage.DOCUMENT_ROOT__POINT:
                 setPoint((Point)null);
-                return;
-            case EPNPackage.DOCUMENT_ROOT__PROCESS:
-                setProcess((org.drools.epn.Process)null);
-                return;
-            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
-                setRootElement((RootElement)null);
                 return;
             case EPNPackage.DOCUMENT_ROOT__SEQUENCE_FLOW:
                 setSequenceFlow((SequenceFlow)null);
@@ -1476,16 +1477,16 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
                 return getLabeledEdge() != null;
             case EPNPackage.DOCUMENT_ROOT__LABELED_SHAPE:
                 return getLabeledShape() != null;
+            case EPNPackage.DOCUMENT_ROOT__NETWORK:
+                return getNetwork() != null;
+            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
+                return getRootElement() != null;
             case EPNPackage.DOCUMENT_ROOT__NODE:
                 return getNode() != null;
             case EPNPackage.DOCUMENT_ROOT__PLANE:
                 return getPlane() != null;
             case EPNPackage.DOCUMENT_ROOT__POINT:
                 return getPoint() != null;
-            case EPNPackage.DOCUMENT_ROOT__PROCESS:
-                return getProcess() != null;
-            case EPNPackage.DOCUMENT_ROOT__ROOT_ELEMENT:
-                return getRootElement() != null;
             case EPNPackage.DOCUMENT_ROOT__SEQUENCE_FLOW:
                 return getSequenceFlow() != null;
             case EPNPackage.DOCUMENT_ROOT__SHAPE:

@@ -6,8 +6,6 @@
  */
 package org.drools.epn.impl;
 
-import javax.xml.namespace.QName;
-
 import org.drools.epn.EPNLabel;
 import org.drools.epn.EPNPackage;
 import org.drools.epn.EPNShape;

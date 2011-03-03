@@ -992,40 +992,13 @@ public interface EPNPackage extends EPackage {
     int DOCUMENT_ROOT__LABELED_SHAPE = 25;
 
     /**
-     * The feature id for the '<em><b>Node</b></em>' containment reference.
+     * The feature id for the '<em><b>Network</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DOCUMENT_ROOT__NODE = 26;
-
-    /**
-     * The feature id for the '<em><b>Plane</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DOCUMENT_ROOT__PLANE = 27;
-
-    /**
-     * The feature id for the '<em><b>Point</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DOCUMENT_ROOT__POINT = 28;
-
-    /**
-     * The feature id for the '<em><b>Process</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DOCUMENT_ROOT__PROCESS = 29;
+    int DOCUMENT_ROOT__NETWORK = 26;
 
     /**
      * The feature id for the '<em><b>Root Element</b></em>' containment reference.
@@ -1034,7 +1007,34 @@ public interface EPNPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOCUMENT_ROOT__ROOT_ELEMENT = 30;
+    int DOCUMENT_ROOT__ROOT_ELEMENT = 27;
+
+    /**
+     * The feature id for the '<em><b>Node</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOCUMENT_ROOT__NODE = 28;
+
+    /**
+     * The feature id for the '<em><b>Plane</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOCUMENT_ROOT__PLANE = 29;
+
+    /**
+     * The feature id for the '<em><b>Point</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOCUMENT_ROOT__POINT = 30;
 
     /**
      * The feature id for the '<em><b>Sequence Flow</b></em>' containment reference.
@@ -1345,7 +1345,7 @@ public interface EPNPackage extends EPackage {
      * @see org.drools.epn.impl.EPNPackageImpl#getNode()
      * @generated
      */
-    int NODE = 25;
+    int NODE = 26;
 
     /**
      * The feature id for the '<em><b>Extension</b></em>' containment reference.
@@ -1501,7 +1501,7 @@ public interface EPNPackage extends EPackage {
      * @see org.drools.epn.impl.EPNPackageImpl#getPlane()
      * @generated
      */
-    int PLANE = 26;
+    int PLANE = 27;
 
     /**
      * The feature id for the '<em><b>Extension</b></em>' containment reference.
@@ -2315,6 +2315,88 @@ public interface EPNPackage extends EPackage {
     int EXTENSION_TYPE_FEATURE_COUNT = 1;
 
     /**
+     * The meta object id for the '{@link org.drools.epn.impl.NetworkImpl <em>Network</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.drools.epn.impl.NetworkImpl
+     * @see org.drools.epn.impl.EPNPackageImpl#getNetwork()
+     * @generated
+     */
+    int NETWORK = 25;
+
+    /**
+     * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NETWORK__DOCUMENTATION = CALLABLE_ELEMENT__DOCUMENTATION;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NETWORK__ID = CALLABLE_ELEMENT__ID;
+
+    /**
+     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NETWORK__ANY_ATTRIBUTE = CALLABLE_ELEMENT__ANY_ATTRIBUTE;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NETWORK__NAME = CALLABLE_ELEMENT__NAME;
+
+    /**
+     * The feature id for the '<em><b>Flow Element</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NETWORK__FLOW_ELEMENT = CALLABLE_ELEMENT_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Definitional Collaboration Ref</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NETWORK__DEFINITIONAL_COLLABORATION_REF = CALLABLE_ELEMENT_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Is Executable</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NETWORK__IS_EXECUTABLE = CALLABLE_ELEMENT_FEATURE_COUNT + 2;
+
+    /**
+     * The number of structural features of the '<em>Network</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NETWORK_FEATURE_COUNT = CALLABLE_ELEMENT_FEATURE_COUNT + 3;
+
+    /**
      * The meta object id for the '{@link org.drools.epn.impl.PointImpl <em>Point</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2322,7 +2404,7 @@ public interface EPNPackage extends EPackage {
      * @see org.drools.epn.impl.EPNPackageImpl#getPoint()
      * @generated
      */
-    int POINT = 27;
+    int POINT = 28;
 
     /**
      * The feature id for the '<em><b>X</b></em>' attribute.
@@ -2350,88 +2432,6 @@ public interface EPNPackage extends EPackage {
      * @ordered
      */
     int POINT_FEATURE_COUNT = 2;
-
-    /**
-     * The meta object id for the '{@link org.drools.epn.impl.ProcessImpl <em>Process</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.drools.epn.impl.ProcessImpl
-     * @see org.drools.epn.impl.EPNPackageImpl#getProcess()
-     * @generated
-     */
-    int PROCESS = 28;
-
-    /**
-     * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS__DOCUMENTATION = CALLABLE_ELEMENT__DOCUMENTATION;
-
-    /**
-     * The feature id for the '<em><b>Id</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS__ID = CALLABLE_ELEMENT__ID;
-
-    /**
-     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS__ANY_ATTRIBUTE = CALLABLE_ELEMENT__ANY_ATTRIBUTE;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS__NAME = CALLABLE_ELEMENT__NAME;
-
-    /**
-     * The feature id for the '<em><b>Flow Element</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS__FLOW_ELEMENT = CALLABLE_ELEMENT_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Definitional Collaboration Ref</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS__DEFINITIONAL_COLLABORATION_REF = CALLABLE_ELEMENT_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Is Executable</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS__IS_EXECUTABLE = CALLABLE_ELEMENT_FEATURE_COUNT + 2;
-
-    /**
-     * The number of structural features of the '<em>Process</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS_FEATURE_COUNT = CALLABLE_ELEMENT_FEATURE_COUNT + 3;
 
     /**
      * The meta object id for the '{@link org.drools.epn.impl.SequenceFlowImpl <em>Sequence Flow</em>}' class.
@@ -3279,6 +3279,28 @@ public interface EPNPackage extends EPackage {
     EReference getDocumentRoot_LabeledShape();
 
     /**
+     * Returns the meta object for the containment reference '{@link org.drools.epn.DocumentRoot#getNetwork <em>Network</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Network</em>'.
+     * @see org.drools.epn.DocumentRoot#getNetwork()
+     * @see #getDocumentRoot()
+     * @generated
+     */
+    EReference getDocumentRoot_Network();
+
+    /**
+     * Returns the meta object for the containment reference '{@link org.drools.epn.DocumentRoot#getRootElement <em>Root Element</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Root Element</em>'.
+     * @see org.drools.epn.DocumentRoot#getRootElement()
+     * @see #getDocumentRoot()
+     * @generated
+     */
+    EReference getDocumentRoot_RootElement();
+
+    /**
      * Returns the meta object for the containment reference '{@link org.drools.epn.DocumentRoot#getNode <em>Node</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3310,28 +3332,6 @@ public interface EPNPackage extends EPackage {
      * @generated
      */
     EReference getDocumentRoot_Point();
-
-    /**
-     * Returns the meta object for the containment reference '{@link org.drools.epn.DocumentRoot#getProcess <em>Process</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Process</em>'.
-     * @see org.drools.epn.DocumentRoot#getProcess()
-     * @see #getDocumentRoot()
-     * @generated
-     */
-    EReference getDocumentRoot_Process();
-
-    /**
-     * Returns the meta object for the containment reference '{@link org.drools.epn.DocumentRoot#getRootElement <em>Root Element</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Root Element</em>'.
-     * @see org.drools.epn.DocumentRoot#getRootElement()
-     * @see #getDocumentRoot()
-     * @generated
-     */
-    EReference getDocumentRoot_RootElement();
 
     /**
      * Returns the meta object for the containment reference '{@link org.drools.epn.DocumentRoot#getSequenceFlow <em>Sequence Flow</em>}'.
@@ -3736,6 +3736,49 @@ public interface EPNPackage extends EPackage {
     EClass getLabeledShape();
 
     /**
+     * Returns the meta object for class '{@link org.drools.epn.Network <em>Network</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Network</em>'.
+     * @see org.drools.epn.Network
+     * @generated
+     */
+    EClass getNetwork();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link org.drools.epn.Network#getFlowElement <em>Flow Element</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Flow Element</em>'.
+     * @see org.drools.epn.Network#getFlowElement()
+     * @see #getNetwork()
+     * @generated
+     */
+    EReference getNetwork_FlowElement();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.drools.epn.Network#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Definitional Collaboration Ref</em>'.
+     * @see org.drools.epn.Network#getDefinitionalCollaborationRef()
+     * @see #getNetwork()
+     * @generated
+     */
+    EAttribute getNetwork_DefinitionalCollaborationRef();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.drools.epn.Network#isIsExecutable <em>Is Executable</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Is Executable</em>'.
+     * @see org.drools.epn.Network#isIsExecutable()
+     * @see #getNetwork()
+     * @generated
+     */
+    EAttribute getNetwork_IsExecutable();
+
+    /**
      * Returns the meta object for class '{@link org.drools.epn.Node <em>Node</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3797,49 +3840,6 @@ public interface EPNPackage extends EPackage {
      * @generated
      */
     EAttribute getPoint_Y();
-
-    /**
-     * Returns the meta object for class '{@link org.drools.epn.Process <em>Process</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Process</em>'.
-     * @see org.drools.epn.Process
-     * @generated
-     */
-    EClass getProcess();
-
-    /**
-     * Returns the meta object for the containment reference list '{@link org.drools.epn.Process#getFlowElement <em>Flow Element</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Flow Element</em>'.
-     * @see org.drools.epn.Process#getFlowElement()
-     * @see #getProcess()
-     * @generated
-     */
-    EReference getProcess_FlowElement();
-
-    /**
-     * Returns the meta object for the attribute '{@link org.drools.epn.Process#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Definitional Collaboration Ref</em>'.
-     * @see org.drools.epn.Process#getDefinitionalCollaborationRef()
-     * @see #getProcess()
-     * @generated
-     */
-    EAttribute getProcess_DefinitionalCollaborationRef();
-
-    /**
-     * Returns the meta object for the attribute '{@link org.drools.epn.Process#isIsExecutable <em>Is Executable</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Is Executable</em>'.
-     * @see org.drools.epn.Process#isIsExecutable()
-     * @see #getProcess()
-     * @generated
-     */
-    EAttribute getProcess_IsExecutable();
 
     /**
      * Returns the meta object for class '{@link org.drools.epn.RootElement <em>Root Element</em>}'.
@@ -4536,6 +4536,22 @@ public interface EPNPackage extends EPackage {
         EReference DOCUMENT_ROOT__LABELED_SHAPE = eINSTANCE.getDocumentRoot_LabeledShape();
 
         /**
+         * The meta object literal for the '<em><b>Network</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DOCUMENT_ROOT__NETWORK = eINSTANCE.getDocumentRoot_Network();
+
+        /**
+         * The meta object literal for the '<em><b>Root Element</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DOCUMENT_ROOT__ROOT_ELEMENT = eINSTANCE.getDocumentRoot_RootElement();
+
+        /**
          * The meta object literal for the '<em><b>Node</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -4558,22 +4574,6 @@ public interface EPNPackage extends EPackage {
          * @generated
          */
         EReference DOCUMENT_ROOT__POINT = eINSTANCE.getDocumentRoot_Point();
-
-        /**
-         * The meta object literal for the '<em><b>Process</b></em>' containment reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference DOCUMENT_ROOT__PROCESS = eINSTANCE.getDocumentRoot_Process();
-
-        /**
-         * The meta object literal for the '<em><b>Root Element</b></em>' containment reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference DOCUMENT_ROOT__ROOT_ELEMENT = eINSTANCE.getDocumentRoot_RootElement();
 
         /**
          * The meta object literal for the '<em><b>Sequence Flow</b></em>' containment reference feature.
@@ -4912,6 +4912,40 @@ public interface EPNPackage extends EPackage {
         EClass LABELED_SHAPE = eINSTANCE.getLabeledShape();
 
         /**
+         * The meta object literal for the '{@link org.drools.epn.impl.NetworkImpl <em>Network</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.drools.epn.impl.NetworkImpl
+         * @see org.drools.epn.impl.EPNPackageImpl#getNetwork()
+         * @generated
+         */
+        EClass NETWORK = eINSTANCE.getNetwork();
+
+        /**
+         * The meta object literal for the '<em><b>Flow Element</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference NETWORK__FLOW_ELEMENT = eINSTANCE.getNetwork_FlowElement();
+
+        /**
+         * The meta object literal for the '<em><b>Definitional Collaboration Ref</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute NETWORK__DEFINITIONAL_COLLABORATION_REF = eINSTANCE.getNetwork_DefinitionalCollaborationRef();
+
+        /**
+         * The meta object literal for the '<em><b>Is Executable</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute NETWORK__IS_EXECUTABLE = eINSTANCE.getNetwork_IsExecutable();
+
+        /**
          * The meta object literal for the '{@link org.drools.epn.impl.NodeImpl <em>Node</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -4964,40 +4998,6 @@ public interface EPNPackage extends EPackage {
          * @generated
          */
         EAttribute POINT__Y = eINSTANCE.getPoint_Y();
-
-        /**
-         * The meta object literal for the '{@link org.drools.epn.impl.ProcessImpl <em>Process</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see org.drools.epn.impl.ProcessImpl
-         * @see org.drools.epn.impl.EPNPackageImpl#getProcess()
-         * @generated
-         */
-        EClass PROCESS = eINSTANCE.getProcess();
-
-        /**
-         * The meta object literal for the '<em><b>Flow Element</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference PROCESS__FLOW_ELEMENT = eINSTANCE.getProcess_FlowElement();
-
-        /**
-         * The meta object literal for the '<em><b>Definitional Collaboration Ref</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute PROCESS__DEFINITIONAL_COLLABORATION_REF = eINSTANCE.getProcess_DefinitionalCollaborationRef();
-
-        /**
-         * The meta object literal for the '<em><b>Is Executable</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute PROCESS__IS_EXECUTABLE = eINSTANCE.getProcess_IsExecutable();
 
         /**
          * The meta object literal for the '{@link org.drools.epn.impl.RootElementImpl <em>Root Element</em>}' class.

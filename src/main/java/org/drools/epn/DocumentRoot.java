@@ -46,11 +46,11 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link org.drools.epn.DocumentRoot#getLabel <em>Label</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getLabeledEdge <em>Labeled Edge</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getLabeledShape <em>Labeled Shape</em>}</li>
+ *   <li>{@link org.drools.epn.DocumentRoot#getNetwork <em>Network</em>}</li>
+ *   <li>{@link org.drools.epn.DocumentRoot#getRootElement <em>Root Element</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getNode <em>Node</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getPlane <em>Plane</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getPoint <em>Point</em>}</li>
- *   <li>{@link org.drools.epn.DocumentRoot#getProcess <em>Process</em>}</li>
- *   <li>{@link org.drools.epn.DocumentRoot#getRootElement <em>Root Element</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getSequenceFlow <em>Sequence Flow</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getShape <em>Shape</em>}</li>
  *   <li>{@link org.drools.epn.DocumentRoot#getTask <em>Task</em>}</li>
@@ -737,6 +737,60 @@ public interface DocumentRoot extends EObject {
     void setLabeledShape(LabeledShape value);
 
     /**
+     * Returns the value of the '<em><b>Network</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Network</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Network</em>' containment reference.
+     * @see #setNetwork(Network)
+     * @see org.drools.epn.EPNPackage#getDocumentRoot_Network()
+     * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+     *        extendedMetaData="kind='element' name='network' namespace='##targetNamespace' affiliation='rootElement'"
+     * @generated
+     */
+    Network getNetwork();
+
+    /**
+     * Sets the value of the '{@link org.drools.epn.DocumentRoot#getNetwork <em>Network</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Network</em>' containment reference.
+     * @see #getNetwork()
+     * @generated
+     */
+    void setNetwork(Network value);
+
+    /**
+     * Returns the value of the '<em><b>Root Element</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Root Element</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Root Element</em>' containment reference.
+     * @see #setRootElement(RootElement)
+     * @see org.drools.epn.EPNPackage#getDocumentRoot_RootElement()
+     * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+     *        extendedMetaData="kind='element' name='rootElement' namespace='##targetNamespace'"
+     * @generated
+     */
+    RootElement getRootElement();
+
+    /**
+     * Sets the value of the '{@link org.drools.epn.DocumentRoot#getRootElement <em>Root Element</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Root Element</em>' containment reference.
+     * @see #getRootElement()
+     * @generated
+     */
+    void setRootElement(RootElement value);
+
+    /**
      * Returns the value of the '<em><b>Node</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <p>
@@ -816,60 +870,6 @@ public interface DocumentRoot extends EObject {
      * @generated
      */
     void setPoint(Point value);
-
-    /**
-     * Returns the value of the '<em><b>Process</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Process</em>' containment reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Process</em>' containment reference.
-     * @see #setProcess(org.drools.epn.Process)
-     * @see org.drools.epn.EPNPackage#getDocumentRoot_Process()
-     * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
-     *        extendedMetaData="kind='element' name='process' namespace='##targetNamespace' affiliation='rootElement'"
-     * @generated
-     */
-    org.drools.epn.Process getProcess();
-
-    /**
-     * Sets the value of the '{@link org.drools.epn.DocumentRoot#getProcess <em>Process</em>}' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Process</em>' containment reference.
-     * @see #getProcess()
-     * @generated
-     */
-    void setProcess(org.drools.epn.Process value);
-
-    /**
-     * Returns the value of the '<em><b>Root Element</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Root Element</em>' containment reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Root Element</em>' containment reference.
-     * @see #setRootElement(RootElement)
-     * @see org.drools.epn.EPNPackage#getDocumentRoot_RootElement()
-     * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
-     *        extendedMetaData="kind='element' name='rootElement' namespace='##targetNamespace'"
-     * @generated
-     */
-    RootElement getRootElement();
-
-    /**
-     * Sets the value of the '{@link org.drools.epn.DocumentRoot#getRootElement <em>Root Element</em>}' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Root Element</em>' containment reference.
-     * @see #getRootElement()
-     * @generated
-     */
-    void setRootElement(RootElement value);
 
     /**
      * Returns the value of the '<em><b>Sequence Flow</b></em>' containment reference.

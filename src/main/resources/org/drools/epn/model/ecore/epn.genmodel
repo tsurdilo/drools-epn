@@ -90,11 +90,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/label"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/labeledEdge"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/labeledShape"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/network"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/rootElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/node"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/plane"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/point"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/process"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/rootElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/sequenceFlow"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/shape"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//DocumentRoot/task"/>
@@ -147,6 +147,11 @@
     </genClasses>
     <genClasses image="false" ecoreClass="epn.ecore#//LabeledEdge"/>
     <genClasses image="false" ecoreClass="epn.ecore#//LabeledShape"/>
+    <genClasses ecoreClass="epn.ecore#//Network">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference epn.ecore#//Network/flowElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Network/definitionalCollaborationRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Network/isExecutable"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="epn.ecore#//Node"/>
     <genClasses image="false" ecoreClass="epn.ecore#//Plane">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference epn.ecore#//Plane/diagramElement"/>
@@ -154,11 +159,6 @@
     <genClasses ecoreClass="epn.ecore#//Point">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Point/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Point/y"/>
-    </genClasses>
-    <genClasses ecoreClass="epn.ecore#//Process">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference epn.ecore#//Process/flowElement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Process/definitionalCollaborationRef"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute epn.ecore#//Process/isExecutable"/>
     </genClasses>
     <genClasses image="false" ecoreClass="epn.ecore#//RootElement"/>
     <genClasses ecoreClass="epn.ecore#//SequenceFlow">

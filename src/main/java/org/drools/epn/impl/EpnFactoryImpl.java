@@ -6,28 +6,7 @@
  */
 package org.drools.epn.impl;
 
-import org.drools.epn.Bounds;
-import org.drools.epn.CallableElement;
-import org.drools.epn.Definitions;
-import org.drools.epn.DocumentRoot;
-import org.drools.epn.Documentation;
-import org.drools.epn.EPNDiagram;
-import org.drools.epn.EPNEdge;
-import org.drools.epn.EPNFactory;
-import org.drools.epn.EPNLabel;
-import org.drools.epn.EPNPackage;
-import org.drools.epn.EPNPlane;
-import org.drools.epn.EPNShape;
-import org.drools.epn.EventChannel;
-import org.drools.epn.EventConsumer;
-import org.drools.epn.EventProcessingAgent;
-import org.drools.epn.EventProducer;
-import org.drools.epn.ExtensionType;
-import org.drools.epn.ImplementationMember1;
-import org.drools.epn.Point;
-import org.drools.epn.ProcessType;
-import org.drools.epn.SequenceFlow;
-import org.drools.epn.Task;
+import org.drools.epn.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -102,8 +81,8 @@ public class EPNFactoryImpl extends EFactoryImpl implements EPNFactory {
             case EPNPackage.EVENT_PROCESSING_AGENT: return createEventProcessingAgent();
             case EPNPackage.EVENT_PRODUCER: return createEventProducer();
             case EPNPackage.EXTENSION_TYPE: return createExtensionType();
+            case EPNPackage.NETWORK: return createNetwork();
             case EPNPackage.POINT: return createPoint();
-            case EPNPackage.PROCESS: return createProcess();
             case EPNPackage.SEQUENCE_FLOW: return createSequenceFlow();
             case EPNPackage.TASK: return createTask();
             default:
@@ -312,9 +291,9 @@ public class EPNFactoryImpl extends EFactoryImpl implements EPNFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public Point createPoint() {
-        PointImpl point = new PointImpl();
-        return point;
+    public Network createNetwork() {
+        NetworkImpl network = new NetworkImpl();
+        return network;
     }
 
     /**
@@ -322,9 +301,9 @@ public class EPNFactoryImpl extends EFactoryImpl implements EPNFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public org.drools.epn.Process createProcess() {
-        ProcessImpl process = new ProcessImpl();
-        return process;
+    public Point createPoint() {
+        PointImpl point = new PointImpl();
+        return point;
     }
 
     /**

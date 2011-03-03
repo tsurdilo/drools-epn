@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ASCII"?>
 <epn:definitions xmlns:epn="http://www.jboss.org/drools/epn/MODEL" id="Definition" targetNamespace="http://www.example.org/SimpleExample">
-  <epn:process id="p1" name="simpleProcess" isExecutable="true">
+  <epn:network id="p1" name="simpleNetwork" isExecutable="true">
     <epn:eventProducer id="_p1" name="producer1"/>
     <epn:eventProcessingAgent id="_a1" name="agent1"/>
     <epn:eventConsumer id="_c1" name="consumer1"/>
     <epn:sequenceFlow id="_p1-_a1" sourceRef="_p1" targetRef="_a1"/>
     <epn:sequenceFlow id="_a1-_c1" sourceRef="_a1" targetRef="_c1"/>
-  </epn:process>
+  </epn:network>
   <epn:EPNDiagram>
-    <epn:EPNPlane epnElement="simpleProcess">
+    <epn:EPNPlane epnElement="simpleNetwork">
       <epn:EPNShape epnElement="_p1">
         <epn:Bounds height="48.0" width="48.0" x="15.0" y="91.0"/>
       </epn:EPNShape>

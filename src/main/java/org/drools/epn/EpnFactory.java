@@ -161,6 +161,15 @@ public interface EPNFactory extends EFactory {
     ExtensionType createExtensionType();
 
     /**
+     * Returns a new object of class '<em>Network</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Network</em>'.
+     * @generated
+     */
+    Network createNetwork();
+
+    /**
      * Returns a new object of class '<em>Point</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -168,15 +177,6 @@ public interface EPNFactory extends EFactory {
      * @generated
      */
     Point createPoint();
-
-    /**
-     * Returns a new object of class '<em>Process</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Process</em>'.
-     * @generated
-     */
-    Process createProcess();
 
     /**
      * Returns a new object of class '<em>Sequence Flow</em>'.

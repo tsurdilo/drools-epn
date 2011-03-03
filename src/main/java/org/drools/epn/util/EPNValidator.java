@@ -8,42 +8,7 @@ package org.drools.epn.util;
 
 import java.util.Map;
 
-import org.drools.epn.Activity;
-import org.drools.epn.BaseElement;
-import org.drools.epn.Bounds;
-import org.drools.epn.CallableElement;
-import org.drools.epn.Definitions;
-import org.drools.epn.Diagram;
-import org.drools.epn.DiagramElement;
-import org.drools.epn.DocumentRoot;
-import org.drools.epn.Documentation;
-import org.drools.epn.EPNDiagram;
-import org.drools.epn.EPNEdge;
-import org.drools.epn.EPNLabel;
-import org.drools.epn.EPNPackage;
-import org.drools.epn.EPNPlane;
-import org.drools.epn.EPNShape;
-import org.drools.epn.Edge;
-import org.drools.epn.EventChannel;
-import org.drools.epn.EventConsumer;
-import org.drools.epn.EventProcessingAgent;
-import org.drools.epn.EventProducer;
-import org.drools.epn.ExtensionType;
-import org.drools.epn.FlowElement;
-import org.drools.epn.FlowNode;
-import org.drools.epn.ImplementationMember1;
-import org.drools.epn.Label;
-import org.drools.epn.LabeledEdge;
-import org.drools.epn.LabeledShape;
-import org.drools.epn.Node;
-import org.drools.epn.Plane;
-import org.drools.epn.Point;
-import org.drools.epn.ProcessType;
-import org.drools.epn.RootElement;
-import org.drools.epn.SequenceFlow;
-import org.drools.epn.Shape;
-import org.drools.epn.Style;
-import org.drools.epn.Task;
+import org.drools.epn.*;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -189,14 +154,14 @@ public class EPNValidator extends EObjectValidator {
                 return validateLabeledEdge((LabeledEdge)value, diagnostics, context);
             case EPNPackage.LABELED_SHAPE:
                 return validateLabeledShape((LabeledShape)value, diagnostics, context);
+            case EPNPackage.NETWORK:
+                return validateNetwork((Network)value, diagnostics, context);
             case EPNPackage.NODE:
                 return validateNode((Node)value, diagnostics, context);
             case EPNPackage.PLANE:
                 return validatePlane((Plane)value, diagnostics, context);
             case EPNPackage.POINT:
                 return validatePoint((Point)value, diagnostics, context);
-            case EPNPackage.PROCESS:
-                return validateProcess((org.drools.epn.Process)value, diagnostics, context);
             case EPNPackage.ROOT_ELEMENT:
                 return validateRootElement((RootElement)value, diagnostics, context);
             case EPNPackage.SEQUENCE_FLOW:
@@ -452,6 +417,15 @@ public class EPNValidator extends EObjectValidator {
      * <!-- end-user-doc -->
      * @generated
      */
+    public boolean validateNetwork(Network network, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return validate_EveryDefaultConstraint(network, diagnostics, context);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean validateNode(Node node, DiagnosticChain diagnostics, Map<Object, Object> context) {
         return validate_EveryDefaultConstraint(node, diagnostics, context);
     }
@@ -472,15 +446,6 @@ public class EPNValidator extends EObjectValidator {
      */
     public boolean validatePoint(Point point, DiagnosticChain diagnostics, Map<Object, Object> context) {
         return validate_EveryDefaultConstraint(point, diagnostics, context);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public boolean validateProcess(org.drools.epn.Process process, DiagnosticChain diagnostics, Map<Object, Object> context) {
-        return validate_EveryDefaultConstraint(process, diagnostics, context);
     }
 
     /**

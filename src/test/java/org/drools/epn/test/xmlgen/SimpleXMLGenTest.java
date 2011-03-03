@@ -18,6 +18,7 @@ import org.drools.epn.EPNShape;
 import org.drools.epn.EventConsumer;
 import org.drools.epn.EventProcessingAgent;
 import org.drools.epn.EventProducer;
+import org.drools.epn.Network;
 import org.drools.epn.Point;
 import org.drools.epn.SequenceFlow;
 import org.drools.epn.impl.EPNPackageImpl;
@@ -36,7 +37,7 @@ public class SimpleXMLGenTest {
 
         assertTrue(loaded.getContents().get(0) instanceof DocumentRoot);
         DocumentRoot droot = (DocumentRoot) loaded.getContents().get(0);
-        assertTrue(droot.getDefinitions().getRootElement().get(0) instanceof org.drools.epn.Process);
+        assertTrue(droot.getDefinitions().getRootElement().get(0) instanceof Network);
 
         
     }
@@ -49,46 +50,46 @@ public class SimpleXMLGenTest {
         Definitions definitions = factory.createDefinitions();
         definitions.setId("Definition");
 
-        org.drools.epn.Process process = factory.createProcess();
-        process.setId("p1");
-        process.setName("simpleProcess");
-        process.setIsExecutable(true);
+        Network network = factory.createNetwork();
+        network.setId("p1");
+        network.setName("simpleNetwork");
+        network.setIsExecutable(true);
         
         
         EventProducer producer = factory.createEventProducer();
         producer.setName("producer1");
         producer.setId("_p1");
-        process.getFlowElement().add(producer);
+        network.getFlowElement().add(producer);
 
         EventProcessingAgent agent = factory.createEventProcessingAgent();
         agent.setName("agent1");
         agent.setId("_a1");
-        process.getFlowElement().add(agent);
+        network.getFlowElement().add(agent);
         
         EventConsumer consumer = factory.createEventConsumer();
         consumer.setName("consumer1");
         consumer.setId("_c1");
-        process.getFlowElement().add(consumer);
+        network.getFlowElement().add(consumer);
         
         // now do the sequenceFlow connections
         SequenceFlow p1toa1 =  factory.createSequenceFlow();
         p1toa1.setSourceRef(producer.getId());
         p1toa1.setTargetRef(agent.getId());
         p1toa1.setId(producer.getId() + "-" + agent.getId());
-        process.getFlowElement().add(p1toa1);
+        network.getFlowElement().add(p1toa1);
         
         SequenceFlow a1toc1 =  factory.createSequenceFlow();
         a1toc1.setSourceRef(agent.getId());
         a1toc1.setTargetRef(consumer.getId());
         a1toc1.setId(agent.getId() + "-" + consumer.getId());
-        process.getFlowElement().add(a1toc1);
+        network.getFlowElement().add(a1toc1);
         
-        definitions.getRootElement().add(process);
+        definitions.getRootElement().add(network);
         
         // now the diagram info
         EPNDiagram diagram = factory.createEPNDiagram();
         EPNPlane plane = factory.createEPNPlane();
-        plane.setEpnElement(process.getName());
+        plane.setEpnElement(network.getName());
         
         EPNShape producerShape = factory.createEPNShape();
         producerShape.setEpnElement(producer.getId());

@@ -34,6 +34,7 @@ import org.drools.epn.ImplementationMember1;
 import org.drools.epn.Label;
 import org.drools.epn.LabeledEdge;
 import org.drools.epn.LabeledShape;
+import org.drools.epn.Network;
 import org.drools.epn.Node;
 import org.drools.epn.Plane;
 import org.drools.epn.Point;
@@ -245,6 +246,13 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass networkEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EClass nodeEClass = null;
 
     /**
@@ -260,13 +268,6 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * @generated
      */
     private EClass pointEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass processEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -983,7 +984,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getDocumentRoot_Node() {
+    public EReference getDocumentRoot_Network() {
         return (EReference)documentRootEClass.getEStructuralFeatures().get(26);
     }
 
@@ -992,7 +993,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getDocumentRoot_Plane() {
+    public EReference getDocumentRoot_RootElement() {
         return (EReference)documentRootEClass.getEStructuralFeatures().get(27);
     }
 
@@ -1001,7 +1002,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getDocumentRoot_Point() {
+    public EReference getDocumentRoot_Node() {
         return (EReference)documentRootEClass.getEStructuralFeatures().get(28);
     }
 
@@ -1010,7 +1011,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getDocumentRoot_Process() {
+    public EReference getDocumentRoot_Plane() {
         return (EReference)documentRootEClass.getEStructuralFeatures().get(29);
     }
 
@@ -1019,7 +1020,7 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getDocumentRoot_RootElement() {
+    public EReference getDocumentRoot_Point() {
         return (EReference)documentRootEClass.getEStructuralFeatures().get(30);
     }
 
@@ -1370,6 +1371,42 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getNetwork() {
+        return networkEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getNetwork_FlowElement() {
+        return (EReference)networkEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getNetwork_DefinitionalCollaborationRef() {
+        return (EAttribute)networkEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getNetwork_IsExecutable() {
+        return (EAttribute)networkEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getNode() {
         return nodeEClass;
     }
@@ -1417,42 +1454,6 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
      */
     public EAttribute getPoint_Y() {
         return (EAttribute)pointEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getProcess() {
-        return processEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getProcess_FlowElement() {
-        return (EReference)processEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getProcess_DefinitionalCollaborationRef() {
-        return (EAttribute)processEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getProcess_IsExecutable() {
-        return (EAttribute)processEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -1680,11 +1681,11 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         createEReference(documentRootEClass, DOCUMENT_ROOT__LABEL);
         createEReference(documentRootEClass, DOCUMENT_ROOT__LABELED_EDGE);
         createEReference(documentRootEClass, DOCUMENT_ROOT__LABELED_SHAPE);
+        createEReference(documentRootEClass, DOCUMENT_ROOT__NETWORK);
+        createEReference(documentRootEClass, DOCUMENT_ROOT__ROOT_ELEMENT);
         createEReference(documentRootEClass, DOCUMENT_ROOT__NODE);
         createEReference(documentRootEClass, DOCUMENT_ROOT__PLANE);
         createEReference(documentRootEClass, DOCUMENT_ROOT__POINT);
-        createEReference(documentRootEClass, DOCUMENT_ROOT__PROCESS);
-        createEReference(documentRootEClass, DOCUMENT_ROOT__ROOT_ELEMENT);
         createEReference(documentRootEClass, DOCUMENT_ROOT__SEQUENCE_FLOW);
         createEReference(documentRootEClass, DOCUMENT_ROOT__SHAPE);
         createEReference(documentRootEClass, DOCUMENT_ROOT__TASK);
@@ -1740,6 +1741,11 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
 
         labeledShapeEClass = createEClass(LABELED_SHAPE);
 
+        networkEClass = createEClass(NETWORK);
+        createEReference(networkEClass, NETWORK__FLOW_ELEMENT);
+        createEAttribute(networkEClass, NETWORK__DEFINITIONAL_COLLABORATION_REF);
+        createEAttribute(networkEClass, NETWORK__IS_EXECUTABLE);
+
         nodeEClass = createEClass(NODE);
 
         planeEClass = createEClass(PLANE);
@@ -1748,11 +1754,6 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         pointEClass = createEClass(POINT);
         createEAttribute(pointEClass, POINT__X);
         createEAttribute(pointEClass, POINT__Y);
-
-        processEClass = createEClass(PROCESS);
-        createEReference(processEClass, PROCESS__FLOW_ELEMENT);
-        createEAttribute(processEClass, PROCESS__DEFINITIONAL_COLLABORATION_REF);
-        createEAttribute(processEClass, PROCESS__IS_EXECUTABLE);
 
         rootElementEClass = createEClass(ROOT_ELEMENT);
 
@@ -1826,9 +1827,9 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         labelEClass.getESuperTypes().add(this.getNode());
         labeledEdgeEClass.getESuperTypes().add(this.getEdge());
         labeledShapeEClass.getESuperTypes().add(this.getShape());
+        networkEClass.getESuperTypes().add(this.getCallableElement());
         nodeEClass.getESuperTypes().add(this.getDiagramElement());
         planeEClass.getESuperTypes().add(this.getNode());
-        processEClass.getESuperTypes().add(this.getCallableElement());
         rootElementEClass.getESuperTypes().add(this.getBaseElement());
         sequenceFlowEClass.getESuperTypes().add(this.getFlowElement());
         shapeEClass.getESuperTypes().add(this.getNode());
@@ -1906,11 +1907,11 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         initEReference(getDocumentRoot_Label(), this.getLabel(), null, "label", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_LabeledEdge(), this.getLabeledEdge(), null, "labeledEdge", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_LabeledShape(), this.getLabeledShape(), null, "labeledShape", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getDocumentRoot_Network(), this.getNetwork(), null, "network", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getDocumentRoot_RootElement(), this.getRootElement(), null, "rootElement", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_Node(), this.getNode(), null, "node", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_Plane(), this.getPlane(), null, "plane", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_Point(), this.getPoint(), null, "point", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-        initEReference(getDocumentRoot_Process(), this.getProcess(), null, "process", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-        initEReference(getDocumentRoot_RootElement(), this.getRootElement(), null, "rootElement", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_SequenceFlow(), this.getSequenceFlow(), null, "sequenceFlow", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_Shape(), this.getShape(), null, "shape", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getDocumentRoot_Task(), this.getTask(), null, "task", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1966,6 +1967,11 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
 
         initEClass(labeledShapeEClass, LabeledShape.class, "LabeledShape", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+        initEClass(networkEClass, Network.class, "Network", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getNetwork_FlowElement(), this.getFlowElement(), null, "flowElement", null, 0, -1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getNetwork_DefinitionalCollaborationRef(), theXMLTypePackage.getQName(), "definitionalCollaborationRef", null, 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getNetwork_IsExecutable(), theXMLTypePackage.getBoolean(), "isExecutable", "false", 0, 1, Network.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
         initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(planeEClass, Plane.class, "Plane", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1974,11 +1980,6 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
         initEClass(pointEClass, Point.class, "Point", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getPoint_X(), theXMLTypePackage.getDouble(), "x", null, 1, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getPoint_Y(), theXMLTypePackage.getDouble(), "y", null, 1, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(processEClass, org.drools.epn.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getProcess_FlowElement(), this.getFlowElement(), null, "flowElement", null, 0, -1, org.drools.epn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getProcess_DefinitionalCollaborationRef(), theXMLTypePackage.getQName(), "definitionalCollaborationRef", null, 0, 1, org.drools.epn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getProcess_IsExecutable(), theXMLTypePackage.getBoolean(), "isExecutable", "false", 0, 1, org.drools.epn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(rootElementEClass, RootElement.class, "RootElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2508,6 +2509,23 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
              "namespace", "##targetNamespace"
            });		
         addAnnotation
+          (getDocumentRoot_Network(), 
+           source, 
+           new String[] {
+             "kind", "element",
+             "name", "network",
+             "namespace", "##targetNamespace",
+             "affiliation", "rootElement"
+           });		
+        addAnnotation
+          (getDocumentRoot_RootElement(), 
+           source, 
+           new String[] {
+             "kind", "element",
+             "name", "rootElement",
+             "namespace", "##targetNamespace"
+           });		
+        addAnnotation
           (getDocumentRoot_Node(), 
            source, 
            new String[] {
@@ -2529,23 +2547,6 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
            new String[] {
              "kind", "element",
              "name", "Point",
-             "namespace", "##targetNamespace"
-           });		
-        addAnnotation
-          (getDocumentRoot_Process(), 
-           source, 
-           new String[] {
-             "kind", "element",
-             "name", "process",
-             "namespace", "##targetNamespace",
-             "affiliation", "rootElement"
-           });		
-        addAnnotation
-          (getDocumentRoot_RootElement(), 
-           source, 
-           new String[] {
-             "kind", "element",
-             "name", "rootElement",
              "namespace", "##targetNamespace"
            });		
         addAnnotation
@@ -2850,6 +2851,35 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
              "kind", "elementOnly"
            });		
         addAnnotation
+          (networkEClass, 
+           source, 
+           new String[] {
+             "name", "Network",
+             "kind", "elementOnly"
+           });		
+        addAnnotation
+          (getNetwork_FlowElement(), 
+           source, 
+           new String[] {
+             "kind", "element",
+             "name", "flowElement",
+             "namespace", "##targetNamespace"
+           });		
+        addAnnotation
+          (getNetwork_DefinitionalCollaborationRef(), 
+           source, 
+           new String[] {
+             "kind", "attribute",
+             "name", "definitionalCollaborationRef"
+           });		
+        addAnnotation
+          (getNetwork_IsExecutable(), 
+           source, 
+           new String[] {
+             "kind", "attribute",
+             "name", "isExecutable"
+           });		
+        addAnnotation
           (nodeEClass, 
            source, 
            new String[] {
@@ -2891,35 +2921,6 @@ public class EPNPackageImpl extends EPackageImpl implements EPNPackage {
            new String[] {
              "kind", "attribute",
              "name", "y"
-           });		
-        addAnnotation
-          (processEClass, 
-           source, 
-           new String[] {
-             "name", "Process",
-             "kind", "elementOnly"
-           });		
-        addAnnotation
-          (getProcess_FlowElement(), 
-           source, 
-           new String[] {
-             "kind", "element",
-             "name", "flowElement",
-             "namespace", "##targetNamespace"
-           });		
-        addAnnotation
-          (getProcess_DefinitionalCollaborationRef(), 
-           source, 
-           new String[] {
-             "kind", "attribute",
-             "name", "definitionalCollaborationRef"
-           });		
-        addAnnotation
-          (getProcess_IsExecutable(), 
-           source, 
-           new String[] {
-             "kind", "attribute",
-             "name", "isExecutable"
            });		
         addAnnotation
           (processTypeEEnum, 

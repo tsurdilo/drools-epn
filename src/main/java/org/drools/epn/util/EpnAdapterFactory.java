@@ -6,40 +6,7 @@
  */
 package org.drools.epn.util;
 
-import org.drools.epn.Activity;
-import org.drools.epn.BaseElement;
-import org.drools.epn.Bounds;
-import org.drools.epn.CallableElement;
-import org.drools.epn.Definitions;
-import org.drools.epn.Diagram;
-import org.drools.epn.DiagramElement;
-import org.drools.epn.DocumentRoot;
-import org.drools.epn.Documentation;
-import org.drools.epn.EPNDiagram;
-import org.drools.epn.EPNEdge;
-import org.drools.epn.EPNLabel;
-import org.drools.epn.EPNPackage;
-import org.drools.epn.EPNPlane;
-import org.drools.epn.EPNShape;
-import org.drools.epn.Edge;
-import org.drools.epn.EventChannel;
-import org.drools.epn.EventConsumer;
-import org.drools.epn.EventProcessingAgent;
-import org.drools.epn.EventProducer;
-import org.drools.epn.ExtensionType;
-import org.drools.epn.FlowElement;
-import org.drools.epn.FlowNode;
-import org.drools.epn.Label;
-import org.drools.epn.LabeledEdge;
-import org.drools.epn.LabeledShape;
-import org.drools.epn.Node;
-import org.drools.epn.Plane;
-import org.drools.epn.Point;
-import org.drools.epn.RootElement;
-import org.drools.epn.SequenceFlow;
-import org.drools.epn.Shape;
-import org.drools.epn.Style;
-import org.drools.epn.Task;
+import org.drools.epn.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -205,6 +172,10 @@ public class EPNAdapterFactory extends AdapterFactoryImpl {
                 return createLabeledShapeAdapter();
             }
             @Override
+            public Adapter caseNetwork(Network object) {
+                return createNetworkAdapter();
+            }
+            @Override
             public Adapter caseNode(Node object) {
                 return createNodeAdapter();
             }
@@ -215,10 +186,6 @@ public class EPNAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter casePoint(Point object) {
                 return createPointAdapter();
-            }
-            @Override
-            public Adapter caseProcess(org.drools.epn.Process object) {
-                return createProcessAdapter();
             }
             @Override
             public Adapter caseRootElement(RootElement object) {
@@ -611,6 +578,20 @@ public class EPNAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link org.drools.epn.Network <em>Network</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.drools.epn.Network
+     * @generated
+     */
+    public Adapter createNetworkAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link org.drools.epn.Node <em>Node</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -649,20 +630,6 @@ public class EPNAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createPointAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link org.drools.epn.Process <em>Process</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see org.drools.epn.Process
-     * @generated
-     */
-    public Adapter createProcessAdapter() {
         return null;
     }
 

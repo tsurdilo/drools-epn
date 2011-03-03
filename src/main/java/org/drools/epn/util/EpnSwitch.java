@@ -8,40 +8,7 @@ package org.drools.epn.util;
 
 import java.util.List;
 
-import org.drools.epn.Activity;
-import org.drools.epn.BaseElement;
-import org.drools.epn.Bounds;
-import org.drools.epn.CallableElement;
-import org.drools.epn.Definitions;
-import org.drools.epn.Diagram;
-import org.drools.epn.DiagramElement;
-import org.drools.epn.DocumentRoot;
-import org.drools.epn.Documentation;
-import org.drools.epn.EPNDiagram;
-import org.drools.epn.EPNEdge;
-import org.drools.epn.EPNLabel;
-import org.drools.epn.EPNPackage;
-import org.drools.epn.EPNPlane;
-import org.drools.epn.EPNShape;
-import org.drools.epn.Edge;
-import org.drools.epn.EventChannel;
-import org.drools.epn.EventConsumer;
-import org.drools.epn.EventProcessingAgent;
-import org.drools.epn.EventProducer;
-import org.drools.epn.ExtensionType;
-import org.drools.epn.FlowElement;
-import org.drools.epn.FlowNode;
-import org.drools.epn.Label;
-import org.drools.epn.LabeledEdge;
-import org.drools.epn.LabeledShape;
-import org.drools.epn.Node;
-import org.drools.epn.Plane;
-import org.drools.epn.Point;
-import org.drools.epn.RootElement;
-import org.drools.epn.SequenceFlow;
-import org.drools.epn.Shape;
-import org.drools.epn.Style;
-import org.drools.epn.Task;
+import org.drools.epn.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -320,6 +287,15 @@ public class EPNSwitch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
+            case EPNPackage.NETWORK: {
+                Network network = (Network)theEObject;
+                T result = caseNetwork(network);
+                if (result == null) result = caseCallableElement(network);
+                if (result == null) result = caseRootElement(network);
+                if (result == null) result = caseBaseElement(network);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             case EPNPackage.NODE: {
                 Node node = (Node)theEObject;
                 T result = caseNode(node);
@@ -338,15 +314,6 @@ public class EPNSwitch<T> {
             case EPNPackage.POINT: {
                 Point point = (Point)theEObject;
                 T result = casePoint(point);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case EPNPackage.PROCESS: {
-                org.drools.epn.Process process = (org.drools.epn.Process)theEObject;
-                T result = caseProcess(process);
-                if (result == null) result = caseCallableElement(process);
-                if (result == null) result = caseRootElement(process);
-                if (result == null) result = caseBaseElement(process);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -769,6 +736,21 @@ public class EPNSwitch<T> {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>Network</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Network</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseNetwork(Network object) {
+        return null;
+    }
+
+    /**
      * Returns the result of interpreting the object as an instance of '<em>Node</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -810,21 +792,6 @@ public class EPNSwitch<T> {
      * @generated
      */
     public T casePoint(Point object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Process</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseProcess(org.drools.epn.Process object) {
         return null;
     }
 

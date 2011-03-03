@@ -6,7 +6,6 @@
  */
 package org.drools.epn;
 
-import javax.xml.namespace.QName;
 
 /**
  * <!-- begin-user-doc -->

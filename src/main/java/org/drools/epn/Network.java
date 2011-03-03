@@ -12,23 +12,23 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Process</b></em>'.
+ * A representation of the model object '<em><b>Network</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.drools.epn.Process#getFlowElement <em>Flow Element</em>}</li>
- *   <li>{@link org.drools.epn.Process#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}</li>
- *   <li>{@link org.drools.epn.Process#isIsExecutable <em>Is Executable</em>}</li>
+ *   <li>{@link org.drools.epn.Network#getFlowElement <em>Flow Element</em>}</li>
+ *   <li>{@link org.drools.epn.Network#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}</li>
+ *   <li>{@link org.drools.epn.Network#isIsExecutable <em>Is Executable</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.drools.epn.EPNPackage#getProcess()
- * @model extendedMetaData="name='Process' kind='elementOnly'"
+ * @see org.drools.epn.EPNPackage#getNetwork()
+ * @model extendedMetaData="name='Network' kind='elementOnly'"
  * @generated
  */
-public interface Process extends CallableElement {
+public interface Network extends CallableElement {
     /**
      * Returns the value of the '<em><b>Flow Element</b></em>' containment reference list.
      * The list contents are of type {@link org.drools.epn.FlowElement}.
@@ -39,7 +39,7 @@ public interface Process extends CallableElement {
      * </p>
      * <!-- end-user-doc -->
      * @return the value of the '<em>Flow Element</em>' containment reference list.
-     * @see org.drools.epn.EPNPackage#getProcess_FlowElement()
+     * @see org.drools.epn.EPNPackage#getNetwork_FlowElement()
      * @model containment="true"
      *        extendedMetaData="kind='element' name='flowElement' namespace='##targetNamespace'"
      * @generated
@@ -56,7 +56,7 @@ public interface Process extends CallableElement {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Definitional Collaboration Ref</em>' attribute.
      * @see #setDefinitionalCollaborationRef(QName)
-     * @see org.drools.epn.EPNPackage#getProcess_DefinitionalCollaborationRef()
+     * @see org.drools.epn.EPNPackage#getNetwork_DefinitionalCollaborationRef()
      * @model dataType="org.eclipse.emf.ecore.xml.type.QName"
      *        extendedMetaData="kind='attribute' name='definitionalCollaborationRef'"
      * @generated
@@ -64,7 +64,7 @@ public interface Process extends CallableElement {
     QName getDefinitionalCollaborationRef();
 
     /**
-     * Sets the value of the '{@link org.drools.epn.Process#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}' attribute.
+     * Sets the value of the '{@link org.drools.epn.Network#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Definitional Collaboration Ref</em>' attribute.
@@ -86,7 +86,7 @@ public interface Process extends CallableElement {
      * @see #isSetIsExecutable()
      * @see #unsetIsExecutable()
      * @see #setIsExecutable(boolean)
-     * @see org.drools.epn.EPNPackage#getProcess_IsExecutable()
+     * @see org.drools.epn.EPNPackage#getNetwork_IsExecutable()
      * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
      *        extendedMetaData="kind='attribute' name='isExecutable'"
      * @generated
@@ -94,7 +94,7 @@ public interface Process extends CallableElement {
     boolean isIsExecutable();
 
     /**
-     * Sets the value of the '{@link org.drools.epn.Process#isIsExecutable <em>Is Executable</em>}' attribute.
+     * Sets the value of the '{@link org.drools.epn.Network#isIsExecutable <em>Is Executable</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Is Executable</em>' attribute.
@@ -106,7 +106,7 @@ public interface Process extends CallableElement {
     void setIsExecutable(boolean value);
 
     /**
-     * Unsets the value of the '{@link org.drools.epn.Process#isIsExecutable <em>Is Executable</em>}' attribute.
+     * Unsets the value of the '{@link org.drools.epn.Network#isIsExecutable <em>Is Executable</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #isSetIsExecutable()
@@ -117,7 +117,7 @@ public interface Process extends CallableElement {
     void unsetIsExecutable();
 
     /**
-     * Returns whether the value of the '{@link org.drools.epn.Process#isIsExecutable <em>Is Executable</em>}' attribute is set.
+     * Returns whether the value of the '{@link org.drools.epn.Network#isIsExecutable <em>Is Executable</em>}' attribute is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return whether the value of the '<em>Is Executable</em>' attribute is set.
@@ -128,4 +128,4 @@ public interface Process extends CallableElement {
      */
     boolean isSetIsExecutable();
 
-} // Process
+} // Network

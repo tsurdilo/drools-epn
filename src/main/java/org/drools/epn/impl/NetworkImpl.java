@@ -12,6 +12,7 @@ import javax.xml.namespace.QName;
 
 import org.drools.epn.EPNPackage;
 import org.drools.epn.FlowElement;
+import org.drools.epn.Network;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -28,20 +29,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Process</b></em>'.
+ * An implementation of the model object '<em><b>Network</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.drools.epn.impl.ProcessImpl#getFlowElement <em>Flow Element</em>}</li>
- *   <li>{@link org.drools.epn.impl.ProcessImpl#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}</li>
- *   <li>{@link org.drools.epn.impl.ProcessImpl#isIsExecutable <em>Is Executable</em>}</li>
+ *   <li>{@link org.drools.epn.impl.NetworkImpl#getFlowElement <em>Flow Element</em>}</li>
+ *   <li>{@link org.drools.epn.impl.NetworkImpl#getDefinitionalCollaborationRef <em>Definitional Collaboration Ref</em>}</li>
+ *   <li>{@link org.drools.epn.impl.NetworkImpl#isIsExecutable <em>Is Executable</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ProcessImpl extends CallableElementImpl implements org.drools.epn.Process {
+public class NetworkImpl extends CallableElementImpl implements Network {
     /**
      * The cached value of the '{@link #getFlowElement() <em>Flow Element</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -106,7 +107,7 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ProcessImpl() {
+    protected NetworkImpl() {
         super();
     }
 
@@ -117,7 +118,7 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
      */
     @Override
     protected EClass eStaticClass() {
-        return EPNPackage.Literals.PROCESS;
+        return EPNPackage.Literals.NETWORK;
     }
 
     /**
@@ -127,7 +128,7 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
      */
     public EList<FlowElement> getFlowElement() {
         if (flowElement == null) {
-            flowElement = new EObjectContainmentEList<FlowElement>(FlowElement.class, this, EPNPackage.PROCESS__FLOW_ELEMENT);
+            flowElement = new EObjectContainmentEList<FlowElement>(FlowElement.class, this, EPNPackage.NETWORK__FLOW_ELEMENT);
         }
         return flowElement;
     }
@@ -150,7 +151,7 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
         QName oldDefinitionalCollaborationRef = definitionalCollaborationRef;
         definitionalCollaborationRef = newDefinitionalCollaborationRef;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF, oldDefinitionalCollaborationRef, definitionalCollaborationRef));
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.NETWORK__DEFINITIONAL_COLLABORATION_REF, oldDefinitionalCollaborationRef, definitionalCollaborationRef));
     }
 
     /**
@@ -173,7 +174,7 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
         boolean oldIsExecutableESet = isExecutableESet;
         isExecutableESet = true;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.PROCESS__IS_EXECUTABLE, oldIsExecutable, isExecutable, !oldIsExecutableESet));
+            eNotify(new ENotificationImpl(this, Notification.SET, EPNPackage.NETWORK__IS_EXECUTABLE, oldIsExecutable, isExecutable, !oldIsExecutableESet));
     }
 
     /**
@@ -187,7 +188,7 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
         isExecutable = IS_EXECUTABLE_EDEFAULT;
         isExecutableESet = false;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, EPNPackage.PROCESS__IS_EXECUTABLE, oldIsExecutable, IS_EXECUTABLE_EDEFAULT, oldIsExecutableESet));
+            eNotify(new ENotificationImpl(this, Notification.UNSET, EPNPackage.NETWORK__IS_EXECUTABLE, oldIsExecutable, IS_EXECUTABLE_EDEFAULT, oldIsExecutableESet));
     }
 
     /**
@@ -207,7 +208,7 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT:
+            case EPNPackage.NETWORK__FLOW_ELEMENT:
                 return ((InternalEList<?>)getFlowElement()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -221,11 +222,11 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT:
+            case EPNPackage.NETWORK__FLOW_ELEMENT:
                 return getFlowElement();
-            case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
+            case EPNPackage.NETWORK__DEFINITIONAL_COLLABORATION_REF:
                 return getDefinitionalCollaborationRef();
-            case EPNPackage.PROCESS__IS_EXECUTABLE:
+            case EPNPackage.NETWORK__IS_EXECUTABLE:
                 return isIsExecutable();
         }
         return super.eGet(featureID, resolve, coreType);
@@ -240,14 +241,14 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT:
+            case EPNPackage.NETWORK__FLOW_ELEMENT:
                 getFlowElement().clear();
                 getFlowElement().addAll((Collection<? extends FlowElement>)newValue);
                 return;
-            case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
+            case EPNPackage.NETWORK__DEFINITIONAL_COLLABORATION_REF:
                 setDefinitionalCollaborationRef((QName)newValue);
                 return;
-            case EPNPackage.PROCESS__IS_EXECUTABLE:
+            case EPNPackage.NETWORK__IS_EXECUTABLE:
                 setIsExecutable((Boolean)newValue);
                 return;
         }
@@ -262,13 +263,13 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT:
+            case EPNPackage.NETWORK__FLOW_ELEMENT:
                 getFlowElement().clear();
                 return;
-            case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
+            case EPNPackage.NETWORK__DEFINITIONAL_COLLABORATION_REF:
                 setDefinitionalCollaborationRef(DEFINITIONAL_COLLABORATION_REF_EDEFAULT);
                 return;
-            case EPNPackage.PROCESS__IS_EXECUTABLE:
+            case EPNPackage.NETWORK__IS_EXECUTABLE:
                 unsetIsExecutable();
                 return;
         }
@@ -283,11 +284,11 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case EPNPackage.PROCESS__FLOW_ELEMENT:
+            case EPNPackage.NETWORK__FLOW_ELEMENT:
                 return flowElement != null && !flowElement.isEmpty();
-            case EPNPackage.PROCESS__DEFINITIONAL_COLLABORATION_REF:
+            case EPNPackage.NETWORK__DEFINITIONAL_COLLABORATION_REF:
                 return DEFINITIONAL_COLLABORATION_REF_EDEFAULT == null ? definitionalCollaborationRef != null : !DEFINITIONAL_COLLABORATION_REF_EDEFAULT.equals(definitionalCollaborationRef);
-            case EPNPackage.PROCESS__IS_EXECUTABLE:
+            case EPNPackage.NETWORK__IS_EXECUTABLE:
                 return isSetIsExecutable();
         }
         return super.eIsSet(featureID);
@@ -311,4 +312,4 @@ public class ProcessImpl extends CallableElementImpl implements org.drools.epn.P
         return result.toString();
     }
 
-} //ProcessImpl
+} //NetworkImpl

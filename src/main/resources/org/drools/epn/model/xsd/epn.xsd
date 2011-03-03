@@ -282,9 +282,9 @@
     </xsd:complexContent>
   </xsd:complexType>
 
-  <xsd:element name="process" type="Process"
+  <xsd:element name="network" type="Network"
     substitutionGroup="rootElement" />
-  <xsd:complexType name="Process">
+  <xsd:complexType name="Network">
     <xsd:complexContent>
       <xsd:extension base="CallableElement">
         <xsd:sequence>
